@@ -24,9 +24,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+ - Browser Version  [e.g. chrome 126]
+ - Stylus Version  [e.g. v1.5.51]
+ - bilibili Dark Theme Version [e.g. 1.25.0125.1]
 
 **Additional context**
 Add any other context about the problem here.
