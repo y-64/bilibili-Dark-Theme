@@ -1,0 +1,2423 @@
+/* ==UserStyle==
+@name           bilibili Dark Theme
+@namespace      y-64
+@version        1.25.0125.1
+@description    A bilibili Dark Theme
+@author         y-64
+@license        GPL-3.0
+@preprocessor   stylus
+==/UserStyle== */
+@-moz-document regexp("^https?://(?:[^\/.]+\.)*bilibili\.com/.*") {
+    :root {
+        --b-Wh0: #FFFFFF;
+        --b-Ga0: #F6F7F8;
+        --b-Ga1: #F1F2F3;
+        --b-Ga2: #E3E5E7;
+        --b-Ga3: #C9CCD0;
+        --b-Ga3-rgb: 201, 204, 208;
+        --b-Ga4: #AEB3B9;
+        --b-Ga5: #9499A0;
+        --b-Ga6: #797F87;
+        --b-Ga7: #61666D;
+        --b-Ga7p50: #545960;
+        --b-Ga8: #484C53;
+        --b-Ga8p50: #3C3F46;
+        --b-Ga8p75: #35383F;
+        --b-Ga9: #2F3238;
+        --b-Ga9-rgb: 47, 50, 56;
+        --b-Ga9p25: #292C31;
+        --b-Ga9p75: #1E1F23;
+        --b-Ga9p75-rgb: 30, 31, 35;
+        --b-Ga10: #18191C;
+        --b-Ba0: #000000;
+        --b-Pi2: #FFD9E4;
+        --b-Pi3: #FFB3CA;
+        --b-Pi4: #FF8CB0;
+        --b-Pi5: #FF6699;
+        --b-Pi6: #E84B85;
+        --b-Or4: #FFA058;
+        --b-Or5: #FF7F24;
+        --b-Or6: #E95B03;
+        --b-Gr2: #CAF1D6;
+        --b-Gr3: #95E4AF;
+        --b-Gr4: #5FD689;
+        --b-Gr5: #2AC864;
+        --b-Cy2: #C4EFF0;
+        --b-Cy3: #89E1E1;
+        --b-Cy4: #4FD3D1;
+        --b-Cy5: #14C4BF;
+        --b-Lb2: #BFEDFA;
+        --b-Lb3: #80DAF6;
+        --b-Lb4: #40C5F1;
+        --b-Lb5: #00AEEC;
+        --b-Lb5p50: #009CD8;
+        --b-Lb6: #008AC5;
+        --b-Pu2: #EDDBFF;
+        --b-Pu3: #D8B6FF;
+        --b-Pu4: #C392FF;
+        --b-Pu5: #AC6DFF;
+        --b-Si5: #AFC0D5;
+        --b-Si6: #8D9FB9;
+        --b-Si7: #6D7F9C;
+        --b-Si8: #4D5D7C;
+        --bg1u: var(--b-Ga9p75);
+        --bg1u-rgb: var(--b-Ga9p75-rgb);
+        --bg2u: var(--b-Ga9);
+        --bg2u-rgb: var(--b-Ga9-rgb);
+        --bg2p25: var(--b-Ga9p25);
+        --bg3u: var(--bg2u);
+        --bg4u: var(--b-Ga8p50);
+        --bg5u: var(--b-Ga8);
+        --text0u: var(--b-Ga2);
+        --text1u: var(--b-Ga4);
+        --text2u: var(--b-Ga5);
+        --text3u: var(--b-Ga6);
+        --text4u: var(--b-Ga7);
+        --text5u: var(--b-Ga8);
+        --trans: transparent;
+        --trans-hov: transparent;
+        --bwh: var(--b-Ga1);
+        --bwh-hov: var(--b-Ga0);
+        --bbl3: var(--b-Lb3);
+        --bbl5-hov: var(--b-Lb4);
+        --bbl5: var(--b-Lb5);
+        --bbl6: var(--b-Lb6);
+        --bpi3: var(--b-Pi3);
+        --bpi5-hov: var(--b-Pi4);
+        --bpi5: var(--b-Pi5);
+        --bpi6: var(--b-Pi6);
+        --bor4: var(--b-Or4);
+        --bor5: var(--b-Or5);
+        --bg2-hov: var(--bg4);
+        --bg4-hov: var(--bg5);
+        --bg4-bl: var(--bg4);
+        --bg5-hov: var(--bg6);
+        --bg6: var(--b-Ga6);
+        --text0: var(--text0u);
+        --text1-hov: var(--text0);
+        --text2-hov: var(--text1);
+        --text3-hov: var(--text2);
+        --text4-hov: var(--text3);
+        --none-s: none;
+        --trans-s: 1px solid transparent;
+        --trans-s-hov: 1px solid transparent;
+        --bg1-s: 1px solid var(--bg1);
+        --bg2-s: 1px solid var(--bg2);
+        --bg2-s-hov: 1px solid var(--bg2-hov);
+        --bg2-2s: 2px solid var(--bg2);
+        --bg4-s: 1px solid var(--bg4);
+        --bg4-s-hov: 1px solid var(--bg4-hov);
+        --bg4-2s: 2px solid var(--bg4);
+        --bg5-s: 1px solid var(--bg5);
+        --bg5-s-hov: 1px solid var(--bg5-hov);
+        --text1-s: 1px solid var(--text1);
+        --text2-s: 1px solid var(--text2);
+        --text2-s-hov: 1px solid var(--text2-hov);
+        --text2-2s: 2px solid var(--text2);
+        --text2-2s-hov: 2px solid var(--text2-hov);
+        --text3-s: 1px solid var(--text3);
+        --text4-s: 1px solid var(--text4);
+        --text4-s-hov: 1px solid var(--text4-hov);
+        --text5-s: 1px solid var(--text5);
+        --bbl5-s: 1px solid var(--bbl5);
+        --bbl5-s-hov: 1px solid var(--bbl5-hov);
+        --bbl5-2s: 2px solid var(--bbl5);
+        --bbl5-2s-hov: 2px solid var(--bbl5-hov);
+        --bpi5-s: 1px solid var(--bpi5);
+        --bpi5-2s: 2px solid var(--bpi5);
+        --bpi5-2s-hov: 2px solid var(--bpi5-hov);
+        --bor4-s: 1px solid var(--bor4);
+        --bor5-s: 1px solid var(--bor5);
+        --shadow-popup: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        --ra-zero: 0;
+        --ra-btn-rd: 100px;
+        --ra-btn-rt: 6px;
+        --ra-popup-rd: 12px;
+        --ra-popup-rt: var(--ra-btn-rt);
+        --ra-popup-sp: 16px;
+        --ra-tag: 4px;
+    }
+
+    bgnb(bgc, border=bgc) {
+        background-color: var(bgc) !important;
+        border-color: var(border) !important;
+    }
+
+    btn(bgc, color, border, colorHov=false, borderHov=false) {
+        background-color: var(bgc) !important;
+        border: var(border) !important;
+        color: var(color) !important;
+        box-shadow: none !important;
+        transition: all .3s ease;
+        &:hover {
+            background-color: var(bgc+-hov) !important;
+            border: var(borderHov||border+-hov) !important;
+            color: var(colorHov||color+-hov) !important;
+        }
+    }
+
+    btnRd(bgc, color, border) {
+        btn(bgc, color, border);
+        border-radius: var(--ra-btn-rd) !important;
+    }
+
+    btnRs() {
+        height: auto !important;
+        line-height: normal !important;
+        min-width: auto !important;
+        width: auto !important;
+        font-size: 13px !important;
+        height: 32px !important;
+        padding: 0 16px !important;
+    }
+
+    tag(bgc, color, border, radius=--ra-tag) {
+        background-color: var(bgc) !important;
+        border: var(border) !important;
+        border-radius: var(radius) !important;
+        color: var(color) !important;
+        height: auto !important;
+        padding: 0px 5px !important;
+    }
+
+    tagT(color) {
+        tag(--trans, color, color+-s);
+    }
+
+    popupBox(bgc, borderColor, radius, shadow) {
+        background-color: var(bgc) !important;
+        border-color: var(borderColor) !important;
+        border-radius: var(radius) !important;
+        box-shadow: var(shadow) !important;
+    }
+
+    pb(radius, color=--bg2u) {
+        popupBox(color, --trans, --ra-popup+radius, --shadow-popup);
+    }
+
+    pbTrans() {
+        popupBox(--trans, --trans, --ra-popup-rt, --trans);
+    }
+    .banner-content,
+    html,
+    img {
+        filter: brightness(0.96);
+    }
+}
+
+
+@-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard|festival|watchroom|v/(customer-service|pay|virtual)).*") {
+    :root {
+        --Ga1: var(--bg3u);
+        --Ga10: var(--text1u);
+        --Pi10_u: var(--b-Pi3);
+        --bg1: var(--bg1u);
+        --bg1_rgb: var(--bg1u-rgb);
+        --bg2: var(--bg2u);
+        --bg3: var(--bg2);
+        --bg4: var(--bg4u);
+        --bg5: var(--bg5u);
+        --bg1_float: var(--bg1);
+        --bg2_float: var(--bg3);
+        --text1: var(--text1u);
+        --text2: var(--text2u);
+        --text3: var(--text3u);
+        --text4: var(--text4u);
+        --text5: var(--text5u);
+        --text_link: var(--b-Lb5p50);
+        --line_light: var(--bg3);
+        --line_regular: var(--b-Ga8p75);
+        --line_bold: var(--text4);
+        --graph_bg_thin: var(--bg2);
+        --graph_bg_thin_rgb: var(--bg2u-rgb);
+        --graph_bg_thin_float: var(--bg2);
+        --graph_bg_regular: var(--bg3);
+        --graph_bg_regular_float: var(--bg3);
+        --graph_bg_thick: var(--bg4);
+        --graph_bg_tick: var(--bg4);
+        --graph_weak: var(--bg2);
+        --graph_medium: var(--text3);
+        --graph_bold: var(--text2);
+        --graph_icon: var(--text2);
+        --bpx-dmsend-hint-icon: var(--text3);
+        --bpx-tooltip-color: var(--text0u);
+        color-scheme: dark;
+    }
+    iframe {
+        color-scheme: initial;
+    }
+
+    *:not(html):not(body) {
+        &::-webkit-scrollbar {
+            width: 6px !important;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--bg5) !important;
+            border-radius: var(--ra-btn-rd) !important;
+        }
+    }
+
+    input,
+    #app input,
+    #app ~ div input,
+    textarea,
+    #app textarea,
+    #app ~ div textarea {
+        background-color: transparent;
+        color: var(--text1);
+        caret-color: var(--text1);
+        &::placeholder {
+            color: var(--text3);
+        }
+    }
+    #appz,
+    body {
+        background-color: var(--bg1);
+    }
+    .bili-footer,
+    .bb-comment,
+    .comment-send-lite {
+        background-color: var(--bg1) !important;
+    }
+    .bili-header .avatar-panel-popover,
+    .bili-video-card__info--no-interest-panel,
+    .vui_button--link:hover,
+    #danmukuBox,
+    .playlist-container--right .b-img {
+        background-color: var(--bg2);
+    }
+    .history-tip,
+    .left-entry-popover > div,
+    .search-input .clear-icon,
+    .split-line,
+    .dropdown-top,
+    .top-vote-card,
+    #musicApp .main,
+    .dialog-wrapper {
+        background: var(--bg2) !important;
+    }
+    .bili-mini-line {
+        background-color: var(--bg4);
+    }
+    .login-tab-line,
+    .bili-video-card__info--no-interest-panel--item:hover,
+    .upload-item:hover,
+    .liked:hover,
+    .normal .loading,
+    [class*="follow_optionsList"] li:hover,
+    .follow_dropdown li:hover {
+        background-color: var(--bg4) !important;
+    }
+    .history-item {
+        background-color: var(--bg5) !important;
+    }
+    .game-card-content-footer-rank,
+    .season-slider-list li::after {
+        background-color: var(--trans) !important;
+    }
+    .bili-header .icon-bg,
+    .up-name .mask,
+    .video-argue-inner.strong,
+    .honor[class*="honor-"],
+    .appeal-box {
+        background: var(--trans) !important;
+    }
+    .week-day-item.active {
+        background-color: var(--bbl5) !important;
+    }
+    .van-popover,
+    body,
+    .bili-footer a,
+    .bili-footer .partner .left a:hover,
+    .bb-comment .comment-header .tabs-order li,
+    .article-title,
+    .bili-dialog {
+        color: var(--text1);
+    }
+    .section-title,
+    .error-text,
+    .follow-dialog-wrap li:not(:hover),
+    .watch-later-list .t:not(:hover),
+    .watch-later-list .key,
+    .uname,
+    .act-rich-render-content {
+        color: var(--text1) !important;
+    }
+    .login-tab-item:not(.active-tab) {
+        color: var(--text2);
+    }
+    .login-scan-title,
+    .login-scan-desc p,
+    .msg-text,
+    .range-box i:not(:hover),
+    .add-group .add-btn {
+        color: var(--text2) !important;
+    }
+    .login-sns-wp *,
+    .login-agreement-wp p,
+    .bili-mini-content-wp input::placeholder,
+    .bili-footer,
+    .bili-footer .partner .left a,
+    .bili-rank-list-video .bili-rank-list-video__item--index {
+        color: var(--text3);
+    }
+    .bpx-player-video-inputbar,
+    .jump-pager,
+    .limit,
+    .img-text,
+    .follow-dialog-wrap .info,
+    .follow-dialog-wrap .special-tip,
+    .watch-later-list .info > *:not(a:hover) > span {
+        color: var(--text3) !important;
+    }
+    .lastMonth,
+    .nextMonth {
+        color: var(--text4) !important;
+    }
+    .login-sms-wp .disable {
+        color: var(--text5) !important;
+    }
+    .week-day-item.active,
+    .toutu-btn,
+    ._title_qa6k1_42 {
+        color: var(--bwh) !important;
+    }
+    .section-item:hover .section-title {
+        color: var(--bbl5) !important;
+    }
+    .icon-bg__popular + .icon-title,
+    .h-forbid .f-txt {
+        color: var(--bpi5) !important;
+    }
+    .icon-bg__dynamic ~ .icon-title {
+        color: var(--bor5);
+    }
+    .bui-collapse-header path {
+        fill: var(--text1);
+    }
+    .v-popover [class*="info"] path {
+        fill: var(--text3);
+    }
+    .search-input .clear-icon > use,
+    .bui-checkbox .bui-checkbox-icon svg,
+    #__next [class*="rankList_svg"],
+    .game-header .search-icon path,
+    .css-1xneiug .border,
+    .css-1xneiug .content {
+        fill: var(--text4);
+    }
+    #edu-icon-group_top [stroke] {
+        stroke: var(--text1);
+    }
+    .at-btn *,
+    .index-categary-head .icon-arrow path {
+        stroke: var(--text2);
+    }
+    .icon-bg__popular path {
+        fill: var(--bpi5);
+    }
+    .icon-bg__dynamic path {
+        stroke: var(--bor5);
+    }
+    .vui_button.vui_button--round,
+    .header-upload-entry,
+    .enter-button,
+    .game-header .search-input,
+    .vote-btn,
+    [class*="game_button"],
+    .manga-navbar-submission-portal {
+        border-radius: var(--ra-btn-rd) !important;
+    }
+    .boston-postcards li,
+    .video-toolbar-container,
+    .video-tag-container,
+    .bb-comment .con,
+    .article-content,
+    .watch-later-list .av-about {
+        border-color: var(--bg2) !important;
+    }
+    .bpx-player-filter-wrap *:not(span),
+    .jump-pager input,
+    #link-message-container .orginal-reply,
+    .follow-dialog-wrap .bottom,
+    .watch-later-list .looked {
+        border-color: var(--bg4) !important;
+    }
+    .login-scan-box,
+    .form__separator-line,
+    .login-sms-wp__vertical-line,
+    .add-group .add-btn:not(:hover),
+    #link-message-container .send-box,
+    .bili-dialog-bomb textarea,
+    .add-item {
+        border-color: var(--bg5) !important;
+    }
+    .mc-box:not(.on):not(:hover),
+    [class*="coin_mc_box"]:not([class*="coin_on"]):not(:hover),
+    .fav-select,
+    .bili-dialog-bomb .checkbox {
+        border-color: var(--text4) !important;
+    }
+    .comment-header,
+    .single-card.floor-card,
+    [class*="List_sp_msg"],
+    .up-focus-btn.is-focus {
+        border-color: var(--trans) !important;
+    }
+    .icon-bg__dynamic {
+        border: 3px solid var(--bor5);
+    }
+    .icon-bg__popular {
+        border: 3px solid var(--bpi5);
+    }
+    .header-channel,
+    .mini-header,
+    .search-fixed-header,
+    .fixed-wrapper-shown,
+    .drop-list {
+        box-shadow: var(--shadow-popup) !important;
+    }
+    .bili-mini-content-wp input {
+        box-shadow: inset 0 0 0 1000px var(--bg2) !important;
+    }
+    .el-input__inner {
+        box-shadow: 0 0 0 1px var(--bg4) inset !important;
+    }
+    .bili-feed4 .bili-header .slide-down,
+    #bilibili-player-placeholder,
+    .bpx-player-container,
+    [class^="Share_boxTopR"],
+    [class^="NanoPlay"],
+    .calendar-table tr > *,
+    .reaction-item,
+    .player-popup,
+    .catalogue-nav-wrp {
+        box-shadow: none !important;
+    }
+    .bili-header .nav-search-clean:not(:hover),
+    .second-line_left img,
+    input[type="checkbox"]:not(:hover):not(:checked) + i,
+    .helper-btn::before {
+        filter: brightness(0.6);
+    }
+    .ranking-cell-index {
+        filter: brightness(1.5);
+    }
+    .bili-mini-close-icon,
+    #link-message-container .side-bar .icon,
+    .active-content__desc span:first-child,
+    .side-toolbar__btn.backtop span:before,
+    .cut-off-1 {
+        filter: invert(0.9);
+    }
+    .subject-picture.has-background {
+        opacity: 0.5 !important;
+    }
+    .game-next .card-cover {
+        z-index: auto;
+    }
+    .dynamic-panel-popover .header-tabs-panel__content {
+        max-height: 680px;
+    }
+    .living-up-list {
+        margin-bottom: 0 !important;
+    }
+    .header-dynamic-list-item {
+        padding: 6px 20px !important;
+    }
+
+    .bili-header .header-fav-card {
+        padding: 6px 10px !important;
+    }
+    .favorite-panel-popover__nav,
+    .favorite-panel-popover__content,
+    .history-panel-popover {
+        height: 680px;
+    }
+    .favorite-panel-popover__content .content-scroll {
+        height: 633px;
+    }
+    .history-panel-popover .header-tabs-panel__content {
+        height: 620px;
+    }
+    .recommended-container_floor-aside .container > *:nth-of-type(n+8),
+    .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n+13) {
+        margin-top: 5px;
+    }
+    .bpx-player-dm-btn-send.bui-disabled .bui-button-blue,
+    #dialog-user-rating-button:not([class*="act"]),
+    .sponsor-btn.disabled,
+    .mr-btn:not(.active),
+    .btn-disabled,
+    .follow-dialog-wrap .btn:disabled {
+        background-color: var(--bg4) !important;
+        border-color: var(--trans) !important;
+        color: var(--text4) !important;
+    }
+    .tool-item:not(:hover),
+    .back-top-btn:not(:hover) {
+        background-color: var(--bg1) !important;
+        border-color: var(--bg4) !important;
+    }
+    .sl-ep-list .section-item {
+        bgnb(--bg2);
+    }
+    [class*="sp_rank"] i,
+    .sp-rank i,
+    a .rank-index:not(.hot) {
+        background-color: var(--trans) !important;
+        color: var(--text2) !important;
+    }
+    .bili-mini-content-wp .tab__form {
+        border-color: var(--bg5);
+        color: var(--text1);
+    }
+    .opt-list li,
+    .sort-type-wrp li {
+        color: var(--text1) !important;
+        &:hover {
+            background-color: var(--bg4) !important;
+        }
+    }
+    #link-message-container .divider-last::after {
+        height: 0;
+    }
+    #app .nav-tool {
+        left: unset;
+        right: 0;
+        position: fixed;
+        transform: none;
+    }
+    .bili-header #nav-searchform,
+    .search-layout .search-input-wrap,
+    .g-search input {
+        background-color: var(--bg2) !important;
+        border: var(--bg2-2s) !important;
+        border-radius: var(--ra-btn-rd) !important;
+        transition: all .3s ease !important;
+        &:hover,
+        &:focus-within {
+            border: var(--bg4-2s) !important;
+        }
+
+        & input {
+            color: var(--text2) !important;
+        }
+
+        & input:focus {
+            color: var(--text1) !important;
+        }
+
+        & input::placeholder {
+            color: var(--text3) !important;
+        }
+    }
+    .bili-header .search-panel,
+    .nav-search .suggest-wrap,
+    .search-panel-popover {
+        pb(-rd);
+        margin-top: 8px !important;
+        border-radius: var(--ra-popup-sp) !important;
+    }
+    .bili-header #nav-searchform {
+        padding-left: 6px !important;
+        & .nav-search-content,
+        & .nav-search-content input {
+            background-color: transparent !important;
+        }
+    }
+    .bili-header #nav-searchform .nav-search-btn {
+        color: var(--text3);
+        background-color: transparent;
+        transition: all .3s ease;
+        &:hover {
+            color: var(--text1);
+        }
+    }
+    .vui_button.search-button {
+        border-radius: 6px var(--ra-btn-rd) var(--ra-btn-rd) 6px !important;
+    }
+    [class*="-actions"] .vui_button,
+    .follow-btn__trigger {
+        width: 82px !important;
+        height: 30px !important;
+        min-width: auto !important;
+    }
+    .game-next .end {
+        tagT(--text3);
+    }
+    .game-next .playing {
+        tagT(--bbl5);
+    }
+    .bili-video-card__info--icon-text,
+    .game-card-content-head-recommend,
+    .normal .up span,
+    .rcmd-tag {
+        tagT(--bor4);
+    }
+    .channel-items__left > *,
+    .header-channel-fixed-right-item,
+    .block-right .more-link,
+    .topbar .option-item {
+        btn(--bg2, --text2, --trans-s);
+    }
+    .follow-btn.following,
+    .fans-action-follow,
+    .follow-btn.inactive,
+    .owner-unfollow {
+        btn(--bg2, --text3, --trans-s);
+    }
+    [class^="follow_btn"][class*="_followed"],
+    [class^="upinfo_upInfo"],
+    .episode-list .header-item,
+    .follow-btn.followed,
+    .follow-btn.on {
+        btnRd(--bg2, --text3, --trans-s);
+    }
+    .btn.ghost {
+        btn(--bg4, --text2, --trans-s);
+    }
+    .page-item:not(.active) button,
+    .misl-ep-item.simple,
+    [class^="load_btn"],
+    .episode-list .list-item,
+    .create-series-icon,
+    .be-pager > li:not(.be-pager-item-active):not(.be-pager-item-jump-next),
+    .back-to-info {
+        btn(--trans, --text2, --bg4-s);
+    }
+    .btn_other,
+    .bpx-player-adv-danmaku-dialog-function,
+    .day-select,
+    .bl-button--ghost,
+    .fans-action-btn.follow,
+    .btn-box,
+    .follow-btn.active,
+    .cancel,
+    .btn-cancel {
+        btn(--trans, --text2, --bg5-s);
+    }
+    .d-btn,
+    .s-btn {
+        btn(--trans, --bbl5, --bbl5-s);
+    }
+    .new-charge-btn + .follow-btn.not-follow,
+    .follow-btn.not-follow:only-child,
+    .search-content .vui_button--blue,
+    .follow-btn__trigger:not(.gray) {
+        btn(--trans, --bbl5, --bbl5-2s);
+    }
+    .old-charge-btn,
+    [class^="mediainfo_btn"] {
+        btnRd(--trans, --bbl5, --bbl5-2s);
+    }
+    .new-charge-btn.charge-btn-loaded,
+    .new-elec-trigger {
+        btn(--trans, --bpi5, --bpi5-2s);
+    }
+    .game-next .dis-btn {
+        btnRd(--bg4, --text3, --trans-s);
+        btnRs();
+    }
+    .game-next .card .btn {
+        btnRd(--trans, --bbl5, --bbl5-2s);
+        btnRs();
+    }
+    .upinfo-btn-panel .default-btn {
+        border-radius: 8px !important;
+        height: 29px !important;
+        line-height: 29px !important;
+    }
+    .upinfo-btn-panel [class*="-charge-btn"] {
+        width: 90px !important;
+    }
+    .upinfo-btn-panel .follow-btn {
+        max-width: 146px !important;
+    }
+    #app .up-info__detail {
+        margin-bottom: 8px;
+    }
+    .charge-btn-icon {
+        margin-left: -10px;
+    }
+    .panel-v2,
+    .misl-ep-item,
+    .sp-msg,
+    .sp-msg::before,
+    .rank-video-card__popover {
+        pbTrans();
+    }
+    .bili-mini-content-wp,
+    .v-popover-content,
+    .video-share-popover,
+    .modal-content,
+    .user-card-m-exp,
+    .follow-dialog-window,
+    .bili-dialog-bomb,
+    #musicApp,
+    .bili-game-header-user-popper,
+    .hovercard,
+    .overlay .content,
+    .popup-box,
+    .more-panel,
+    .bp-emoji-box .static-popup,
+    .cs-actions-wrap,
+    .bp-popup-panel,
+    .bili-dialog .con,
+    .bili-popover,
+    .bili-at-popup {
+        pb(-rd);
+    }
+    .lt-row ~ div .v-popover-content,
+    .vui_popover-content,
+    .video-tool-more-popover,
+    .search-sub-channel,
+    .video-sections-head_desc,
+    .bpx-player-report-box,
+    [class*="follow_optionsList"],
+    [class*="selectorDrop"],
+    .datepicker-popup,
+    .opt-list,
+    .sort-type-wrp ul,
+    .calendar-year,
+    .channel-select-content {
+        pb(-rt);
+    }
+    .van-followed,
+    .bui-dropdown-items {
+        pb(-rt);
+        padding: 4px !important;
+    }
+    .bili-video-card__info--no-interest-panel {
+        padding: 4px;
+    }
+    .follow-dialog-window .title,
+    [class^="payHeader_spon"],
+    .sponsor-pay-header,
+    .modal-title,
+    .pin-layer-header,
+    .dialog-title,
+    .edit-media-list .head,
+    .bili-dialog .con header,
+    .bili-dialog-bomb .header,
+    .appeal-box .submit {
+        background-color: var(--bg2) !important;
+        border-color: var(--trans) !important;
+        border-radius: var(--ra-popup-rd) !important;
+        color: var(--text1) !important;
+    }
+    .opt-list li.disabled,
+    [class^="f"] li[class^="follow_dis"] {
+        background-color: var(--trans) !important;
+        color: var(--text5) !important;
+    }
+    .follow-dialog-window .content,
+    .bili-dialog-bomb .content,
+    [class*="Collect_con"],
+    .target-favlist {
+        height: 430px !important;
+        max-height: 430px !important;
+        overflow: auto;
+    }
+    .group-list {
+        overflow: unset !important;
+    }
+    .follow-group-mask,
+    .s-space .collection-mask {
+        background-color: var(--bg2) !important;
+        opacity: 0.58 !important;
+    }
+    .van-popper .popper__arrow,
+    .floor-single-card .layer,
+    .desktop-download-tip,
+    .usercard-wrap .layout,
+    .bili-dialog-bomb .layout,
+    .follow-dialog-window .layout,
+    .hovercard .tip,
+    .content .card .more-panel:after,
+    .join-button__join-way:after,
+    .share-popover:after,
+    ._arrow_wdqx1_20 {
+        display: none;
+    }
+    .adblock-tips,
+    .is-rcmd:has(.bili-video-card__info--ad) .bili-video-card__info,
+    .couplet-locs,
+    .adcard-content,
+    .col_3:has(.bili-video-card__info--ad),
+    .reply-notice,
+    .activity-m-v1,
+    .ad-report,
+    .slide-ad-exp,
+    .ad-feedback-menu,
+    .video-page-special-card-small,
+    #right-bottom-banner,
+    [class^="vipPay"],
+    [class^="paybar_con"],
+    .gg-floor-module,
+    div.cm-module,
+    .eva-banner {
+        display: none !important;
+    }
+    .is-rcmd:has(.bili-video-card__info--ad) .bili-video-card__wrap {
+        background: url(//i0.hdslb.com/bfs/album/eb65ae5ee6f66b6381090f5bee4fe6cbabfd6d0d.png@360w_!web-dynamic.webp) center/cover no-repeat;
+        border-radius: 6px;
+        & a {
+            visibility: hidden;
+        }
+    }
+
+    @media (max-height: 848px) {
+        .video-pod__body,
+        .multi-page-v1 .cur-list {
+            height: auto !important;
+            max-height: 355px !important;
+        }
+        .video-sections-content-list {
+            height: auto !important;
+            max-height: 330px !important;
+        }
+        [class^="numberList_wrap"],
+        [class^="imageList_wrap"] {
+            max-height: 420px !important;
+        }
+    }
+
+    @media (min-height: 848px) {
+        .video-pod__body,
+        .multi-page-v1 .cur-list {
+            height: auto !important;
+            max-height: 485px !important;
+        }
+        .video-sections-content-list {
+            height: auto !important;
+            max-height: 485px !important;
+        }
+        [class^="numberList_wrap"],
+        [class^="imageList_wrap"] {
+            max-height: 535px !important;
+        }
+    }
+}
+
+@-moz-document regexp("^https?://game\.bilibili\.com/(platform/.*)?"),
+regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
+    :root {
+        --Ba0_s: var(--text1);
+        --Wh0: var(--bg1);
+        --Ga0: var(--bg2);
+        --Ga0_s: var(--bg2);
+        --Ga1_s: var(--bg3);
+        --Ga2: var(--line_regular);
+        --Ga3: var(--text4);
+        --Ga5: var(--text3);
+        --Ga7: var(--text2);
+        --Ga8: var(--text2);
+        --Ga9: var(--text1);
+        --Ga9: var(--text1);
+        --Ga10: var(--text1);
+        --Ga11: var(--bg1);
+        --Ga12: var(--bg3);
+        --Ga12_s: var(--bg2);
+        --Bl1: var(--b-Si8);
+        --Si4: var(--b-Si8);
+        --Si5: var(--b-Si7);
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/appeal/.*") {
+    .app,
+    .navbar,
+    .row,
+    .form-textarea,
+    .form-upload-image,
+    #app {
+        background-color: var(--bg2) !important;
+    }
+    .navbar::after,
+    .row::before,
+    .tip-wrap,
+    .section-info,
+    .cnt {
+        background-color: var(--bg4) !important;
+    }
+    .navbar-title,
+    .sub-tag-item,
+    textarea,
+    .container .question {
+        color: var(--text1) !important;
+    }
+    .tip-text,
+    .info-description,
+    .before,
+    .block-text {
+        color: var(--text2) !important;
+    }
+    .section-name,
+    textarea::placeholder,
+    .cnt__num,
+    .upload-tip {
+        color: var(--text3) !important;
+    }
+    .item-check-btn,
+    textarea,
+    .img-wrap {
+        border-color: var(--text4) !important;
+    }
+    .header,
+    .submit {
+        background-color: var(--bg2) !important;
+        border-color: var(--trans) !important;
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/bangumi/(?!media).*") {
+    .home-container .main-container,
+    [class*="SendingBar"] {
+        background-color: var(--bg1);
+    }
+    [class^="Share"] > div,
+    [class*="playerPop"],
+    [class^="eplist"] {
+        background-color: var(--bg2) !important;
+    }
+    [class*="dropdownItem"]:hover,
+    [class*="upLink"]::after {
+        background-color: var(--bg4) !important;
+    }
+    [class*="media_desc"] i,
+    [class^="EpListSke"],
+    [class*="coverWrap"] {
+        background: transparent !important;
+    }
+    [class*="List_sp_rank"],
+    [class*="sponsor_point"] {
+        color: var(--text2) !important;
+    }
+    [class^="RecommendItem_sub"] * {
+        color: var(--text3) !important;
+    }
+    [class*="follow_followed"] path,
+    #empty-star path,
+    #play-icon path,
+    #danmu-icon path {
+        fill: var(--text3);
+    }
+    [class^="follow_btn"],
+    [class^="sponsor_btn"] {
+        border-radius: var(--ra-btn-rd) !important;
+    }
+    [class^="mediainfo_mediaInfo"],
+    [class^="recommend_wrap"],
+    [class*="sponsor_module"],
+    [class*="Tab_sp_list"] {
+        border-color: var(--bg2) !important;
+    }
+    [class*="review_body"],
+    [name="custom-amount"] {
+        border-color: var(--bg5) !important;
+    }
+    [class*="list_title"] {
+        border-radius: 6px !important;
+    }
+    [class*="coin_op"],
+    [class*="dialogCon"] {
+        box-shadow: var(--shadow-popup) !important;
+        border-color: var(--trans);
+    }
+    [class^="numberListItem_nu"] {
+        height: 38px;
+        & [class^="numberListItem_ti"] {
+            color: var(--text2);
+            font-size: 14px;
+            line-height: 38px;
+        }
+
+        &:not([class*="Item_select"]) {
+            btn(--trans, --text2, --bg4-s, --bbl5, --bbl5-s);
+        }
+    }
+    [class*="Item_badge"] {
+        font-size: 10px;
+        height: 17px;
+        line-height: 17px;
+        top: -8px;
+        right: -8px;
+    }
+    [class^="Share_share__"],
+    [class*="watch_more"],
+    [class*="review_con"],
+    [class*="rank_content"],
+    [class*="pay_con"] {
+        pb(-rd);
+    }
+    [class^="moreTool_po"] {
+        pb(-rt);
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/anime/.*"),
+regexp("^https?://(www\.)?bilibili\.com/guochuang/.*"),
+regexp("^https?://(www\.)?bilibili\.com/v/anime/.*"),
+regexp("^https?://(www\.)?bilibili\.com/v/guochuang/.*"),
+regexp("^https?://(www\.)?bilibili\.com/.*/index/.*"),
+regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
+    #app .nav-tool .section,
+    .media-tab-wrp {
+        background-color: var(--bg1);
+    }
+    .b-img,
+    .season-cover,
+    .week-day-wrapper,
+    .media-tab-wrp,
+    .slider-contro span:not(:hover) {
+        background-color: var(--bg2) !important;
+    }
+    .nav-tool .section:not(.channel-entry):hover,
+    .nav-tool .channel-item:hover {
+        background-color: var(--bg4) !important;
+    }
+    .recommend-feed-line-rank-wrapper,
+    .share-module,
+    .slide-item-img {
+        background: transparent !important;
+    }
+    .home-v3-app-container .home-cell-desc-title,
+    .nav-tool .section,
+    .nav-tool .section a,
+    .media-tab-nav ul li,
+    .section-item:not(:hover) .section-index,
+    .sponsor-rank-tab li {
+        color: var(--text1);
+    }
+    .index-categary-head:not(a:hover),
+    .timeline-item-title:not(:hover),
+    .weixin-share-modal p,
+    .sl-ep-nav-title,
+    .sp-user:not([style^="c"]),
+    .sponsor-choice li:not(.active) span,
+    .sponsor-hint,
+    .sponsor-agree a:not(:hover) {
+        color: var(--text1) !important;
+    }
+    .bread-crumb ul li a,
+    .bangumi-review-item .item-header .author-name,
+    .review-list-wrp li .review-author-info div.review-author-name {
+        color: var(--text2);
+    }
+    .item-link-a:not(:hover),
+    .week-day-item,
+    .simple .misl-ep-index,
+    .sponsor-point,
+    .feed-header span:not(:hover) {
+        color: var(--text2) !important;
+    }
+    .home-v3-app-container .home-cell-desc-subtitle,
+    .misl-ep-item .misl-ep-text .misl-ep-title {
+        color: var(--text3);
+    }
+    .update-to,
+    .feedline-rank-subject-subtitle,
+    .season-desc:not(.published),
+    .pub-info,
+    .sp-msg,
+    .sponsor-count-info,
+    .sponsor-agree,
+    .pub-time,
+    .review-body-wrap .tip,
+    .mic-expand:not(:hover),
+    .mic-info,
+    .review-author-time,
+    .review-detail ~ div *,
+    .review-about,
+    .review-about a:not(:hover),
+    .likes {
+        color: var(--text3) !important;
+    }
+    .nav-tool .section,
+    .bangumi-index-wrapper,
+    .season-slider-list li:not(.cur):last-child,
+    .mode-select,
+    .media-tab-detail-l > div,
+    .review-list-wrp li,
+    .review-feed-item,
+    .media-tab-module-wrp {
+        border-color: var(--bg2) !important;
+    }
+    .sponsor-choice input,
+    .review-body-wrap {
+        border-color: var(--bg5) !important;
+    }
+    .tl-weeks:after,
+    .season-group {
+        border-color: var(--text3) !important;
+    }
+    .sp-left img,
+    .sp-list-nav {
+        border-color: var(--trans) !important;
+    }
+    .sort-item i.up {
+        border-bottom-color: var(--text4);
+    }
+    .sort-item i.down {
+        border-top-color: var(--text4);
+    }
+    .season-slider-list li:not(.cur)::after,
+    .season-slider-list li:not(.cur)::before {
+        filter: invert(0.84);
+    }
+    .title-right .left-icon,
+    .today .day-of-week {
+        filter: invert(0.9);
+    }
+    .slider-contro span.disabled {
+        visibility: hidden;
+    }
+    .tl-day:not(.today) .indicator,
+    .sp-msg > span {
+        display: none !important;
+    }
+    .title-right,
+    .show-sponsor-rank,
+    .btn-more-review,
+    .media-tab-module-more {
+        btn(--trans, --text2, --trans-s, --bbl5);
+    }
+    .media-tab-nav,
+    .media-tab-detail-l,
+    .media-tab-detail-r > div,
+    .media-tab-detail {
+        pb(-rt, --bg1);
+    }
+    .weixin-share-modal,
+    .sponsor-rank-content,
+    .sponsor-pay-content,
+    .short-review-content,
+    .report-dialog-content {
+        pb(-rd);
+    }
+}
+
+@-moz-document regexp("^https?://www\.bilibili\.com/(documentary|movie|tv|variety)/.*") {
+    .index-module {
+        background: linear-gradient(0deg, var(--bg1) 14.49%, rgba(30, 31, 35 .8) 60.12%, rgba(20, 20, 20, .0001)) !important;
+    }
+    .index-module .title,
+    .all-a:not(:hover) *,
+    .sub-m:not(:hover),
+    .side-item div {
+        color: var(--text0) !important;
+    }
+    .hot-item:not(:hover) .title,
+    .promotion-c:not(:hover) .title,
+    .hover-c:not(:hover) .title,
+    .subTitle:not(.highlight),
+    .link {
+        color: var(--text1) !important;
+    }
+    .desc {
+        color: var(--text3) !important;
+    }
+    .bg-item,
+    .img {
+        filter: brightness(0.96)
+    }
+}
+
+@-moz-document regexp("^https?://game\.bilibili\.com/(platform/.*)?") {
+    :root {
+        --Ga10_rgb: var(--b-Ga3-rgb);
+    }
+    [class^="Home"] {
+        background: var(--trans) !important;
+    }
+    .bili-game-header-nav-bar {
+        box-shadow: var(--shadow-popup) !important;
+    }
+    [class^="ske"] {
+        display: none;
+    }
+    [class^="Card-rec"] {
+        pb(-rd, --bg2p25);
+    }
+}
+
+@-moz-document regexp("^https?://manga\.bilibili\.com/(?!account-center).*") {
+    .manga-footer,
+    .drop-list,
+    .manga-navbar .right-part [class*="-btn-container"],
+    .multi-line-text::after,
+    .hot-seller {
+        background-color: var(--bg1) !important;
+    }
+    .search-bar-bg,
+    .dot,
+    .split,
+    html:has(.manga-detail),
+    body:has(.manga-detail) {
+        background-color: var(--bg2) !important;
+    }
+    .list-section .manga-cover,
+    .schedule-img,
+    .empty-hinter,
+    .rank-item-wrapper,
+    .back-to-content {
+        background: var(--trans) !important;
+    }
+    .manga-navbar-manga-logo,
+    .nav-item:not(.active):not(:hover),
+    .hovercard .line,
+    .manga-title,
+    .right-part button:not(.manga-navbar-submission-portal),
+    .category-item,
+    .title,
+    .title1,
+    .title .text,
+    .app-button.tab.active,
+    .section-item:not(.current),
+    .style-tag,
+    .schedule-list [class*="title"],
+    .rank-title,
+    .comic-title,
+    .first-line {
+        color: var(--text1) !important;
+    }
+    .user-panel [class*="item-"],
+    .date-item:not(.active),
+    .sidebar-item:not(.activated),
+    .author-name,
+    .introduction-text,
+    .header-content .more:not(:hover),
+    .second-line,
+    .manga-reader {
+        color: var(--text2) !important;
+    }
+    .manga-navbar .drop-list .text,
+    .placeholder-item,
+    .hot-category + div .sub-title,
+    .sell-number,
+    .completed-comic,
+    .tags,
+    .supporting-text,
+    .status-text,
+    .meta-ctnr > *,
+    .tag-block .block-title.v-top,
+    .status-controls,
+    .rank-hint,
+    .is-read:not(.last-read),
+    .comic-info {
+        color: var(--text3) !important;
+    }
+    .app-button.tab {
+        color: var(--text4) !important;
+    }
+
+    a[class*="item"]:hover,
+    a[class*="text"]:hover,
+    .vsc-initialized a *[class*="text"]:hover,
+    a[class*="title"]:hover,
+    .vsc-initialized a *[class*="title"]:hover {
+        color: var(--bbl5) !important;
+    }
+    .fix-scroller *,
+    .fav-icon.cancel {
+        border-color: var(--trans) !important;
+    }
+    .search-icon,
+    .emmet,
+    .list-body button,
+    .label-icon,
+    .fav-icon.add {
+        filter: invert(1);
+    }
+    .theme-dark {
+        filter: brightness(0.92);
+    }
+    .manga-navbar,
+    .hot-category,
+    .back-to-content,
+    .manga-detail .layout,
+    .episode-comment {
+        pb(-rt, --bg1);
+    }
+    .section-navigator {
+        pb(-rt, --bg2p25);
+    }
+
+    .app-button.cancel {
+        btn(--bbl5, --bwh, --trans);
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/match/.*"),
+regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
+    .light-theme {
+        --guess-bg3: var(--bg3) !important;
+        --guess-text1: var(--text1) !important;
+        --guess-text1-2: var(--text3) !important;
+        --guess-text-round: var(--text3) !important;
+        --guess-line-color: var(--bg5) !important;
+    }
+    [class*="-loading"],
+    .bili-option:hover,
+    .competition-option-close {
+        background: var(--bg2) !important;
+    }
+    div[class*="popper"] *[class*="content-item"]:hover,
+    .datepicker-popup .calendar-year > a:hover {
+        background-color: var(--bg4) !important;
+    }
+    .card-cover {
+        background-color: transparent !important;
+    }
+    .search-icon,
+    .score .score-point,
+    .filter-top,
+    .competition-option-content,
+    .lazy-img,
+    .lazy-img img,
+    .score-module-wrap *,
+    .info-title > div,
+    .user-mobal .center {
+        background: transparent !important;
+    }
+    .hasDatepicker .datepicker,
+    .schedule-filter .filter-content li {
+        color: var(--text1);
+    }
+    .team-name,
+    .rep-list-wrap .type {
+        color: var(--text1) !important;
+    }
+    .how-pay,
+    .popup-box ul li {
+        color: var(--text2) !important;
+    }
+    .has-matchs div:nth-child(2),
+    .time-status.over,
+    .score-state,
+    .no-competition {
+        color: var(--text3) !important;
+    }
+    .special-text h3 {
+        color: var(--bwh) !important;
+    }
+    .game-header .search-icon:hover path,
+    .game-next [class^="arrow-"] path {
+        fill: var(--text2);
+    }
+    .contain-item {
+        border-color: var(--bg2) !important;
+    }
+    .competition-option-content,
+    .competition-option-input *,
+    .relevant-container * {
+        border-color: var(--bg5) !important;
+    }
+    .header .tabs,
+    .filter-top,
+    .popup-title {
+        border-color: var(--trans) !important;
+    }
+    .team-list .team.team-active {
+        border-color: var(--bbl5) !important;
+    }
+    .slide-cover .card .btn {
+        margin: 0 18px !important;
+    }
+    .icon-menu::after {
+        filter: brightness(0.6);
+    }
+    .info-resource .resource-img {
+        filter: invert(0.9);
+    }
+    .title .right,
+    .all-video,
+    .toggle-open-select,
+    .game-menu .more {
+        btn(--trans, --text2, --bg4-s);
+    }
+    .slide-cover .card,
+    [class^="arrow-"],
+    .game-tab .slide-cover .card,
+    .game-tab [class^="arrow-"],
+    .tree-content,
+    .stage-container > .main > div,
+    .team-list .team,
+    .team-info,
+    .option,
+    .video-option {
+        pb(-rt, --bg2p25);
+    }
+    .popper > *,
+    .user-options,
+    .competition-option-hide > div {
+        pb(-rt);
+    }
+}
+
+@-moz-document regexp("^https?://space\.bilibili\.com/.*"),
+regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
+    .bili-video-card {
+        --bili-video-card-title-font-size: 14px !important;
+        --bili-video-card-subtitle-font-size: 13px !important;
+    }
+    .channel-option.no-channel,
+    html:has(.win),
+    .channel-add-video,
+    .fav-action-fixtop,
+    .is-dragging .setting-index-module,
+    .follow-action-fixtop,
+    .search-page,
+    .bg-white,
+    .feed-dynamic-content .card,
+    #app:has(.container.play-list),
+    .delete-btn.delete-check {
+        background-color: var(--bg1) !important;
+    }
+    #app:has(#navigator),
+    html,
+    .i-pin-cover,
+    #pin-layer-reason-input input,
+    .contribution-item:not(.cur):hover,
+    #submit-video-type-filter,
+    .article-card .article-card-cover .b-img,
+    .article-card__no-img,
+    .opus-card--only-text,
+    .fav-item:not(.cur):hover,
+    .disabled-cover,
+    .filter-item:nth-child(2) .be-dropdown-item:hover,
+    .favEmpty .fav-play,
+    .menu-popover__panel-item,
+    .follow-item:not(.cur):hover,
+    .search-nav-item:not(.search-nav-actived):hover,
+    .delete-btn {
+        background-color: var(--bg2) !important;
+    }
+    [class*="-aside-section"] > div {
+        background-color: var(--bg2p25) !important;
+    }
+    .small-item .cover {
+        background: var(--bg2) !important;
+    }
+    .be-switch {
+        background-color: var(--bg4);
+    }
+    .be-dropdown-item:hover,
+    .pin-layer-vlist .small-item:not(.selected):hover,
+    .row .breadline,
+    .icon-cursor,
+    .favlist-body::after,
+    .bili-card-dropdown-popper__item:hover,
+    .pgc-item-info div:nth-of-type(n + 2) i {
+        background-color: var(--bg4) !important;
+    }
+    #setting-new-tag-btn {
+        background: var(--bg4) !important;
+    }
+    .h-forbid,
+    .n-avatar .b-img,
+    .list-create,
+    .toutu-content,
+    .fav-video-list.is-batch .small-item {
+        background: transparent !important;
+    }
+    .n .n-data .n-data-v,
+    .i-live .i-live-text,
+    .large-item .title,
+    li:not(.is-active):not(.disabled),
+    .breadcrumb .item.cur,
+    #page-fav .fav-sidenav,
+    #page-fav .fav-main .filter-item,
+    .sub-tabs .filter-content,
+    .sub-tabs span,
+    #page-follows .follow-tabs {
+        color: var(--text1);
+    }
+    .info-title,
+    .goto-auth,
+    .pin-layer-order-tip,
+    .pin-layer-vlist .small-item:not(.selected) .title,
+    .auth-description,
+    .channel-name,
+    .game-card__info-title,
+    .page-head__left .video-title,
+    .row .breadcrumb .item,
+    .pin-layer-header-counter,
+    .nav-title.nav-add .text,
+    .edit-mask .title,
+    .edit-mask .cover-title,
+    .fav-name:not(:hover),
+    .search-types,
+    .search-fav-input,
+    .fav-filters .be-dropdown-item span:not(:hover),
+    [class*="-action-bottom"] li,
+    .edit-video-title,
+    .new-topic-list-content-title:not(:hover),
+    .opus-item-title,
+    p.main-title,
+    .collection-details .title-name,
+    .pgc-item-title,
+    .pgc-item-desc,
+    .setting-privacy-name,
+    .is-dragging .setting-index-module,
+    #setting-new-tag-btn,
+    .follow-item,
+    .target-followitem:not(:hover),
+    .idc-laoding-text,
+    .play-list .list-title:not(:hover),
+    .play-list .upper-name:not(:hover),
+    .source-name:not(:hover),
+    .source-index,
+    .window-item:not(:hover),
+    .collect-item:not(:hover) {
+        color: var(--text1) !important;
+    }
+    .list-create .text,
+    .elec .elec-total-c-num,
+    .i-m-btn,
+    .be-pager li:not(.be-pager-item-active) a {
+        color: var(--text2);
+    }
+    .command,
+    .keyword-tips,
+    .choose-kw,
+    #i-ann-content textarea,
+    .user-info .info-content *,
+    .i-live-fo > span,
+    .channel-option.no-channel p,
+    .channel-add-video:not(:hover) .text,
+    .media-list-type,
+    .fake-fav-input p,
+    .icon-ic_more,
+    .opus-item-content,
+    .p404 p,
+    .draggable,
+    .more-oprate {
+        color: var(--text2) !important;
+    }
+    .n .n-num,
+    .n .n-data .n-data-k,
+    .sec-empty-hint,
+    .i-pin-title ~ *,
+    .be-input-word-counter,
+    .article-title ~ *,
+    .private-hint,
+    .elec .elec-total-count,
+    .list-item .desc,
+    #page-fav .fav-main .filter-item .filter-type .be-dropdown-item i,
+    .collection-details .title ~ *:not(.collection-btn) {
+        color: var(--text3);
+    }
+    .no-auth-title span,
+    .empty-state p,
+    .section.empty:after,
+    .command-num,
+    .choose-kw-num,
+    .no-video-tips,
+    .video-view,
+    .video-pub,
+    .icon-checkbox,
+    .large-item .title ~ *,
+    .meta,
+    .user-info .info-command,
+    .user-info .icon-a-Slice1,
+    .i-live-off-guest,
+    .game-card__info-title ~ div,
+    .game .expend-more,
+    li:not(.cur):not(.search-nav-actived) .num,
+    #submit-video-type-filter .count,
+    .article-card__no-img .article-card__icons,
+    .channel-update-time,
+    .favlist-title,
+    .watch-later,
+    .fav-item:not(.cur) .iconfont,
+    .fav-main .icon-heji,
+    span[class*="-num-limit"],
+    .fav-meta,
+    .edit-video-subtitle,
+    .fav-state,
+    .target-fav-count,
+    .new-topic-list-content-desc,
+    .opus-item-time,
+    p.main-title ~ *,
+    .type-and-area,
+    .pgc-item-state,
+    .pgc-space-follow-item .iconfont,
+    .be-switch-label,
+    .nav-title .text,
+    .follow-main .list-item .content > p,
+    .idc-tag-list ~ div,
+    .select-counter,
+    .target-follow-notice,
+    .list-info,
+    .oprate-panel .iconfont:not(.blue-icon),
+    .oprate-panel .icon-text,
+    .media-list-type .iconfont:not(.blue-icon),
+    .source-upper-name:not(:hover),
+    .source-detail:not(.source-upper-name),
+    .all-check,
+    .source-check {
+        color: var(--text3) !important;
+    }
+    .nav-bar .nav-search .actions .search {
+        color: var(--text4);
+    }
+    .favEmpty .fav-play,
+    .target-favitem.disabled .fav-name,
+    .delete-btn:not(.delete-check) {
+        color: var(--text5) !important;
+    }
+    .small-item.selected .meta {
+        color: #b3e3f3 !important;
+    }
+    .large-item .cover,
+    .game-card__btn {
+        border-radius: var(--ra-btn-rd) !important;
+    }
+    .i-pin-v .be-tab,
+    .section,
+    .col-2 .section-title,
+    .user-info-title,
+    .elec-avatar,
+    .channel .channel-item,
+    .main-content,
+    .list-item,
+    .channel-detail .filter,
+    .nav-container,
+    .fav-sidenav .watch-later,
+    .be-dropdown-item-delimiter,
+    .favList-info,
+    [class*="-action-top"],
+    .opus-item,
+    .follow-main,
+    .follow-header,
+    .oprate-panel,
+    .source-right {
+        border-color: var(--bg2) !important;
+    }
+    .i-m-r2,
+    .i-m-upload,
+    .search-types,
+    .i-live-fo > span,
+    .filter-item.search,
+    .space_input,
+    .setting-index-container,
+    .setting-index-module,
+    .setting-add-tag .space_input,
+    #setting-new-tag-btn,
+    .batch-btn.clear-btn:not(:hover) {
+        border-color: var(--bg4) !important;
+    }
+    .list-create:not(:hover),
+    #pin-layer-search,
+    .be-input_inner:not(:focus),
+    .bili-dialog-bomb input,
+    .series-desc-box,
+    .choose-kw-num,
+    .channel-add-video:not(:hover),
+    .channel-info .meta > span:not(:last-child),
+    .edit-mask [type="text"],
+    .fake-fav-input:not(:hover),
+    .search-component-focus:not(:hover),
+    .target-followlist {
+        border-color: var(--bg5) !important;
+    }
+    .fav-covers,
+    .list-item:last-child,
+    [class*="sidenav"],
+    .channel-action-row .be-dropdown,
+    .fav-main .small-item,
+    .fav-header,
+    .window-item,
+    .collect-item {
+        border-color: var(--trans) !important;
+    }
+    .toutu-content,
+    .vui_dialog--content {
+        box-shadow: var(--shadow-popup);
+    }
+    .i-pin-c,
+    #pin-layer-reason-input input,
+    .large-item .cover img {
+        box-shadow: none !important;
+    }
+    .g-search .search-btn:not(:hover),
+    .list-create:not(:hover) .icon,
+    #pin-layer-search-btn:not(:hover),
+    .small-item:not(.selected) .meta .icon,
+    .private-hint .icon,
+    .article-content .icon,
+    .icon-m-ra,
+    .channel-add-video:not(:hover) .icon,
+    .edit-media-list .icon-check:not(.blue-icon),
+    .fav-main .icon-search:not(:hover),
+    .fav-main .icon-selece-all,
+    .filter-disable .icon,
+    .s-space .icon-add:not(:hover),
+    .icon-follow-search,
+    .icon-follow-watched:not(.icon-follow-selected) {
+        filter: brightness(60%);
+    }
+    .elec-map .elec-status,
+    .section .count,
+    .qipapnum {
+        filter: invert(90%);
+    }
+    .vui_drawer-drawer--bottom-placement {
+        height: 620px !important;
+    }
+    #page-fav .fav-sidenav .text {
+        font-size: 13px;
+        line-height: 35px;
+    }
+    .fav-sidenav .be-dropdown-menu {
+        margin-top: -5px;
+    }
+    #page-fav .fav-sidenav .fav-item .iconfont {
+        font-size: 20px;
+    }
+    .icon-cursor {
+        background-position: -219px -1105px;
+    }
+    .vui_sidebar-item {
+        height: 40px !important;
+        padding: 10px 16px !important;
+    }
+    .menu-popover__panel {
+        padding: 0 !important;
+    }
+    .bili-card-dropdown-popper {
+        padding: 4px !important;
+    }
+    .header-toutu,
+    .header-upinfo-bg-shadow {
+        z-index: auto !important;
+    }
+    .header-upinfo {
+        z-index: 0 !important;
+    }
+    .btn.default,
+    .cancel-btn,
+    .back-btn,
+    .default-btn.cancel {
+        btn(--trans, --text2, --bg5-s);
+    }
+    .operation.create,
+    .play-all-channel,
+    .section .more,
+    .change-info-btn,
+    .play-all-btn,
+    .paly-all-btn,
+    .series-item .btn-row .btn {
+        btn(--trans, --text2, --trans-s, --bbl5);
+    }
+    .modal-wrapper,
+    #pin-layer,
+    .edit-mask > div,
+    #id-card {
+        pb(-rd);
+    }
+    .be-dropdown-menu,
+    .oprate-window,
+    .collect,
+    .bili-card-dropdown-popper {
+        pb(-rt);
+    }
+    #page-dynamic .bili-dyn-item {
+        pb(-rt, bg1);
+    }
+}
+
+@-moz-document regexp("^https?://message\.bilibili\.com/.*") {
+    #message-navbar,
+    .message .message-content:not(.is-me),
+    .msg-notify,
+    .auto-reply-push,
+    .cs-q-tab-item.active,
+    .cs-self-service-item {
+        background-color: var(--bg1) !important;
+    }
+    .divider-last::before,
+    .message-list,
+    .send-box,
+    .msg-notify hr,
+    .emoji-cover.selected,
+    .config-item:not(:first-child)::before {
+        background-color: var(--bg2) !important;
+    }
+    .list-item.active,
+    .list-item:hover,
+    .bp-emoji-box .pagination,
+    .bp-emoji-box .static-popup li:hover,
+    .cs-q-tabs,
+    .cs-action-item:hover {
+        background-color: var(--bg4) !important;
+    }
+    .name-loading,
+    .emoji div,
+    .emoji:not(:hover) {
+        background-color: transparent !important;
+    }
+    .love-card .header::after,
+    .link-progress-tv {
+        background: transparent !important;
+    }
+    .space-left {
+        background-color: rgba(24, 25, 28, 0.8) !important;
+    }
+    .space-right {
+        background-color: rgba(24, 25, 28, 0.5) !important;
+    }
+    #link-message-container .line-1 .name-field,
+    .detail .content:not(:hover),
+    .message .message-content:not(.is-me),
+    .auto-reply-push *,
+    .msg-notify .link:not(:hover) {
+        color: var(--text1);
+    }
+    .title,
+    .line-2,
+    .content-text,
+    .list-item .name,
+    .core-style,
+    .msg-notify .detail span,
+    .tool-title,
+    .config,
+    .radio-selector {
+        color: var(--text1) !important;
+    }
+    .item:not(.active):not(:hover),
+    .item:not(.active):not(:hover) a,
+    .line-1,
+    .bottom,
+    .bili-im,
+    .list-item .close,
+    .msg-notify .content,
+    .icon-more-1,
+    .helper-btn,
+    .cs-action-item {
+        color: var(--text2) !important;
+    }
+    .space-right .line-3 {
+        color: var(--text3);
+    }
+    .orginal-reply,
+    .time,
+    .list-item .last-word,
+    .msg-tips,
+    .mtitle,
+    .ar-recommend-item__info--view *,
+    .notify-wrapper,
+    .no-more,
+    .indicator,
+    .tip {
+        color: var(--text3) !important;
+    }
+    .divider,
+    .card > div:not(:last-child)::after,
+    .bili-im .title {
+        border-color: var(--bg2) !important;
+    }
+    .divided-line,
+    .bili-im .left,
+    .msg-notify .title {
+        border-color: var(--trans) !important;
+    }
+    .space-right-top .title,
+    .card,
+    .bili-im,
+    .config {
+        background-color: var(--bg1) !important;
+        box-shadow: 0 2px 4px 0 rgba(24, 25, 28, 0.54) !important;
+    }
+    .reply-textarea {
+        background-color: var(--bg2) !important;
+        border: var(--solid-bg2) !important;
+        color: var(--text1) !important;
+    }
+}
+
+@-moz-document regexp("^https?://t\.bilibili\.com/.*"),
+regexp("^https?://(www\.)?bilibili\.com/v/topic/.*"),
+regexp("^https?://(www\.)?bilibili\.com/opus/.*"),
+regexp("^https?://space\.bilibili\.com/.*"),
+url("https://www.bilibili.com/h5/topic-active/topic-intro") {
+    .bgc,
+    .s-space .video-container {
+        background-color: var(--bg1) !important;
+    }
+    html:has(#topic-intro),
+    #topic-intro,
+    .bili-picker-panel,
+    .bili-select-dropdown,
+    .bili-dyn-report,
+    .bili-dyn-interaction:before,
+    .topic-detail,
+    .bili-emoji__pkg.active {
+        background-color: var(--bg2);
+    }
+    .card-content .repost,
+    .bg,
+    .b-img,
+    .bili-popup-modal__footer,
+    .bili-input,
+    .bili-album__preview__picture,
+    .topic-detail__header,
+    .bili-dyn-share__pub .bili-rich-textarea__inner,
+    .bili-dyn-share__pub .bili-topic-selector__bulletin {
+        background: var(--bg2) !important;
+    }
+    .bili-topic-selector__bulletin__clear,
+    .bili-topic-new__default__create__icon,
+    .bili-picker__option:hover,
+    .bili-at-popup__user--selected {
+        background-color: var(--bg4);
+    }
+    .active .bili-topic-search__input,
+    .bili-topic-item__cloud:hover,
+    .bili-user-profile-view__info__button.follow.checked,
+    .way:hover,
+    .share-popover__tips--content .title {
+        background-color: var(--bg4) !important;
+    }
+    .bili-emoji__pkg:not(.active):hover,
+    .bili-emoji__list__item:hover {
+        background: var(--bg4);
+    }
+    .b-img.empty-content__img,
+    .dyn-dispute__title,
+    .primary.plain,
+    .horizontal-scroll-album__pic:not(.loaded) {
+        background-color: transparent !important;
+    }
+    .bili-create-topic__intro__footer {
+        background: linear-gradient(180deg,
+        hsla(0, 0%, 100%, 0),
+        var(--bg2) 50%);
+    }
+    .feed-dynamic .card .main-content .user-name a,
+    .feed-dynamic .card .more-panel,
+    .feed-dynamic .video-container .text-area .title,
+    .launch-user__name,
+    .topic-nav span,
+    .share-popover__tips span {
+        color: var(--text1);
+    }
+    .feed-dynamic-header-title,
+    .sub-question,
+    .topic-desc__text-btn {
+        color: var(--text1) !important;
+    }
+    .tc-slate,
+    .bili-dyn-up-list__item__name,
+    .bili-rich-text-module:not(:hover),
+    .launch-user__text,
+    .topic-desc__text,
+    .switch-tab {
+        color: var(--text2);
+    }
+    .original-card-content .content,
+    .intro-content .answer,
+    .intro-content .sub-answer,
+    .way__text {
+        color: var(--text2) !important;
+    }
+    .feed-dynamic-header-search,
+    .more-button:not(:hover),
+    .view-danmaku,
+    .up-info-tip,
+    .bili-topic-search__input__prefix,
+    .bili-input__count,
+    .bili-dyn-more__btn.tp,
+    .bili-dyn-interaction .bili-rich-text__content,
+    .action-item__data {
+        color: var(--text3) !important;
+    }
+    .bili-dyn-publishing__action,
+    [class^="bili-dyn-card"] button,
+    [class^="bili-dyn-upower"] button,
+    .join-button__btn,
+    .bili-dyn-share-publishing__action {
+        border-radius: var(--ra-btn-rd);
+    }
+    .s-space .feed-dynamic-content .card,
+    .feed-dynamic,
+    .video-container,
+    .bili-dyn-card-live__body,
+    .bili-dyn-forward__item {
+        border-color: var(--bg2) !important;
+    }
+    .bili-input::before,
+    .bili-picker-input,
+    .bili-picker-panel,
+    .bili-select-dropdown {
+        border-color: var(--bg5) !important;
+    }
+    .bili-dyn-sidebar {
+        right: 0;
+        transform: none;
+    }
+    #page-index .col-1,
+    .col-2 .section,
+    .col-full,
+    .n .n-inner,
+    .search-page,
+    #page-404,
+    .bili-dyn-my-info,
+    .bili-dyn-up-list__window,
+    .bili-dyn-list-tabs__list,
+    .bili-dyn-topic-box,
+    .bili-dyn-list-notification,
+    section .bili-dyn-item,
+    .bili-dyn-live-users,
+    .bili-dyn-sidebar__btn,
+    .topic-nav,
+    .active-card,
+    .switch-tab,
+    .bili-dyn-publishing,
+    .opus-detail,
+    .side-toolbar__box,
+    .side-toolbar__btn {
+        pb(-rt,
+        --bg1);
+    }
+    .bp-popup-panel,
+    .bili-topic-search__popover.active,
+    .bili-popup__wrap,
+    .bili-user-profile,
+    .bili-modal,
+    .join-button__join-way,
+    .share-popover,
+    .bili-follow-button__menu,
+    .bili-dyn-share-publishing {
+        pb(-rd);
+    }
+    .bili-cascader-options {
+        pb(-rt);
+        padding: 4px;
+    }
+
+    @media screen and (min-width: 1680px) {
+        .bili-dyn-home--member main,
+        #app > .content {
+            width: 824px;
+        }
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/v/popular/.*"),
+regexp("^https?://music\.bilibili\.com/pc/.*") {
+    .rank-tab-wrap {
+        background-color: var(--bg1);
+    }
+    .video-card__content,
+    .weekly-hint,
+    .content .img,
+    [class^="._loading"],
+    #app:has(.appHeader) {
+        background-color: var(--bg2) !important;
+    }
+    .select-item:not(.item-active):hover,
+    .other-link:hover,
+    .vector-ver {
+        background-color: var(--bg4) !important;
+    }
+    .bili-header__banner,
+    .history-hint,
+    .info-wrap .tag {
+        background-color: transparent !important;
+    }
+    .weekly-hint,
+    .rank-tips {
+        color: var(--text2) !important;
+    }
+    [class^="_item"] [class^="_inlineVideoSquare"] {
+        border-color: var(--trans);
+    }
+    [class*="_PcRankPeriod"] {
+        box-shadow: var(--shadow-popup) !important;
+    }
+    [class*="_arrow"] {
+        display: none;
+    }
+    .musicInfo .btn,
+    ._btn_1jbur_81 {
+        btn(--trans,
+        --bbl5,
+        --trans-s);
+    }
+    [class^="_musician"] [class^="_card"],
+    [class^="_moreMusic"] > [class^="_cardList"] > div {
+        pb(-rt,
+        --bg2p25);
+    }
+    .weekly-header .panel,
+    .rulePop {
+        pb(-rt);
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
+    p.url,
+    .select-droplist li:hover {
+        background-color: var(--bg4) !important;
+    }
+    .officialAccount-showContent,
+    .rank-tag,
+    .section-season {
+        background-color: var(--trans) !important;
+    }
+    .exchange .submit {
+        background: var(--Cy6) !important;
+    }
+    .tab-choose-fixed {
+        box-shadow: var(--shadow-popup) !important;
+    }
+    p.url input:focus-visible {
+        outline: none;
+    }
+    .officialAccount,
+    .share-pannel-wrp > div,
+    .select-droplist {
+        pb(-rd);
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
+    #app {
+        top: 20px;
+    }
+    .right-sidebar-wrap {
+        margin-left: 1030px;
+    }
+    .side-toolbar__top,
+    .opus-collection {
+        box-shadow: var(--shadow-popup);
+        filter: none;
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/read/.*"),
+regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
+    #bili-header-container,
+    .ql-container {
+        background-color: var(--bg1);
+    }
+    .article-item,
+    .article-up-info {
+        background-color: var(--bg1) !important;
+    }
+    #article-web-app + #app,
+    .article-detail .card-image,
+    .read-article-holder .default-cover,
+    html:has(.list-container),
+    body:has(.list-container) {
+        background-color: var(--bg2);
+    }
+    .article-read-info .spoiler,
+    .vote-card-holder {
+        background: var(--bg2) !important;
+    }
+    .catalog-item:hover {
+        background-color: var(--bg4) !important;
+    }
+    .tips,
+    .title-line,
+    .article-detail .catalog:after,
+    .coin-dialog-wrapper {
+        background: transparent !important;
+    }
+    #App,
+    .ql-container,
+    .modalBox {
+        color: var(--text1)
+    }
+    .title,
+    .up-name,
+    .inner-title,
+    .up-info__name,
+    .article-container h1,
+    .normal-article-holder,
+    blockquote *,
+    .bili-dialog-bomb .question,
+    .vote-head h3,
+    .catalog-item:not(:hover):not(.catalog-item--on),
+    .coin-title,
+    .article-title:not(:hover) {
+        color: var(--text1) !important;
+    }
+    .recommend-list .recommend-header .more,
+    .article-detail .right-side-bar .catalog-panel__header > span {
+        color: var(--text2);
+    }
+    .tips,
+    .color-default,
+    .single-ellipsis.desc,
+    .article-breadcrumb > *,
+    .interaction-info *,
+    .toolbar-item:not(:hover):not(.toolbar-on),
+    .toolbar-item:not(:hover):not(.toolbar-on) .iconfont,
+    .catalog:not(:hover),
+    .to-top:not(:hover) .iconfont {
+        color: var(--text2) !important;
+    }
+    .article-read-info > span,
+    .avatar-info-pannel,
+    .bangumi-rate-panel .desc,
+    .article-icon,
+    .status-item,
+    .article-footer-box *,
+    .vote-head,
+    .article-desc,
+    .article-info span,
+    .coin-bottom .tips,
+    .up-info-block ~ div,
+    .item-holder .index,
+    .article-title-holder ~ * {
+        color: var(--text3) !important;
+    }
+    .hover-item:hover,
+    .hover-item:hover i {
+        color: var(--bbl5) !important;
+    }
+    .follow-btn {
+        border-radius: var(--ra-btn-rd) !important;
+    }
+    .article-item,
+    .row-video-holder,
+    .article-container__content,
+    .vote-card-holder,
+    .recommend-header,
+    .article-left-block {
+        border-color: var(--bg2) !important;
+    }
+    .ql-editor blockquote {
+        border-color: var(--bg4) !important;
+    }
+    .article-card-holder {
+        background-color: var(--bg3) !important;
+        border-color: var(--bg2) !important;
+    }
+    .normal-article-holder blockquote:before {
+        filter: invert(.75);
+    }
+    .main .content,
+    .opus-detail {
+        width: 1008px;
+    }
+    .fixed-top-header,
+    .article-container,
+    .comment-m,
+    .right-side-bar > div,
+    .list-container > div {
+        pb(-rt,
+        --bg1);
+    }
+    .share-list .qrcode-box,
+    .catalog-panel,
+    .modalBox {
+        pb(-rd);
+    }
+    [style*="#d6d5d5"] {
+        color: #5f5f5f !important;
+    }
+    [style*="#5f5f5f"] {
+        color: #d6d5d5 !important;
+    }
+    .color-blue-01,
+    [style*="#56c1fe"] {
+        color: var(--b-Lb2) !important;
+    }
+    .color-blue-02,
+    [style*="#02a2ff"] {
+        color: var(--b-Lb3) !important;
+    }
+    .color-blue-03,
+    [style*="#0176ba"] {
+        color: var(--b-Lb4) !important;
+    }
+    .color-blue-04,
+    [style*="#004e80"] {
+        color: var(--b-Lb5) !important;
+    }
+    .color-lblue-01,
+    [style*="#73fdea"] {
+        color: var(--b-Cy2) !important;
+    }
+    .color-lblue-02,
+    [style*="#18e7cf"] {
+        color: var(--b-Cy3) !important;
+    }
+    .color-lblue-03,
+    [style*="#068f86"] {
+        color: var(--b-Cy4) !important;
+    }
+    .color-lblue-04,
+    [style*="#017c76"] {
+        color: var(--b-Cy5) !important;
+    }
+    .color-green-01,
+    [style*="#89fa4e"] {
+        color: var(--b-Gr2) !important;
+    }
+    .color-green-02,
+    [style*="#60d837"] {
+        color: var(--b-Gr3) !important;
+    }
+    .color-green-03,
+    [style*="#1db100"] {
+        color: var(--b-Gr4) !important;
+    }
+    .color-green-04,
+    [style*="#017001"] {
+        color: var(--b-Gr5) !important;
+    }
+    .color-pink-01,
+    [style*="#ff968d"] {
+        color: var(--b-Pi2) !important;
+    }
+    .color-pink-02,
+    [style*="#ff654e"] {
+        color: var(--b-Pi3) !important;
+    }
+    .color-pink-03,
+    [style*="#ee230d"] {
+        color: var(--b-Pi4) !important;
+    }
+    .color-pink-04,
+    [style*="#b41700"] {
+        color: var(--b-Pi5) !important;
+    }
+    .color-purple-01,
+    [style*="#ff8cc6"] {
+        color: var(--b-Pu2) !important;
+    }
+    .color-purple-02,
+    [style*="#ff8cc6"] {
+        color: var(--b-Pu3) !important;
+    }
+    .color-purple-03,
+    [style*="#cb297a"] {
+        color: var(--b-Pu4) !important;
+    }
+    .color-purple-04,
+    [style*="#99195e"] {
+        color: var(--b-Pu5) !important;
+    }
+    .color-gray-01,
+    [style*="#d6d5d5"] {
+        color: var(--b-Ga8) !important;
+    }
+    .color-gray-02,
+    [style*="#929292"] {
+        color: var(--b-Ga6) !important;
+    }
+    .normal-article-holder blockquote,
+    .normal-article-holder blockquote *,
+    .color-gray-03,
+    [style*="#5f5f5f"] {
+        color: var(--b-Ga5) !important;
+    }
+}
