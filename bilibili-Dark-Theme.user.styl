@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0125.1
-@description    A bilibili Dark Theme
+@version        1.25.0128.1
+@description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
 @preprocessor   stylus
@@ -235,7 +235,7 @@
         --graph_bg_regular_float: var(--bg3);
         --graph_bg_thick: var(--bg4);
         --graph_bg_tick: var(--bg4);
-        --graph_weak: var(--bg2);
+        --graph_weak: var(--text3);
         --graph_medium: var(--text3);
         --graph_bold: var(--text2);
         --graph_icon: var(--text2);
@@ -275,9 +275,8 @@
     body {
         background-color: var(--bg1);
     }
-    .bili-footer,
-    .bb-comment,
-    .comment-send-lite {
+    .history-item,
+    .bili-footer {
         background-color: var(--bg1) !important;
     }
     .bili-header .avatar-panel-popover,
@@ -291,10 +290,11 @@
     .left-entry-popover > div,
     .search-input .clear-icon,
     .split-line,
+    .upinfo-btn-panel .default-btn,
+    .pic-box,
+    .b-img.sleepy,
     .dropdown-top,
-    .top-vote-card,
-    #musicApp .main,
-    .dialog-wrapper {
+    #musicApp .main {
         background: var(--bg2) !important;
     }
     .bili-mini-line {
@@ -302,45 +302,26 @@
     }
     .login-tab-line,
     .bili-video-card__info--no-interest-panel--item:hover,
-    .upload-item:hover,
-    .liked:hover,
-    .normal .loading,
-    [class*="follow_optionsList"] li:hover,
-    .follow_dropdown li:hover {
+    .follow-btn.following:hover,
+    .liked:hover {
         background-color: var(--bg4) !important;
     }
-    .history-item {
-        background-color: var(--bg5) !important;
-    }
-    .game-card-content-footer-rank,
-    .season-slider-list li::after {
-        background-color: var(--trans) !important;
-    }
     .bili-header .icon-bg,
+    .game-card-content-footer-rank,
     .up-name .mask,
     .video-argue-inner.strong,
     .honor[class*="honor-"],
     .appeal-box {
         background: var(--trans) !important;
     }
-    .week-day-item.active {
-        background-color: var(--bbl5) !important;
-    }
     .van-popover,
     body,
-    .bili-footer a,
-    .bili-footer .partner .left a:hover,
-    .bb-comment .comment-header .tabs-order li,
-    .article-title,
     .bili-dialog {
         color: var(--text1);
     }
-    .section-title,
-    .error-text,
     .follow-dialog-wrap li:not(:hover),
     .watch-later-list .t:not(:hover),
     .watch-later-list .key,
-    .uname,
     .act-rich-render-content {
         color: var(--text1) !important;
     }
@@ -349,21 +330,15 @@
     }
     .login-scan-title,
     .login-scan-desc p,
-    .msg-text,
-    .range-box i:not(:hover),
     .add-group .add-btn {
         color: var(--text2) !important;
     }
     .login-sns-wp *,
     .login-agreement-wp p,
-    .bili-mini-content-wp input::placeholder,
-    .bili-footer,
-    .bili-footer .partner .left a,
-    .bili-rank-list-video .bili-rank-list-video__item--index {
+    .bili-mini-content-wp input::placeholder {
         color: var(--text3);
     }
     .bpx-player-video-inputbar,
-    .jump-pager,
     .limit,
     .img-text,
     .follow-dialog-wrap .info,
@@ -371,17 +346,8 @@
     .watch-later-list .info > *:not(a:hover) > span {
         color: var(--text3) !important;
     }
-    .lastMonth,
-    .nextMonth {
-        color: var(--text4) !important;
-    }
     .login-sms-wp .disable {
         color: var(--text5) !important;
-    }
-    .week-day-item.active,
-    .toutu-btn,
-    ._title_qa6k1_42 {
-        color: var(--bwh) !important;
     }
     .section-item:hover .section-title {
         color: var(--bbl5) !important;
@@ -392,9 +358,6 @@
     }
     .icon-bg__dynamic ~ .icon-title {
         color: var(--bor5);
-    }
-    .bui-collapse-header path {
-        fill: var(--text1);
     }
     .v-popover [class*="info"] path {
         fill: var(--text3);
@@ -407,13 +370,6 @@
     .css-1xneiug .content {
         fill: var(--text4);
     }
-    #edu-icon-group_top [stroke] {
-        stroke: var(--text1);
-    }
-    .at-btn *,
-    .index-categary-head .icon-arrow path {
-        stroke: var(--text2);
-    }
     .icon-bg__popular path {
         fill: var(--bpi5);
     }
@@ -423,43 +379,33 @@
     .vui_button.vui_button--round,
     .header-upload-entry,
     .enter-button,
-    .game-header .search-input,
     .vote-btn,
     [class*="game_button"],
     .manga-navbar-submission-portal {
         border-radius: var(--ra-btn-rd) !important;
     }
-    .boston-postcards li,
-    .video-toolbar-container,
-    .video-tag-container,
-    .bb-comment .con,
-    .article-content,
     .watch-later-list .av-about {
         border-color: var(--bg2) !important;
     }
     .bpx-player-filter-wrap *:not(span),
-    .jump-pager input,
-    #link-message-container .orginal-reply,
-    .follow-dialog-wrap .bottom,
     .watch-later-list .looked {
         border-color: var(--bg4) !important;
     }
     .login-scan-box,
     .form__separator-line,
     .login-sms-wp__vertical-line,
+    .mc-box:not(.on):not(:hover),
+    [class*="coin_mc_box"]:not([class*="coin_on"]):not(:hover),
     .add-group .add-btn:not(:hover),
     #link-message-container .send-box,
     .bili-dialog-bomb textarea,
     .add-item {
         border-color: var(--bg5) !important;
     }
-    .mc-box:not(.on):not(:hover),
-    [class*="coin_mc_box"]:not([class*="coin_on"]):not(:hover),
     .fav-select,
     .bili-dialog-bomb .checkbox {
         border-color: var(--text4) !important;
     }
-    .comment-header,
     .single-card.floor-card,
     [class*="List_sp_msg"],
     .up-focus-btn.is-focus {
@@ -487,10 +433,8 @@
     .bili-feed4 .bili-header .slide-down,
     #bilibili-player-placeholder,
     .bpx-player-container,
-    [class^="Share_boxTopR"],
     [class^="NanoPlay"],
     .calendar-table tr > *,
-    .reaction-item,
     .player-popup,
     .catalogue-nav-wrp {
         box-shadow: none !important;
@@ -501,9 +445,6 @@
     .helper-btn::before {
         filter: brightness(0.6);
     }
-    .ranking-cell-index {
-        filter: brightness(1.5);
-    }
     .bili-mini-close-icon,
     #link-message-container .side-bar .icon,
     .active-content__desc span:first-child,
@@ -511,24 +452,17 @@
     .cut-off-1 {
         filter: invert(0.9);
     }
-    .subject-picture.has-background {
-        opacity: 0.5 !important;
-    }
-    .game-next .card-cover {
-        z-index: auto;
-    }
-    .dynamic-panel-popover .header-tabs-panel__content {
-        max-height: 680px;
-    }
     .living-up-list {
         margin-bottom: 0 !important;
     }
     .header-dynamic-list-item {
         padding: 6px 20px !important;
     }
-
     .bili-header .header-fav-card {
         padding: 6px 10px !important;
+    }
+    .dynamic-panel-popover .header-tabs-panel__content {
+        max-height: 680px;
     }
     .favorite-panel-popover__nav,
     .favorite-panel-popover__content,
@@ -560,34 +494,15 @@
         background-color: var(--bg1) !important;
         border-color: var(--bg4) !important;
     }
-    .sl-ep-list .section-item {
-        bgnb(--bg2);
-    }
-    [class*="sp_rank"] i,
-    .sp-rank i,
-    a .rank-index:not(.hot) {
-        background-color: var(--trans) !important;
-        color: var(--text2) !important;
-    }
     .bili-mini-content-wp .tab__form {
         border-color: var(--bg5);
         color: var(--text1);
     }
-    .opt-list li,
-    .sort-type-wrp li {
+    .opt-list li {
         color: var(--text1) !important;
         &:hover {
             background-color: var(--bg4) !important;
         }
-    }
-    #link-message-container .divider-last::after {
-        height: 0;
-    }
-    #app .nav-tool {
-        left: unset;
-        right: 0;
-        position: fixed;
-        transform: none;
     }
     .bili-header #nav-searchform,
     .search-layout .search-input-wrap,
@@ -644,47 +559,21 @@
         height: 30px !important;
         min-width: auto !important;
     }
-    .game-next .end {
-        tagT(--text3);
-    }
-    .game-next .playing {
-        tagT(--bbl5);
-    }
     .bili-video-card__info--icon-text,
     .game-card-content-head-recommend,
     .normal .up span,
     .rcmd-tag {
         tagT(--bor4);
     }
-    .channel-items__left > *,
-    .header-channel-fixed-right-item,
-    .block-right .more-link,
-    .topbar .option-item {
-        btn(--bg2, --text2, --trans-s);
-    }
-    .follow-btn.following,
+    .episode-list .header-item,
     .fans-action-follow,
     .follow-btn.inactive,
-    .owner-unfollow {
-        btn(--bg2, --text3, --trans-s);
-    }
-    [class^="follow_btn"][class*="_followed"],
-    [class^="upinfo_upInfo"],
-    .episode-list .header-item,
     .follow-btn.followed,
     .follow-btn.on {
-        btnRd(--bg2, --text3, --trans-s);
+        btn(--bg2, --text3, --trans-s);
     }
-    .btn.ghost {
-        btn(--bg4, --text2, --trans-s);
-    }
-    .page-item:not(.active) button,
     .misl-ep-item.simple,
-    [class^="load_btn"],
-    .episode-list .list-item,
-    .create-series-icon,
-    .be-pager > li:not(.be-pager-item-active):not(.be-pager-item-jump-next),
-    .back-to-info {
+    .episode-list .list-item {
         btn(--trans, --text2, --bg4-s);
     }
     .btn_other,
@@ -692,8 +581,6 @@
     .day-select,
     .bl-button--ghost,
     .fans-action-btn.follow,
-    .btn-box,
-    .follow-btn.active,
     .cancel,
     .btn-cancel {
         btn(--trans, --text2, --bg5-s);
@@ -708,7 +595,7 @@
     .follow-btn__trigger:not(.gray) {
         btn(--trans, --bbl5, --bbl5-2s);
     }
-    .old-charge-btn,
+    .upinfo-btn-panel .old-charge-btn,
     [class^="mediainfo_btn"] {
         btnRd(--trans, --bbl5, --bbl5-2s);
     }
@@ -742,10 +629,10 @@
         margin-left: -10px;
     }
     .panel-v2,
+    .rank-video-card__popover,
     .misl-ep-item,
     .sp-msg,
-    .sp-msg::before,
-    .rank-video-card__popover {
+    .sp-msg::before {
         pbTrans();
     }
     .bili-mini-content-wp,
@@ -757,35 +644,32 @@
     .bili-dialog-bomb,
     #musicApp,
     .bili-game-header-user-popper,
-    .hovercard,
     .overlay .content,
     .popup-box,
     .more-panel,
     .bp-emoji-box .static-popup,
     .cs-actions-wrap,
     .bp-popup-panel,
-    .bili-dialog .con,
-    .bili-popover,
-    .bili-at-popup {
+    .bili-dialog .con {
         pb(-rd);
     }
     .lt-row ~ div .v-popover-content,
     .vui_popover-content,
     .video-tool-more-popover,
     .search-sub-channel,
-    .video-sections-head_desc,
+    .pod-description-popover,
     .bpx-player-report-box,
-    [class*="follow_optionsList"],
-    [class*="selectorDrop"],
-    .datepicker-popup,
     .opt-list,
-    .sort-type-wrp ul,
-    .calendar-year,
+    .bili-popover,
+    .bili-at-popup,
     .channel-select-content {
         pb(-rt);
     }
     .van-followed,
-    .bui-dropdown-items {
+    .bui-dropdown-items,
+    [class*="follow_optionsList"],
+    [class*="selectorDrop"],
+    .sort-type-wrp ul {
         pb(-rt);
         padding: 4px !important;
     }
@@ -793,7 +677,6 @@
         padding: 4px;
     }
     .follow-dialog-window .title,
-    [class^="payHeader_spon"],
     .sponsor-pay-header,
     .modal-title,
     .pin-layer-header,
@@ -806,11 +689,6 @@
         border-color: var(--trans) !important;
         border-radius: var(--ra-popup-rd) !important;
         color: var(--text1) !important;
-    }
-    .opt-list li.disabled,
-    [class^="f"] li[class^="follow_dis"] {
-        background-color: var(--trans) !important;
-        color: var(--text5) !important;
     }
     .follow-dialog-window .content,
     .bili-dialog-bomb .content,
@@ -828,7 +706,6 @@
         background-color: var(--bg2) !important;
         opacity: 0.58 !important;
     }
-    .van-popper .popper__arrow,
     .floor-single-card .layer,
     .desktop-download-tip,
     .usercard-wrap .layout,
@@ -837,8 +714,7 @@
     .hovercard .tip,
     .content .card .more-panel:after,
     .join-button__join-way:after,
-    .share-popover:after,
-    ._arrow_wdqx1_20 {
+    .share-popover:after {
         display: none;
     }
     .adblock-tips,
@@ -926,62 +802,19 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     }
 }
 
-@-moz-document regexp("^https?://(www\.)?bilibili\.com/appeal/.*") {
-    .app,
-    .navbar,
-    .row,
-    .form-textarea,
-    .form-upload-image,
-    #app {
-        background-color: var(--bg2) !important;
-    }
-    .navbar::after,
-    .row::before,
-    .tip-wrap,
-    .section-info,
-    .cnt {
-        background-color: var(--bg4) !important;
-    }
-    .navbar-title,
-    .sub-tag-item,
-    textarea,
-    .container .question {
-        color: var(--text1) !important;
-    }
-    .tip-text,
-    .info-description,
-    .before,
-    .block-text {
-        color: var(--text2) !important;
-    }
-    .section-name,
-    textarea::placeholder,
-    .cnt__num,
-    .upload-tip {
-        color: var(--text3) !important;
-    }
-    .item-check-btn,
-    textarea,
-    .img-wrap {
-        border-color: var(--text4) !important;
-    }
-    .header,
-    .submit {
-        background-color: var(--bg2) !important;
-        border-color: var(--trans) !important;
-    }
-}
-
 @-moz-document regexp("^https?://(www\.)?bilibili\.com/bangumi/(?!media).*") {
     .home-container .main-container,
     [class*="SendingBar"] {
         background-color: var(--bg1);
     }
+    [class*="mediaCover"],
+    [class^="RecommendItem_cover"],
     [class^="Share"] > div,
     [class*="playerPop"],
     [class^="eplist"] {
         background-color: var(--bg2) !important;
     }
+    [class*="follow_optionsList"] li:not([class^="follow_dis"]):hover,
     [class*="dropdownItem"]:hover,
     [class*="upLink"]::after {
         background-color: var(--bg4) !important;
@@ -1045,6 +878,10 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
         top: -8px;
         right: -8px;
     }
+    [class^="follow_btn"][class*="_followed"],
+    [class^="upinfo_upInfo"] {
+        btnRd(--bg2, --text3, --trans-s);
+    }
     [class^="Share_share__"],
     [class*="watch_more"],
     [class*="review_con"],
@@ -1078,10 +915,17 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .nav-tool .channel-item:hover {
         background-color: var(--bg4) !important;
     }
-    .recommend-feed-line-rank-wrapper,
     .share-module,
-    .slide-item-img {
+    .season-slider-list li::after,
+    .sp-rank i {
+        background-color: var(--trans) !important;
+    }
+    .recommend-feed-line-rank-wrapper {
         background: transparent !important;
+    }
+    .week-day-item.active {
+        background-color: var(--bbl5) !important;
+        color: var(--bwh) !important;
     }
     .home-v3-app-container .home-cell-desc-title,
     .nav-tool .section,
@@ -1171,12 +1015,24 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .today .day-of-week {
         filter: invert(0.9);
     }
+    .ranking-cell-index {
+        filter: brightness(1.8);
+    }
+    .subject-picture.has-background {
+        opacity: 0.4 !important;
+    }
     .slider-contro span.disabled {
         visibility: hidden;
     }
     .tl-day:not(.today) .indicator,
     .sp-msg > span {
         display: none !important;
+    }
+    #app .nav-tool {
+        left: unset;
+        right: 0;
+        position: fixed;
+        transform: none;
     }
     .title-right,
     .show-sponsor-rank,
@@ -1209,6 +1065,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .side-item div {
         color: var(--text0) !important;
     }
+    .section-title,
     .hot-item:not(:hover) .title,
     .promotion-c:not(:hover) .title,
     .hover-c:not(:hover) .title,
@@ -1335,6 +1192,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         filter: brightness(0.92);
     }
     .manga-navbar,
+    .hovercard,
     .hot-category,
     .back-to-content,
     .manga-detail .layout,
@@ -1400,6 +1258,10 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .no-competition {
         color: var(--text3) !important;
     }
+    .lastMonth,
+    .nextMonth {
+        color: var(--text4) !important;
+    }
     .special-text h3 {
         color: var(--bwh) !important;
     }
@@ -1431,6 +1293,9 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .info-resource .resource-img {
         filter: invert(0.9);
+    }
+    .topbar .option-item {
+        btn(--bg2, --text2, --trans-s);
     }
     .title .right,
     .all-video,
@@ -1498,6 +1363,7 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     [class*="-aside-section"] > div {
         background-color: var(--bg2p25) !important;
     }
+    .dialog-wrapper,
     .small-item .cover {
         background: var(--bg2) !important;
     }
@@ -1525,7 +1391,9 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     }
     .n .n-data .n-data-v,
     .i-live .i-live-text,
+    .section-title,
     .large-item .title,
+    .article-title,
     li:not(.is-active):not(.disabled),
     .breadcrumb .item.cur,
     #page-fav .fav-sidenav,
@@ -1669,6 +1537,9 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .delete-btn:not(.delete-check) {
         color: var(--text5) !important;
     }
+    .toutu-btn {
+        color: var(--bwh) !important;
+    }
     .small-item.selected .meta {
         color: #b3e3f3 !important;
     }
@@ -1682,6 +1553,7 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .user-info-title,
     .elec-avatar,
     .channel .channel-item,
+    .article-content,
     .main-content,
     .list-item,
     .channel-detail .filter,
@@ -1798,6 +1670,14 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .header-upinfo {
         z-index: 0 !important;
     }
+    .btn.ghost {
+        btn(--bg4, --text2, --trans-s);
+    }
+    .create-series-icon,
+    .be-pager > li:not(.be-pager-item-active):not(.be-pager-item-jump-next),
+    .back-to-info {
+        btn(--trans, --text2, --bg4-s);
+    }
     .btn.default,
     .cancel-btn,
     .back-btn,
@@ -1884,6 +1764,7 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .core-style,
     .msg-notify .detail span,
     .tool-title,
+    .uname,
     .config,
     .radio-selector {
         color: var(--text1) !important;
@@ -1920,6 +1801,10 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .bili-im .title {
         border-color: var(--bg2) !important;
     }
+    #link-message-container .orginal-reply,
+    .follow-dialog-wrap .bottom {
+        border-color: var(--bg4) !important;
+    }
     .divided-line,
     .bili-im .left,
     .msg-notify .title {
@@ -1936,6 +1821,13 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
         background-color: var(--bg2) !important;
         border: var(--solid-bg2) !important;
         color: var(--text1) !important;
+    }
+    #link-message-container .divider-last::after {
+        height: 0;
+    }
+    .send-btn,
+    .follow-btn.active {
+        btn(--trans, --text2, --bg5-s);
     }
 }
 
@@ -2059,6 +1951,10 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         right: 0;
         transform: none;
     }
+    .opt-list li.disabled {
+        background-color: var(--trans) !important;
+        color: var(--text5) !important;
+    }
     #page-index .col-1,
     .col-2 .section,
     .col-full,
@@ -2161,6 +2057,7 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
 
 @-moz-document regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     p.url,
+    .owner-unfollow:hover,
     .select-droplist li:hover {
         background-color: var(--bg4) !important;
     }
@@ -2182,6 +2079,52 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
     .share-pannel-wrp > div,
     .select-droplist {
         pb(-rd);
+    }
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/appeal/.*") {
+    .app,
+    .navbar,
+    .row,
+    .form-textarea,
+    .form-upload-image,
+    #app {
+        background-color: var(--bg2) !important;
+    }
+    .navbar::after,
+    .row::before,
+    .tip-wrap,
+    .section-info,
+    .cnt {
+        background-color: var(--bg4) !important;
+    }
+    .navbar-title,
+    .sub-tag-item,
+    textarea,
+    .container .question {
+        color: var(--text1) !important;
+    }
+    .tip-text,
+    .info-description,
+    .before,
+    .block-text {
+        color: var(--text2) !important;
+    }
+    .section-name,
+    textarea::placeholder,
+    .cnt__num,
+    .upload-tip {
+        color: var(--text3) !important;
+    }
+    .item-check-btn,
+    textarea,
+    .img-wrap {
+        border-color: var(--text4) !important;
+    }
+    .header,
+    .submit {
+        background-color: var(--bg2) !important;
+        border-color: var(--trans) !important;
     }
 }
 
@@ -2220,6 +2163,7 @@ regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
     .vote-card-holder {
         background: var(--bg2) !important;
     }
+    .follow_dropdown li:hover,
     .catalog-item:hover {
         background-color: var(--bg4) !important;
     }
