@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0128.1
+@version        1.25.0128.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -421,7 +421,8 @@
     .mini-header,
     .search-fixed-header,
     .fixed-wrapper-shown,
-    .drop-list {
+    .drop-list,
+    .bili-popup__wrap {
         box-shadow: var(--shadow-popup) !important;
     }
     .bili-mini-content-wp input {
@@ -454,6 +455,9 @@
     }
     .living-up-list {
         margin-bottom: 0 !important;
+    }
+    .bpx-player-ctrl-eplist-section-bottom {
+        margin: 8px 0 !important;
     }
     .header-dynamic-list-item {
         padding: 6px 20px !important;
@@ -1844,7 +1848,6 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     #topic-intro,
     .bili-picker-panel,
     .bili-select-dropdown,
-    .bili-dyn-report,
     .bili-dyn-interaction:before,
     .topic-detail,
     .bili-emoji__pkg.active {
@@ -1981,7 +1984,6 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     }
     .bp-popup-panel,
     .bili-topic-search__popover.active,
-    .bili-popup__wrap,
     .bili-user-profile,
     .bili-modal,
     .join-button__join-way,
@@ -2079,6 +2081,49 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
     .share-pannel-wrp > div,
     .select-droplist {
         pb(-rd);
+    }
+}
+
+@-moz-document regexp("^https?://t\.bilibili\.com/h5/dynamic/vote/#/.*"),
+regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
+    #bp-app,
+    html,
+    body,
+    .square:not(.checked) {
+        background-color: var(--bg1);
+    }
+    .option-li {
+        background-color: var(--bg2) !important;
+        border-color: var(--trans) !important;
+    }
+    .percentage-bar {
+        background-color: var(--bg5) !important;
+    }
+    .percentage-bar.my-vote {
+        background-color: var(--bbl6) !important;
+    }
+    .vote-title,
+    .option-text {
+        color: var(--text1) !important;
+    }
+    .vote-user-name,
+    .desc-title,
+    .anonymous {
+        color: var(--text2) !important;
+    }
+    .vote-user-text,
+    .joined-text,
+    .choice-count-text {
+        color: var(--text3) !important;
+    }
+    .my-vote .option-text {
+        color: var(--bwh) !important;
+    }
+    .checkbox:not(.checked) {
+        border-color: var(--text3) !important;
+    }
+    .submit-button.disabled {
+        visibility: hidden;
     }
 }
 
