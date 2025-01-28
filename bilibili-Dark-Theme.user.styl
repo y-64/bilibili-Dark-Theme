@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0128.2
+@version        1.25.0128.3
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -282,6 +282,7 @@
     .bili-header .avatar-panel-popover,
     .bili-video-card__info--no-interest-panel,
     .vui_button--link:hover,
+    .up-info__btn-panel .upinfo-btn-panel .default-btn,
     #danmukuBox,
     .playlist-container--right .b-img {
         background-color: var(--bg2);
@@ -290,7 +291,7 @@
     .left-entry-popover > div,
     .search-input .clear-icon,
     .split-line,
-    .upinfo-btn-panel .default-btn,
+    .up-avatar,
     .pic-box,
     .b-img.sleepy,
     .dropdown-top,
@@ -302,7 +303,6 @@
     }
     .login-tab-line,
     .bili-video-card__info--no-interest-panel--item:hover,
-    .follow-btn.following:hover,
     .liked:hover {
         background-color: var(--bg4) !important;
     }
@@ -569,6 +569,7 @@
     .rcmd-tag {
         tagT(--bor4);
     }
+    .follow-btn.following,
     .episode-list .header-item,
     .fans-action-follow,
     .follow-btn.inactive,
@@ -593,13 +594,13 @@
     .s-btn {
         btn(--trans, --bbl5, --bbl5-s);
     }
+    .old-charge-btn,
     .new-charge-btn + .follow-btn.not-follow,
     .follow-btn.not-follow:only-child,
     .search-content .vui_button--blue,
     .follow-btn__trigger:not(.gray) {
         btn(--trans, --bbl5, --bbl5-2s);
     }
-    .upinfo-btn-panel .old-charge-btn,
     [class^="mediainfo_btn"] {
         btnRd(--trans, --bbl5, --bbl5-2s);
     }
