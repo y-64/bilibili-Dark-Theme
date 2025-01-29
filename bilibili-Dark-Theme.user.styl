@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0128.3
+@version        1.25.0130.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -228,6 +228,7 @@
         --line_light: var(--bg3);
         --line_regular: var(--b-Ga8p75);
         --line_bold: var(--text4);
+        --graph_bg_bright: var(--bg1);
         --graph_bg_thin: var(--bg2);
         --graph_bg_thin_rgb: var(--bg2u-rgb);
         --graph_bg_thin_float: var(--bg2);
@@ -242,6 +243,9 @@
         --bpx-dmsend-hint-icon: var(--text3);
         --bpx-tooltip-color: var(--text0u);
         color-scheme: dark;
+    }
+    [class^="_VideoAs"] {
+        --app_graph_bg: var(--bg5) !important;
     }
     iframe {
         color-scheme: initial;
@@ -283,6 +287,7 @@
     .bili-video-card__info--no-interest-panel,
     .vui_button--link:hover,
     .up-info__btn-panel .upinfo-btn-panel .default-btn,
+    .normal-base-item .cover,
     #danmukuBox,
     .playlist-container--right .b-img {
         background-color: var(--bg2);
@@ -648,6 +653,7 @@
     .follow-dialog-window,
     .bili-dialog-bomb,
     #musicApp,
+    [class^="_VideoAs"],
     .bili-game-header-user-popper,
     .overlay .content,
     .popup-box,
@@ -1282,6 +1288,10 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .relevant-container * {
         border-color: var(--bg5) !important;
     }
+    .match-points-container,
+    .rank-contests {
+        border: 1px solid var(--line_regular) !important;
+    }
     .header .tabs,
     .filter-top,
     .popup-title {
@@ -1312,10 +1322,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     [class^="arrow-"],
     .game-tab .slide-cover .card,
     .game-tab [class^="arrow-"],
-    .tree-content,
-    .stage-container > .main > div,
     .team-list .team,
-    .team-info,
     .option,
     .video-option {
         pb(-rt, --bg2p25);
