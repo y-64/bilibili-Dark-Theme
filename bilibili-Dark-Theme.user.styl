@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0131.1
+@version        1.25.0131.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1209,6 +1209,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         grid-template-columns: repeat(6, 1fr) !important;
         grid-gap: 16px;
     }
+    .manga-button,
     .list-data .list-item {
         border-radius: 6px !important;
         margin: 0;
@@ -1231,7 +1232,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .episode-list .list-item {
         btn(--trans, --text2, --bg5-s);
     }
-    .manga-navbar,
+    nav.manga-navbar,
     .hovercard,
     .hot-category,
     .episode-comment {
@@ -1784,10 +1785,10 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
         background: transparent !important;
     }
     .space-left {
-        background-color: rgba(24, 25, 28, 0.8) !important;
+        background-color: rgba(30, 31, 35, 0.8) !important;
     }
     .space-right {
-        background-color: rgba(24, 25, 28, 0.5) !important;
+        background-color: rgba(30, 31, 35, 0.5) !important;
     }
     #link-message-container .line-1 .name-field,
     .detail .content:not(:hover),
