@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0130.2
+@version        1.25.0131.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -575,16 +575,11 @@
         tagT(--bor4);
     }
     .follow-btn.following,
-    .episode-list .header-item,
     .fans-action-follow,
     .follow-btn.inactive,
     .follow-btn.followed,
     .follow-btn.on {
         btn(--bg2, --text3, --trans-s);
-    }
-    .misl-ep-item.simple,
-    .episode-list .list-item {
-        btn(--trans, --text2, --bg4-s);
     }
     .btn_other,
     .bpx-player-adv-danmaku-dialog-function,
@@ -603,6 +598,7 @@
     .new-charge-btn + .follow-btn.not-follow,
     .follow-btn.not-follow:only-child,
     .search-content .vui_button--blue,
+    .episode-list .list-item.last-read,
     .follow-btn__trigger:not(.gray) {
         btn(--trans, --bbl5, --bbl5-2s);
     }
@@ -640,7 +636,7 @@
     }
     .panel-v2,
     .rank-video-card__popover,
-    .misl-ep-item,
+    .misl-ep-item:not(.simple),
     .sp-msg,
     .sp-msg::before {
         pbTrans();
@@ -963,7 +959,6 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     }
     .item-link-a:not(:hover),
     .week-day-item,
-    .simple .misl-ep-index,
     .sponsor-point,
     .feed-header span:not(:hover) {
         color: var(--text2) !important;
@@ -1087,10 +1082,6 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .desc {
         color: var(--text3) !important;
     }
-    .bg-item,
-    .img {
-        filter: brightness(0.96)
-    }
 }
 
 @-moz-document regexp("^https?://game\.bilibili\.com/(platform/.*)?") {
@@ -1116,38 +1107,39 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .drop-list,
     .manga-navbar .right-part [class*="-btn-container"],
     .multi-line-text::after,
-    .hot-seller {
+    .hot-seller,
+    .manga-detail .layout {
         background-color: var(--bg1) !important;
     }
     .search-bar-bg,
     .dot,
-    .split,
-    html:has(.manga-detail),
-    body:has(.manga-detail) {
+    .split {
         background-color: var(--bg2) !important;
     }
-    .list-section .manga-cover,
     .schedule-img,
     .empty-hinter,
     .rank-item-wrapper,
     .back-to-content {
         background: var(--trans) !important;
     }
+    .row .nav-list .nav-item,
+    .right-part .app-button {
+        color: var(--text1);
+    }
     .manga-navbar-manga-logo,
-    .nav-item:not(.active):not(:hover),
     .hovercard .line,
+    [class*="-btn-container"] .app-button,
+    .m-auto [class*="-title"],
     .manga-title,
-    .right-part button:not(.manga-navbar-submission-portal),
+    .section-title,
     .category-item,
-    .title,
+    .m-auto .title,
     .title1,
     .title .text,
     .app-button.tab.active,
     .section-item:not(.current),
     .style-tag,
-    .schedule-list [class*="title"],
-    .rank-title,
-    .comic-title,
+    .title-text,
     .first-line {
         color: var(--text1) !important;
     }
@@ -1161,19 +1153,17 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .manga-reader {
         color: var(--text2) !important;
     }
-    .manga-navbar .drop-list .text,
+    .drop-list .text,
     .placeholder-item,
     .hot-category + div .sub-title,
     .sell-number,
     .completed-comic,
     .tags,
     .supporting-text,
+    .block-title.v-top,
+    .status-controls,
     .status-text,
     .meta-ctnr > *,
-    .tag-block .block-title.v-top,
-    .status-controls,
-    .rank-hint,
-    .is-read:not(.last-read),
     .comic-info {
         color: var(--text3) !important;
     }
@@ -1181,11 +1171,9 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         color: var(--text4) !important;
     }
 
-    a[class*="item"]:hover,
-    a[class*="text"]:hover,
-    .vsc-initialized a *[class*="text"]:hover,
-    a[class*="title"]:hover,
-    .vsc-initialized a *[class*="title"]:hover {
+    a:hover,
+    a [class*="text"]:hover,
+    a [class*="title"]:hover {
         color: var(--bbl5) !important;
     }
     .fix-scroller *,
@@ -1197,25 +1185,61 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .list-body button,
     .label-icon,
     .fav-icon.add {
-        filter: invert(1);
+        filter: invert(0.9);
     }
-    .theme-dark {
-        filter: brightness(0.92);
+    canvas {
+        filter: brightness(0.94);
+    }
+    .last-read * {
+        opacity: 1 !important;
+    }
+    .manga-detail .right-side {
+        display: none;
+    }
+    .app-layout .size-ruler:has(.manga-detail) {
+        margin: 0;
+        padding: 70px 120px;
+        width: 100%;
+    }
+    .section-list {
+        width: 100% !important;
+    }
+    .list-data:not([style^="d"]) {
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        grid-gap: 16px;
+    }
+    .list-data .list-item {
+        border-radius: 6px !important;
+        margin: 0;
+        width: auto !important;
+    }
+    #main-stage .header-item {
+        background: var(--bg2) !important;
+        border-radius: 6px !important;
+        color: var(--text1) !important;
+        &.selected {
+            background: var(--bbl5) !important;
+            color: var(--b-Wh0) !important;
+        }
+    }
+    .back-to-top-button-container {
+        position: fixed;
+        right: 35px;
+    }
+    .manga-button.ghost,
+    .episode-list .list-item {
+        btn(--trans, --text2, --bg5-s);
     }
     .manga-navbar,
     .hovercard,
     .hot-category,
-    .back-to-content,
-    .manga-detail .layout,
     .episode-comment {
         pb(-rt, --bg1);
     }
-    .section-navigator {
+    .section-navigator,
+    .back-to-content {
         pb(-rt, --bg2p25);
-    }
-
-    .app-button.cancel {
-        btn(--bbl5, --bwh, --trans);
     }
 }
 
