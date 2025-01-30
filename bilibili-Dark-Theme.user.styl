@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0130.1
+@version        1.25.0130.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1723,6 +1723,9 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
 }
 
 @-moz-document regexp("^https?://message\.bilibili\.com/.*") {
+    body {
+        background: url(//i0.hdslb.com/bfs/album/ec22a65f8475b0f97a95cc3c6aea298aec910821.jpg) top/cover no-repeat fixed;
+    }
     #message-navbar,
     .message .message-content:not(.is-me),
     .msg-notify,
