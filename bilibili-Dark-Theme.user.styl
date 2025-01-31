@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0131.4
+@version        1.25.0131.5
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1108,7 +1108,8 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .schedule-img,
     .empty-hinter,
     .rank-item-wrapper,
-    .back-to-content {
+    .back-to-content,
+    .discount-hinter {
         background: var(--trans) !important;
     }
     .row .nav-list .nav-item,
@@ -1150,6 +1151,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .block-title.v-top,
     .status-controls,
     .status-text,
+    .rank-hint,
     .meta-ctnr > *,
     .comic-info {
         color: var(--text3) !important;
@@ -1164,8 +1166,16 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         color: var(--bbl5) !important;
     }
     .fix-scroller *,
-    .fav-icon.cancel {
+    .fav-icon.cancel,
+    .discount-hinter {
         border-color: var(--trans) !important;
+    }
+    .manga-navbar-submission-portal,
+    .cover-image,
+    .manga-cover,
+    .manga-cover img,
+    .discount-hinter .button {
+        border-radius: var(--ra-btn-md) !important;
     }
     .search-icon,
     .emmet,
@@ -1414,6 +1424,7 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     #setting-new-tag-btn {
         background: var(--bg4) !important;
     }
+    .bili-cover-card,
     .h-forbid,
     .n-avatar .b-img,
     .list-create,
