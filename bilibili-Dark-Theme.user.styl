@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0131.3
+@version        1.25.0131.4
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -383,8 +383,7 @@
     .header-upload-entry,
     .enter-button,
     .vote-btn,
-    [class*="game_button"],
-    .manga-navbar-submission-portal {
+    [class*="game_button"] {
         border-radius: var(--ra-btn-rd) !important;
     }
     .watch-later-list .av-about {
@@ -1119,9 +1118,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .manga-navbar-manga-logo,
     .hovercard .line,
     [class*="-btn-container"] .app-button,
-    .m-auto [class*="-title"],
-    .manga-title,
-    .section-title,
+    [class*="-title"]:not(.short-title),
     .category-item,
     .m-auto .title,
     .title1,
@@ -1161,7 +1158,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         color: var(--text4) !important;
     }
 
-    a:hover,
+    .app-layout a:hover,
     a [class*="text"]:hover,
     a [class*="title"]:hover {
         color: var(--bbl5) !important;
