@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0131.2
+@version        1.25.0131.3
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -130,10 +130,10 @@
         --bor5-s: 1px solid var(--bor5);
         --shadow-popup: 0px 0px 10px rgba(0, 0, 0, 0.5);
         --ra-zero: 0;
+        --ra-btn-md: 8px;
         --ra-btn-rd: 100px;
-        --ra-btn-rt: 6px;
+        --ra-popup-rt: 6px;
         --ra-popup-rd: 12px;
-        --ra-popup-rt: var(--ra-btn-rt);
         --ra-popup-sp: 16px;
         --ra-tag: 4px;
     }
@@ -162,13 +162,11 @@
     }
 
     btnRs() {
-        height: auto !important;
+        border-radius: var(--ra-btn-md) !important;
         line-height: normal !important;
-        min-width: auto !important;
+        height: auto !important;
         width: auto !important;
-        font-size: 13px !important;
-        height: 32px !important;
-        padding: 0 16px !important;
+        padding: 5px 16px !important;
     }
 
     tag(bgc, color, border, radius=--ra-tag) {
@@ -608,14 +606,6 @@
     .new-charge-btn.charge-btn-loaded,
     .new-elec-trigger {
         btn(--trans, --bpi5, --bpi5-2s);
-    }
-    .game-next .dis-btn {
-        btnRd(--bg4, --text3, --trans-s);
-        btnRs();
-    }
-    .game-next .card .btn {
-        btnRd(--trans, --bbl5, --bbl5-2s);
-        btnRs();
     }
     .upinfo-btn-panel .default-btn {
         border-radius: 8px !important;
@@ -1211,13 +1201,13 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     }
     .manga-button,
     .list-data .list-item {
-        border-radius: 6px !important;
+        border-radius: var(--ra-btn-md) !important;
         margin: 0;
         width: auto !important;
     }
     #main-stage .header-item {
         background: var(--bg2) !important;
-        border-radius: 6px !important;
+        border-radius: var(--ra-btn-md) !important;
         color: var(--text1) !important;
         &.selected {
             background: var(--bbl5) !important;
@@ -1342,6 +1332,14 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .toggle-open-select,
     .game-menu .more {
         btn(--trans, --text2, --bg4-s);
+    }
+    .game-next .dis-btn {
+        btn(--bg4, --text3, --trans-s);
+        btnRs();
+    }
+    .game-next .card .btn {
+        btn(--trans, --bbl5, --bbl5-2s);
+        btnRs();
     }
     .slide-cover .card,
     [class^="arrow-"],
