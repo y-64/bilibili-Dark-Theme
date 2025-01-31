@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0131.5
+@version        1.25.0201.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -35,6 +35,7 @@
         --b-Pi4: #FF8CB0;
         --b-Pi5: #FF6699;
         --b-Pi6: #E84B85;
+        --b-Or3: #FFC18F;
         --b-Or4: #FFA058;
         --b-Or5: #FF7F24;
         --b-Or6: #E95B03;
@@ -87,6 +88,7 @@
         --bpi5: var(--b-Pi5);
         --bpi6: var(--b-Pi6);
         --bor4: var(--b-Or4);
+        --bor4-hov: var(--b-Or3);
         --bor5: var(--b-Or5);
         --bg2-hov: var(--bg4);
         --bg4-hov: var(--bg5);
@@ -1112,6 +1114,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .discount-hinter {
         background: var(--trans) !important;
     }
+    .right-part .login-panel .action-button,
     .row .nav-list .nav-item,
     .right-part .app-button {
         color: var(--text1);
@@ -1119,7 +1122,10 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .manga-navbar-manga-logo,
     .hovercard .line,
     [class*="-btn-container"] .app-button,
-    [class*="-title"]:not(.short-title),
+    .manga-title,
+    .section-title,
+    .schedule-list .title-text,
+    .rank-title,
     .category-item,
     .m-auto .title,
     .title1,
@@ -1127,7 +1133,6 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .app-button.tab.active,
     .section-item:not(.current),
     .style-tag,
-    .title-text,
     .first-line {
         color: var(--text1) !important;
     }
@@ -1164,6 +1169,10 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     a [class*="text"]:hover,
     a [class*="title"]:hover {
         color: var(--bbl5) !important;
+        cursor: pointer;
+    }
+    .recharge-panel {
+        color: #222;
     }
     .fix-scroller *,
     .fav-icon.cancel,
@@ -1224,6 +1233,9 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .back-to-top-button-container {
         position: fixed;
         right: 35px;
+    }
+    .discount-hinter .button {
+        btn(--trans, --bor4, --trans-s)
     }
     .manga-button.ghost,
     .episode-list .list-item {
