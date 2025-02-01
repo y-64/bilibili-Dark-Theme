@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0202.1
+@version        1.25.0202.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -220,6 +220,7 @@
         --bg4: var(--bg4u);
         --bg5: var(--bg5u);
         --bg1_float: var(--bg1);
+        --bg1_float_rgb: var(--bg1_rgb);
         --bg2_float: var(--bg3);
         --text1: var(--text1u);
         --text2: var(--text2u);
@@ -353,7 +354,7 @@
         color: var(--bbl5) !important;
     }
     .icon-bg__popular + .icon-title,
-    .h-forbid .f-txt {
+    .space-notice {
         color: var(--bpi5) !important;
     }
     .icon-bg__dynamic ~ .icon-title {
@@ -633,7 +634,6 @@
     .bpx-player-report-box,
     .opt-list,
     .bili-popover,
-    .bili-at-popup,
     .channel-select-content {
         pb(-rt);
     }
@@ -659,8 +659,8 @@
     .follow-dialog-window .content,
     .bili-dialog-bomb .content,
     [class*="Collect_con"] {
-        height: 430px !important;
-        max-height: 430px !important;
+        height: 500px !important;
+        max-height: 500px !important;
         overflow: auto;
     }
     .group-list {
@@ -1359,7 +1359,6 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .anounce,
     .bili-cover-card,
-    .h-forbid,
     .toutu-content {
         background: transparent !important;
     }
@@ -1638,9 +1637,10 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     }
     .bili-dyn-my-info,
     .bili-dyn-live-users,
+    .bili-dyn-topic-box,
+    .bili-dyn-publishing,
     .bili-dyn-up-list__window,
     .bili-dyn-list-tabs__list,
-    .bili-dyn-topic-box,
     .bili-dyn-list-notification,
     section .bili-dyn-item,
     .bili-dyn-sidebar__btn,
@@ -1649,6 +1649,17 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .side-toolbar__btn {
         box-shadow: var(--shadow-popup) !important;
     }
+    .bili-set-follow-group__content {
+        height: 500px !important;
+    }
+    .bili-popup-modal {
+        height: 570px !important;
+    }
+
+    .bili-at-popup__list,
+    .bili-popup__wrap {
+        max-height: 650px !important;
+    }
     .bili-modal,
     .bili-popup__wrap,
     .bili-dyn-share-publishing {
@@ -1656,12 +1667,27 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         border-radius: var(--ra-popup-rd) !important;
         box-shadow: var(--shadow-popup) !important;
     }
+    .bili-at-popup {
+        width: auto;
+    }
+    .bili-at-popup__user {
+        margin: 0 !important;
+        padding: 0;
+    }
+    .bili-at-popup__group-list {
+        display: grid !important;
+        margin: 0 12px 12px 20px;
+        grid-template-columns: repeat(4, 1fr) !important;
+        grid-gap: 6px;
+    }
     .bili-topic-search__popover.active,
+    .bili-at-popup,
     .bili-user-profile,
     .share-popover {
         pb(-rd);
     }
-    .bili-cascader-options {
+    .bili-cascader-options,
+    .bili-follow-button__menu {
         pb(-rt);
         padding: 4px;
     }
@@ -1675,6 +1701,9 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         .list__topic-card .bili-dyn-item {
             min-width: 832px !important;
             min-width: 900px !important;
+        }
+        .bili-dyn-sidebar {
+            right: calc(50vw - 786px);
         }
     }
 }
