@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0201.1
+@version        1.25.0201.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -26,6 +26,7 @@
         --b-Ga9: #2F3238;
         --b-Ga9-rgb: 47, 50, 56;
         --b-Ga9p25: #292C31;
+        --b-Ga9p50: #24262A;
         --b-Ga9p75: #1E1F23;
         --b-Ga9p75-rgb: 30, 31, 35;
         --b-Ga10: #18191C;
@@ -66,6 +67,7 @@
         --bg2u: var(--b-Ga9);
         --bg2u-rgb: var(--b-Ga9-rgb);
         --bg2p25: var(--b-Ga9p25);
+        --bg2p50: var(--b-Ga9p50);
         --bg3u: var(--bg2u);
         --bg4u: var(--b-Ga8p50);
         --bg5u: var(--b-Ga8);
@@ -288,14 +290,12 @@
     .vui_button--link:hover,
     .up-info__btn-panel .upinfo-btn-panel .default-btn,
     .normal-base-item .cover,
-    #danmukuBox,
-    .playlist-container--right .b-img {
+    #danmukuBox {
         background-color: var(--bg2);
     }
     .history-tip,
     .left-entry-popover > div,
     .search-input .clear-icon,
-    .split-line,
     .up-avatar,
     .pic-box,
     .b-img.sleepy,
@@ -315,8 +315,7 @@
     .game-card-content-footer-rank,
     .up-name .mask,
     .video-argue-inner.strong,
-    .honor[class*="honor-"],
-    .appeal-box {
+    .honor[class*="honor-"] {
         background: var(--trans) !important;
     }
     .van-popover,
@@ -344,10 +343,6 @@
         color: var(--text3);
     }
     .bpx-player-video-inputbar,
-    .limit,
-    .img-text,
-    .follow-dialog-wrap .info,
-    .follow-dialog-wrap .special-tip,
     .watch-later-list .info > *:not(a:hover) > span {
         color: var(--text3) !important;
     }
@@ -399,20 +394,11 @@
     .form__separator-line,
     .login-sms-wp__vertical-line,
     .mc-box:not(.on):not(:hover),
-    [class*="coin_mc_box"]:not([class*="coin_on"]):not(:hover),
-    .add-group .add-btn:not(:hover),
-    #link-message-container .send-box,
-    .bili-dialog-bomb textarea,
-    .add-item {
+    [class*="coin_mc_box"]:not([class*="coin_on"]):not(:hover) {
         border-color: var(--bg5) !important;
     }
-    .fav-select,
-    .bili-dialog-bomb .checkbox {
-        border-color: var(--text4) !important;
-    }
     .single-card.floor-card,
-    [class*="List_sp_msg"],
-    .up-focus-btn.is-focus {
+    [class*="List_sp_msg"] {
         border-color: var(--trans) !important;
     }
     .icon-bg__dynamic {
@@ -425,8 +411,7 @@
     .mini-header,
     .search-fixed-header,
     .fixed-wrapper-shown,
-    .drop-list,
-    .bili-popup__wrap {
+    .drop-list {
         box-shadow: var(--shadow-popup) !important;
     }
     .bili-mini-content-wp input {
@@ -453,8 +438,7 @@
     .bili-mini-close-icon,
     #link-message-container .side-bar .icon,
     .active-content__desc span:first-child,
-    .side-toolbar__btn.backtop span:before,
-    .cut-off-1 {
+    .side-toolbar__btn.backtop span:before {
         filter: invert(0.9);
     }
     .living-up-list {
@@ -491,7 +475,6 @@
     #dialog-user-rating-button:not([class*="act"]),
     .sponsor-btn.disabled,
     .mr-btn:not(.active),
-    .btn-disabled,
     .follow-dialog-wrap .btn:disabled {
         background-color: var(--bg4) !important;
         border-color: var(--trans) !important;
@@ -513,8 +496,7 @@
         }
     }
     .bili-header #nav-searchform,
-    .search-layout .search-input-wrap,
-    .g-search input {
+    .search-layout .search-input-wrap {
         background-color: var(--bg2) !important;
         border: var(--bg2-2s) !important;
         border-radius: var(--ra-btn-rd) !important;
@@ -537,7 +519,6 @@
         }
     }
     .bili-header .search-panel,
-    .nav-search .suggest-wrap,
     .search-panel-popover {
         pb(-rd);
         margin-top: 8px !important;
@@ -574,18 +555,13 @@
         tagT(--bor4);
     }
     .follow-btn.following,
-    .fans-action-follow,
     .follow-btn.inactive,
-    .follow-btn.followed,
     .follow-btn.on {
         btn(--bg2, --text3, --trans-s);
     }
     .btn_other,
     .bpx-player-adv-danmaku-dialog-function,
     .day-select,
-    .bl-button--ghost,
-    .fans-action-btn.follow,
-    .cancel,
     .btn-cancel {
         btn(--trans, --text2, --bg5-s);
     }
@@ -604,8 +580,7 @@
     [class^="mediainfo_btn"] {
         btnRd(--trans, --bbl5, --bbl5-2s);
     }
-    .new-charge-btn.charge-btn-loaded,
-    .new-elec-trigger {
+    .new-charge-btn.charge-btn-loaded {
         btn(--trans, --bpi5, --bpi5-2s);
     }
     .upinfo-btn-panel .default-btn {
@@ -638,13 +613,12 @@
     .modal-content,
     .user-card-m-exp,
     .follow-dialog-window,
-    .bili-dialog-bomb,
+    .bili-dialog-bomb > div,
     #musicApp,
     [class^="_VideoAs"],
     .bili-game-header-user-popper,
     .overlay .content,
     .popup-box,
-    .more-panel,
     .bp-emoji-box .static-popup,
     .cs-actions-wrap,
     .bp-popup-panel,
@@ -676,13 +650,7 @@
     }
     .follow-dialog-window .title,
     .sponsor-pay-header,
-    .modal-title,
-    .pin-layer-header,
-    .dialog-title,
-    .edit-media-list .head,
-    .bili-dialog .con header,
-    .bili-dialog-bomb .header,
-    .appeal-box .submit {
+    .bili-dialog .con header {
         background-color: var(--bg2) !important;
         border-color: var(--trans) !important;
         border-radius: var(--ra-popup-rd) !important;
@@ -690,8 +658,7 @@
     }
     .follow-dialog-window .content,
     .bili-dialog-bomb .content,
-    [class*="Collect_con"],
-    .target-favlist {
+    [class*="Collect_con"] {
         height: 430px !important;
         max-height: 430px !important;
         overflow: auto;
@@ -699,8 +666,7 @@
     .group-list {
         overflow: unset !important;
     }
-    .follow-group-mask,
-    .s-space .collection-mask {
+    .follow-group-mask {
         background-color: var(--bg2) !important;
         opacity: 0.58 !important;
     }
@@ -708,9 +674,7 @@
     .desktop-download-tip,
     .usercard-wrap .layout,
     .bili-dialog-bomb .layout,
-    .follow-dialog-window .layout,
     .hovercard .tip,
-    .content .card .more-panel:after,
     .join-button__join-way:after,
     .share-popover:after {
         display: none;
@@ -973,7 +937,9 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .review-detail ~ div *,
     .review-about,
     .review-about a:not(:hover),
-    .likes {
+    .likes,
+    .limit,
+    .img-text {
         color: var(--text3) !important;
     }
     .nav-tool .section,
@@ -1376,337 +1342,45 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
 }
 
-@-moz-document regexp("^https?://space\.bilibili\.com/.*"),
-regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
+@-moz-document regexp("^https?://space\.bilibili\.com/.*") {
     .bili-video-card {
         --bili-video-card-title-font-size: 14px !important;
         --bili-video-card-subtitle-font-size: 13px !important;
     }
-    .channel-option.no-channel,
-    html:has(.win),
-    .channel-add-video,
-    .fav-action-fixtop,
-    .is-dragging .setting-index-module,
-    .follow-action-fixtop,
-    .search-page,
-    .bg-white,
-    .feed-dynamic-content .card,
-    #app:has(.container.play-list),
-    .delete-btn.delete-check {
-        background-color: var(--bg1) !important;
-    }
-    #app:has(#navigator),
-    html,
-    .i-pin-cover,
-    #pin-layer-reason-input input,
-    .contribution-item:not(.cur):hover,
-    #submit-video-type-filter,
-    .article-card .article-card-cover .b-img,
-    .article-card__no-img,
     .opus-card--only-text,
-    .fav-item:not(.cur):hover,
-    .disabled-cover,
-    .filter-item:nth-child(2) .be-dropdown-item:hover,
-    .favEmpty .fav-play,
-    .menu-popover__panel-item,
-    .follow-item:not(.cur):hover,
-    .search-nav-item:not(.search-nav-actived):hover,
-    .delete-btn {
+    .menu-popover__panel-item {
         background-color: var(--bg2) !important;
     }
     [class*="-aside-section"] > div {
         background-color: var(--bg2p25) !important;
     }
-    .dialog-wrapper,
-    .small-item .cover {
-        background: var(--bg2) !important;
+    .bili-card-dropdown-popper__item:hover {
+        background-color: var(--bg2p50) !important;
     }
-    .be-switch {
-        background-color: var(--bg4);
-    }
-    .be-dropdown-item:hover,
-    .pin-layer-vlist .small-item:not(.selected):hover,
-    .row .breadline,
-    .icon-cursor,
-    .favlist-body::after,
-    .bili-card-dropdown-popper__item:hover,
-    .pgc-item-info div:nth-of-type(n + 2) i {
-        background-color: var(--bg4) !important;
-    }
-    #setting-new-tag-btn {
-        background: var(--bg4) !important;
-    }
+    .anounce,
     .bili-cover-card,
     .h-forbid,
-    .n-avatar .b-img,
-    .list-create,
-    .toutu-content,
-    .fav-video-list.is-batch .small-item {
+    .toutu-content {
         background: transparent !important;
-    }
-    .n .n-data .n-data-v,
-    .i-live .i-live-text,
-    .section-title,
-    .large-item .title,
-    .article-title,
-    li:not(.is-active):not(.disabled),
-    .breadcrumb .item.cur,
-    #page-fav .fav-sidenav,
-    #page-fav .fav-main .filter-item,
-    .sub-tabs .filter-content,
-    .sub-tabs span,
-    #page-follows .follow-tabs {
-        color: var(--text1);
-    }
-    .info-title,
-    .goto-auth,
-    .pin-layer-order-tip,
-    .pin-layer-vlist .small-item:not(.selected) .title,
-    .auth-description,
-    .channel-name,
-    .game-card__info-title,
-    .page-head__left .video-title,
-    .row .breadcrumb .item,
-    .pin-layer-header-counter,
-    .nav-title.nav-add .text,
-    .edit-mask .title,
-    .edit-mask .cover-title,
-    .fav-name:not(:hover),
-    .search-types,
-    .search-fav-input,
-    .fav-filters .be-dropdown-item span:not(:hover),
-    [class*="-action-bottom"] li,
-    .edit-video-title,
-    .new-topic-list-content-title:not(:hover),
-    .opus-item-title,
-    p.main-title,
-    .collection-details .title-name,
-    .pgc-item-title,
-    .pgc-item-desc,
-    .setting-privacy-name,
-    .is-dragging .setting-index-module,
-    #setting-new-tag-btn,
-    .follow-item,
-    .target-followitem:not(:hover),
-    .idc-laoding-text,
-    .play-list .list-title:not(:hover),
-    .play-list .upper-name:not(:hover),
-    .source-name:not(:hover),
-    .source-index,
-    .window-item:not(:hover),
-    .collect-item:not(:hover) {
-        color: var(--text1) !important;
-    }
-    .list-create .text,
-    .elec .elec-total-c-num,
-    .i-m-btn,
-    .be-pager li:not(.be-pager-item-active) a {
-        color: var(--text2);
-    }
-    .command,
-    .keyword-tips,
-    .choose-kw,
-    #i-ann-content textarea,
-    .user-info .info-content *,
-    .i-live-fo > span,
-    .channel-option.no-channel p,
-    .channel-add-video:not(:hover) .text,
-    .media-list-type,
-    .fake-fav-input p,
-    .icon-ic_more,
-    .opus-item-content,
-    .p404 p,
-    .draggable,
-    .more-oprate {
-        color: var(--text2) !important;
-    }
-    .n .n-num,
-    .n .n-data .n-data-k,
-    .sec-empty-hint,
-    .i-pin-title ~ *,
-    .be-input-word-counter,
-    .article-title ~ *,
-    .private-hint,
-    .elec .elec-total-count,
-    .list-item .desc,
-    #page-fav .fav-main .filter-item .filter-type .be-dropdown-item i,
-    .collection-details .title ~ *:not(.collection-btn) {
-        color: var(--text3);
-    }
-    .no-auth-title span,
-    .empty-state p,
-    .section.empty:after,
-    .command-num,
-    .choose-kw-num,
-    .no-video-tips,
-    .video-view,
-    .video-pub,
-    .icon-checkbox,
-    .large-item .title ~ *,
-    .meta,
-    .user-info .info-command,
-    .user-info .icon-a-Slice1,
-    .i-live-off-guest,
-    .game-card__info-title ~ div,
-    .game .expend-more,
-    li:not(.cur):not(.search-nav-actived) .num,
-    #submit-video-type-filter .count,
-    .article-card__no-img .article-card__icons,
-    .channel-update-time,
-    .favlist-title,
-    .watch-later,
-    .fav-item:not(.cur) .iconfont,
-    .fav-main .icon-heji,
-    span[class*="-num-limit"],
-    .fav-meta,
-    .edit-video-subtitle,
-    .fav-state,
-    .target-fav-count,
-    .new-topic-list-content-desc,
-    .opus-item-time,
-    p.main-title ~ *,
-    .type-and-area,
-    .pgc-item-state,
-    .pgc-space-follow-item .iconfont,
-    .be-switch-label,
-    .nav-title .text,
-    .follow-main .list-item .content > p,
-    .idc-tag-list ~ div,
-    .select-counter,
-    .target-follow-notice,
-    .list-info,
-    .oprate-panel .iconfont:not(.blue-icon),
-    .oprate-panel .icon-text,
-    .media-list-type .iconfont:not(.blue-icon),
-    .source-upper-name:not(:hover),
-    .source-detail:not(.source-upper-name),
-    .all-check,
-    .source-check {
-        color: var(--text3) !important;
-    }
-    .nav-bar .nav-search .actions .search {
-        color: var(--text4);
-    }
-    .favEmpty .fav-play,
-    .target-favitem.disabled .fav-name,
-    .delete-btn:not(.delete-check) {
-        color: var(--text5) !important;
-    }
-    .toutu-btn {
-        color: var(--bwh) !important;
-    }
-    .small-item.selected .meta {
-        color: #b3e3f3 !important;
-    }
-    .large-item .cover,
-    .game-card__btn {
-        border-radius: var(--ra-btn-rd) !important;
-    }
-    .i-pin-v .be-tab,
-    .section,
-    .col-2 .section-title,
-    .user-info-title,
-    .elec-avatar,
-    .channel .channel-item,
-    .article-content,
-    .main-content,
-    .list-item,
-    .channel-detail .filter,
-    .nav-container,
-    .fav-sidenav .watch-later,
-    .be-dropdown-item-delimiter,
-    .favList-info,
-    [class*="-action-top"],
-    .opus-item,
-    .follow-main,
-    .follow-header,
-    .oprate-panel,
-    .source-right {
-        border-color: var(--bg2) !important;
-    }
-    .i-m-r2,
-    .i-m-upload,
-    .search-types,
-    .i-live-fo > span,
-    .filter-item.search,
-    .space_input,
-    .setting-index-container,
-    .setting-index-module,
-    .setting-add-tag .space_input,
-    #setting-new-tag-btn,
-    .batch-btn.clear-btn:not(:hover) {
-        border-color: var(--bg4) !important;
-    }
-    .list-create:not(:hover),
-    #pin-layer-search,
-    .be-input_inner:not(:focus),
-    .bili-dialog-bomb input,
-    .series-desc-box,
-    .choose-kw-num,
-    .channel-add-video:not(:hover),
-    .channel-info .meta > span:not(:last-child),
-    .edit-mask [type="text"],
-    .fake-fav-input:not(:hover),
-    .search-component-focus:not(:hover),
-    .target-followlist {
-        border-color: var(--bg5) !important;
-    }
-    .fav-covers,
-    .list-item:last-child,
-    [class*="sidenav"],
-    .channel-action-row .be-dropdown,
-    .fav-main .small-item,
-    .fav-header,
-    .window-item,
-    .collect-item {
-        border-color: var(--trans) !important;
     }
     .toutu-content,
     .vui_dialog--content {
         box-shadow: var(--shadow-popup);
     }
-    .i-pin-c,
-    #pin-layer-reason-input input,
-    .large-item .cover img {
-        box-shadow: none !important;
-    }
-    .g-search .search-btn:not(:hover),
-    .list-create:not(:hover) .icon,
-    #pin-layer-search-btn:not(:hover),
-    .small-item:not(.selected) .meta .icon,
-    .private-hint .icon,
-    .article-content .icon,
-    .icon-m-ra,
-    .channel-add-video:not(:hover) .icon,
-    .edit-media-list .icon-check:not(.blue-icon),
-    .fav-main .icon-search:not(:hover),
-    .fav-main .icon-selece-all,
-    .filter-disable .icon,
-    .s-space .icon-add:not(:hover),
-    .icon-follow-search,
-    .icon-follow-watched:not(.icon-follow-selected) {
-        filter: brightness(60%);
-    }
-    .elec-map .elec-status,
-    .section .count,
-    .qipapnum {
-        filter: invert(90%);
-    }
     .vui_drawer-drawer--bottom-placement {
         height: 620px !important;
     }
-    #page-fav .fav-sidenav .text {
-        font-size: 13px;
-        line-height: 35px;
+    .modify-fav-wrapper,
+    .modify-relationship-list {
+        height: 500px !important;
+        padding-right: 10px;
     }
-    .fav-sidenav .be-dropdown-menu {
-        margin-top: -5px;
-    }
-    #page-fav .fav-sidenav .fav-item .iconfont {
-        font-size: 20px;
-    }
-    .icon-cursor {
-        background-position: -219px -1105px;
+    .modify-fav-add,
+    .modify-fav-item,
+    .relation-collapse-create,
+    .modify-relationship-create,
+    .modify-relationship-list .vui_checkbox--label {
+        height: 40px !important;
     }
     .vui_sidebar-item {
         height: 40px !important;
@@ -1718,50 +1392,58 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .bili-card-dropdown-popper {
         padding: 4px !important;
     }
-    .header-toutu,
-    .header-upinfo-bg-shadow {
-        z-index: auto !important;
-    }
-    .header-upinfo {
-        z-index: 0 !important;
-    }
-    .btn.ghost {
-        btn(--bg4, --text2, --trans-s);
-    }
-    .create-series-icon,
-    .be-pager > li:not(.be-pager-item-active):not(.be-pager-item-jump-next),
-    .back-to-info {
-        btn(--trans, --text2, --bg4-s);
-    }
-    .btn.default,
-    .cancel-btn,
-    .back-btn,
-    .default-btn.cancel {
-        btn(--trans, --text2, --bg5-s);
-    }
-    .operation.create,
-    .play-all-channel,
-    .section .more,
-    .change-info-btn,
-    .play-all-btn,
-    .paly-all-btn,
-    .series-item .btn-row .btn {
-        btn(--trans, --text2, --trans-s, --bbl5);
-    }
-    .modal-wrapper,
-    #pin-layer,
-    .edit-mask > div,
-    #id-card {
-        pb(-rd);
-    }
-    .be-dropdown-menu,
-    .oprate-window,
-    .collect,
     .bili-card-dropdown-popper {
         pb(-rt);
     }
-    #page-dynamic .bili-dyn-item {
-        pb(-rt, bg1);
+}
+
+@-moz-document regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
+    #app:has(.container.play-list),
+    .delete-btn.delete-check {
+        background-color: var(--bg1) !important;
+    }
+    .delete-btn {
+        background-color: var(--bg2) !important;
+    }
+    .play-list .list-title:not(:hover),
+    .play-list .upper-name:not(:hover),
+    .source-name:not(:hover),
+    .source-index,
+    .window-item:not(:hover),
+    .collect-item:not(:hover) {
+        color: var(--text1) !important;
+    }
+    .draggable,
+    .more-oprate {
+        color: var(--text2) !important;
+    }
+    .list-info,
+    .oprate-panel .iconfont:not(.blue-icon),
+    .oprate-panel .icon-text,
+    .media-list-type .iconfont:not(.blue-icon),
+    .source-upper-name:not(:hover),
+    .source-detail:not(.source-upper-name),
+    .all-check,
+    .source-check {
+        color: var(--text3) !important;
+    }
+    .delete-btn:not(.delete-check) {
+        color: var(--text5) !important;
+    }
+    .oprate-panel,
+    .source-right {
+        border-color: var(--bg2) !important;
+    }
+    .batch-btn.clear-btn:not(:hover) {
+        border-color: var(--bg4) !important;
+    }
+    .window-item,
+    .collect-item {
+        border-color: var(--trans) !important;
+    }
+    .oprate-window,
+    .collect {
+        pb(-rt);
     }
 }
 
@@ -1778,6 +1460,7 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
         background-color: var(--bg1) !important;
     }
     .divider-last::before,
+    .split-line,
     .message-list,
     .send-box,
     .msg-notify hr,
@@ -1851,6 +1534,8 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     .notify-wrapper,
     .no-more,
     .indicator,
+    .follow-dialog-wrap .info,
+    .follow-dialog-wrap .special-tip,
     .tip {
         color: var(--text3) !important;
     }
@@ -1862,6 +1547,10 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
     #link-message-container .orginal-reply,
     .follow-dialog-wrap .bottom {
         border-color: var(--bg4) !important;
+    }
+    .add-group .add-btn:not(:hover),
+    #link-message-container .send-box {
+        border-color: var(--bg5) !important;
     }
     .divided-line,
     .bili-im .left,
@@ -1892,26 +1581,20 @@ regexp("^https?://(www\.)?bilibili\.com/medialist/detail/.*") {
 @-moz-document regexp("^https?://t\.bilibili\.com/.*"),
 regexp("^https?://(www\.)?bilibili\.com/v/topic/.*"),
 regexp("^https?://(www\.)?bilibili\.com/opus/.*"),
-regexp("^https?://space\.bilibili\.com/.*"),
 url("https://www.bilibili.com/h5/topic-active/topic-intro") {
-    .bgc,
-    .s-space .video-container {
+    .bgc {
         background-color: var(--bg1) !important;
     }
     html:has(#topic-intro),
     #topic-intro,
-    .bili-picker-panel,
     .bili-select-dropdown,
     .bili-dyn-interaction:before,
     .topic-detail,
     .bili-emoji__pkg.active {
         background-color: var(--bg2);
     }
-    .card-content .repost,
     .bg,
     .b-img,
-    .bili-popup-modal__footer,
-    .bili-input,
     .bili-album__preview__picture,
     .topic-detail__header,
     .bili-dyn-share__pub .bili-rich-textarea__inner,
@@ -1935,7 +1618,6 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bili-emoji__list__item:hover {
         background: var(--bg4);
     }
-    .b-img.empty-content__img,
     .dyn-dispute__title,
     .primary.plain,
     .horizontal-scroll-album__pic:not(.loaded) {
@@ -1946,20 +1628,15 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         hsla(0, 0%, 100%, 0),
         var(--bg2) 50%);
     }
-    .feed-dynamic .card .main-content .user-name a,
-    .feed-dynamic .card .more-panel,
-    .feed-dynamic .video-container .text-area .title,
     .launch-user__name,
     .topic-nav span,
     .share-popover__tips span {
         color: var(--text1);
     }
-    .feed-dynamic-header-title,
     .sub-question,
     .topic-desc__text-btn {
         color: var(--text1) !important;
     }
-    .tc-slate,
     .bili-dyn-up-list__item__name,
     .bili-rich-text-module:not(:hover),
     .launch-user__text,
@@ -1967,16 +1644,11 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .switch-tab {
         color: var(--text2);
     }
-    .original-card-content .content,
     .intro-content .answer,
     .intro-content .sub-answer,
     .way__text {
         color: var(--text2) !important;
     }
-    .feed-dynamic-header-search,
-    .more-button:not(:hover),
-    .view-danmaku,
-    .up-info-tip,
     .bili-topic-search__input__prefix,
     .bili-input__count,
     .bili-dyn-more__btn.tp,
@@ -1991,33 +1663,21 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bili-dyn-share-publishing__action {
         border-radius: var(--ra-btn-rd);
     }
-    .s-space .feed-dynamic-content .card,
-    .feed-dynamic,
-    .video-container,
     .bili-dyn-card-live__body,
     .bili-dyn-forward__item {
         border-color: var(--bg2) !important;
     }
-    .bili-input::before,
-    .bili-picker-input,
-    .bili-picker-panel,
-    .bili-select-dropdown {
-        border-color: var(--bg5) !important;
+    .bili-modal {
+        box-shadow: var(--shadow-popup) !important;
     }
     .bili-dyn-sidebar {
         right: 0;
         transform: none;
     }
-    .opt-list li.disabled {
-        background-color: var(--trans) !important;
-        color: var(--text5) !important;
+    .bili-popup__wrap {
+        border-radius: var(--ra-popup-rd) !important;
+        box-shadow: var(--shadow-popup) !important;
     }
-    #page-index .col-1,
-    .col-2 .section,
-    .col-full,
-    .n .n-inner,
-    .search-page,
-    #page-404,
     .bili-dyn-my-info,
     .bili-dyn-up-list__window,
     .bili-dyn-list-tabs__list,
@@ -2036,10 +1696,8 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         pb(-rt,
         --bg1);
     }
-    .bp-popup-panel,
     .bili-topic-search__popover.active,
     .bili-user-profile,
-    .bili-modal,
     .join-button__join-way,
     .share-popover,
     .bili-follow-button__menu,
@@ -2231,137 +1889,16 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
     #app {
         top: 20px;
     }
+    .opus-detail {
+        width: 908px;
+    }
     .right-sidebar-wrap {
-        margin-left: 1030px;
+        margin-left: 930px;
     }
     .side-toolbar__top,
     .opus-collection {
         box-shadow: var(--shadow-popup);
         filter: none;
-    }
-}
-
-@-moz-document regexp("^https?://(www\.)?bilibili\.com/read/.*"),
-regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
-    #bili-header-container,
-    .ql-container {
-        background-color: var(--bg1);
-    }
-    .article-item,
-    .article-up-info {
-        background-color: var(--bg1) !important;
-    }
-    #article-web-app + #app,
-    .article-detail .card-image,
-    .read-article-holder .default-cover,
-    html:has(.list-container),
-    body:has(.list-container) {
-        background-color: var(--bg2);
-    }
-    .article-read-info .spoiler,
-    .vote-card-holder {
-        background: var(--bg2) !important;
-    }
-    .follow_dropdown li:hover,
-    .catalog-item:hover {
-        background-color: var(--bg4) !important;
-    }
-    .tips,
-    .title-line,
-    .article-detail .catalog:after,
-    .coin-dialog-wrapper {
-        background: transparent !important;
-    }
-    #App,
-    .ql-container,
-    .modalBox {
-        color: var(--text1)
-    }
-    .title,
-    .up-name,
-    .inner-title,
-    .up-info__name,
-    .article-container h1,
-    .normal-article-holder,
-    blockquote *,
-    .bili-dialog-bomb .question,
-    .vote-head h3,
-    .catalog-item:not(:hover):not(.catalog-item--on),
-    .coin-title,
-    .article-title:not(:hover) {
-        color: var(--text1) !important;
-    }
-    .recommend-list .recommend-header .more,
-    .article-detail .right-side-bar .catalog-panel__header > span {
-        color: var(--text2);
-    }
-    .tips,
-    .color-default,
-    .single-ellipsis.desc,
-    .article-breadcrumb > *,
-    .interaction-info *,
-    .toolbar-item:not(:hover):not(.toolbar-on),
-    .toolbar-item:not(:hover):not(.toolbar-on) .iconfont,
-    .catalog:not(:hover),
-    .to-top:not(:hover) .iconfont {
-        color: var(--text2) !important;
-    }
-    .article-read-info > span,
-    .avatar-info-pannel,
-    .bangumi-rate-panel .desc,
-    .article-icon,
-    .status-item,
-    .article-footer-box *,
-    .vote-head,
-    .article-desc,
-    .article-info span,
-    .coin-bottom .tips,
-    .up-info-block ~ div,
-    .item-holder .index,
-    .article-title-holder ~ * {
-        color: var(--text3) !important;
-    }
-    .hover-item:hover,
-    .hover-item:hover i {
-        color: var(--bbl5) !important;
-    }
-    .follow-btn {
-        border-radius: var(--ra-btn-rd) !important;
-    }
-    .article-item,
-    .row-video-holder,
-    .article-container__content,
-    .vote-card-holder,
-    .recommend-header,
-    .article-left-block {
-        border-color: var(--bg2) !important;
-    }
-    .ql-editor blockquote {
-        border-color: var(--bg4) !important;
-    }
-    .article-card-holder {
-        background-color: var(--bg3) !important;
-        border-color: var(--bg2) !important;
-    }
-    .normal-article-holder blockquote:before {
-        filter: invert(.75);
-    }
-    .main .content,
-    .opus-detail {
-        width: 1008px;
-    }
-    .fixed-top-header,
-    .article-container,
-    .comment-m,
-    .right-side-bar > div,
-    .list-container > div {
-        pb(-rt,
-        --bg1);
-    }
-    .share-list .qrcode-box,
-    .catalog-panel,
-    .modalBox {
-        pb(-rd);
     }
     [style*="#d6d5d5"] {
         color: #5f5f5f !important;
@@ -2369,97 +1906,72 @@ regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
     [style*="#5f5f5f"] {
         color: #d6d5d5 !important;
     }
-    .color-blue-01,
     [style*="#56c1fe"] {
         color: var(--b-Lb2) !important;
     }
-    .color-blue-02,
     [style*="#02a2ff"] {
         color: var(--b-Lb3) !important;
     }
-    .color-blue-03,
     [style*="#0176ba"] {
         color: var(--b-Lb4) !important;
     }
-    .color-blue-04,
     [style*="#004e80"] {
         color: var(--b-Lb5) !important;
     }
-    .color-lblue-01,
     [style*="#73fdea"] {
         color: var(--b-Cy2) !important;
     }
-    .color-lblue-02,
     [style*="#18e7cf"] {
         color: var(--b-Cy3) !important;
     }
-    .color-lblue-03,
     [style*="#068f86"] {
         color: var(--b-Cy4) !important;
     }
-    .color-lblue-04,
     [style*="#017c76"] {
         color: var(--b-Cy5) !important;
     }
-    .color-green-01,
     [style*="#89fa4e"] {
         color: var(--b-Gr2) !important;
     }
-    .color-green-02,
     [style*="#60d837"] {
         color: var(--b-Gr3) !important;
     }
-    .color-green-03,
     [style*="#1db100"] {
         color: var(--b-Gr4) !important;
     }
-    .color-green-04,
     [style*="#017001"] {
         color: var(--b-Gr5) !important;
     }
-    .color-pink-01,
     [style*="#ff968d"] {
         color: var(--b-Pi2) !important;
     }
-    .color-pink-02,
     [style*="#ff654e"] {
         color: var(--b-Pi3) !important;
     }
-    .color-pink-03,
     [style*="#ee230d"] {
         color: var(--b-Pi4) !important;
     }
-    .color-pink-04,
     [style*="#b41700"] {
         color: var(--b-Pi5) !important;
     }
-    .color-purple-01,
     [style*="#ff8cc6"] {
         color: var(--b-Pu2) !important;
     }
-    .color-purple-02,
     [style*="#ff8cc6"] {
         color: var(--b-Pu3) !important;
     }
-    .color-purple-03,
     [style*="#cb297a"] {
         color: var(--b-Pu4) !important;
     }
-    .color-purple-04,
     [style*="#99195e"] {
         color: var(--b-Pu5) !important;
     }
-    .color-gray-01,
     [style*="#d6d5d5"] {
         color: var(--b-Ga8) !important;
     }
-    .color-gray-02,
     [style*="#929292"] {
         color: var(--b-Ga6) !important;
     }
-    .normal-article-holder blockquote,
-    .normal-article-holder blockquote *,
-    .color-gray-03,
     [style*="#5f5f5f"] {
         color: var(--b-Ga5) !important;
     }
