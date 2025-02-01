@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0201.2
+@version        1.25.0202.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1587,39 +1587,28 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     }
     html:has(#topic-intro),
     #topic-intro,
-    .bili-select-dropdown,
-    .bili-dyn-interaction:before,
-    .topic-detail,
     .bili-emoji__pkg.active {
         background-color: var(--bg2);
+    }
+    .active .bili-topic-search__input,
+    .bili-topic-item__cloud:hover,
+    .bili-emoji__pkg:not(.active):hover,
+    .bili-emoji__list__item:hover,
+    .share-popover__tips--content .title {
+        background-color: var(--bg2p50) !important;
     }
     .bg,
     .b-img,
     .bili-album__preview__picture,
-    .topic-detail__header,
-    .bili-dyn-share__pub .bili-rich-textarea__inner,
-    .bili-dyn-share__pub .bili-topic-selector__bulletin {
+    .topic-detail__header {
         background: var(--bg2) !important;
     }
     .bili-topic-selector__bulletin__clear,
     .bili-topic-new__default__create__icon,
-    .bili-picker__option:hover,
     .bili-at-popup__user--selected {
         background-color: var(--bg4);
     }
-    .active .bili-topic-search__input,
-    .bili-topic-item__cloud:hover,
-    .bili-user-profile-view__info__button.follow.checked,
-    .way:hover,
-    .share-popover__tips--content .title {
-        background-color: var(--bg4) !important;
-    }
-    .bili-emoji__pkg:not(.active):hover,
-    .bili-emoji__list__item:hover {
-        background: var(--bg4);
-    }
     .dyn-dispute__title,
-    .primary.plain,
     .horizontal-scroll-album__pic:not(.loaded) {
         background-color: transparent !important;
     }
@@ -1628,80 +1617,48 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         hsla(0, 0%, 100%, 0),
         var(--bg2) 50%);
     }
-    .launch-user__name,
-    .topic-nav span,
-    .share-popover__tips span {
-        color: var(--text1);
-    }
     .sub-question,
     .topic-desc__text-btn {
         color: var(--text1) !important;
     }
     .bili-dyn-up-list__item__name,
-    .bili-rich-text-module:not(:hover),
-    .launch-user__text,
-    .topic-desc__text,
-    .switch-tab {
+    .bili-rich-text-module:not(:hover) {
         color: var(--text2);
     }
     .intro-content .answer,
     .intro-content .sub-answer,
-    .way__text {
-        color: var(--text2) !important;
-    }
-    .bili-topic-search__input__prefix,
-    .bili-input__count,
-    .bili-dyn-more__btn.tp,
-    .bili-dyn-interaction .bili-rich-text__content,
     .action-item__data {
-        color: var(--text3) !important;
+        color: var(--text2) !important;
     }
     .bili-dyn-publishing__action,
     [class^="bili-dyn-card"] button,
     [class^="bili-dyn-upower"] button,
-    .join-button__btn,
     .bili-dyn-share-publishing__action {
         border-radius: var(--ra-btn-rd);
     }
-    .bili-dyn-card-live__body,
-    .bili-dyn-forward__item {
-        border-color: var(--bg2) !important;
-    }
-    .bili-modal {
-        box-shadow: var(--shadow-popup) !important;
-    }
-    .bili-dyn-sidebar {
-        right: 0;
-        transform: none;
-    }
-    .bili-popup__wrap {
-        border-radius: var(--ra-popup-rd) !important;
-        box-shadow: var(--shadow-popup) !important;
-    }
     .bili-dyn-my-info,
+    .bili-dyn-live-users,
     .bili-dyn-up-list__window,
     .bili-dyn-list-tabs__list,
     .bili-dyn-topic-box,
     .bili-dyn-list-notification,
     section .bili-dyn-item,
-    .bili-dyn-live-users,
     .bili-dyn-sidebar__btn,
-    .topic-nav,
-    .active-card,
-    .switch-tab,
-    .bili-dyn-publishing,
     .opus-detail,
     .side-toolbar__box,
     .side-toolbar__btn {
-        pb(-rt,
-        --bg1);
+        box-shadow: var(--shadow-popup) !important;
+    }
+    .bili-modal,
+    .bili-popup__wrap,
+    .bili-dyn-share-publishing {
+        border-color: var(--trans) !important;
+        border-radius: var(--ra-popup-rd) !important;
+        box-shadow: var(--shadow-popup) !important;
     }
     .bili-topic-search__popover.active,
     .bili-user-profile,
-    .join-button__join-way,
-    .share-popover,
-    .bili-follow-button__menu,
-    .bili-dyn-share-publishing {
+    .share-popover {
         pb(-rd);
     }
     .bili-cascader-options {
@@ -1712,7 +1669,12 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     @media screen and (min-width: 1680px) {
         .bili-dyn-home--member main,
         #app > .content {
-            width: 824px;
+            width: 924px;
+        }
+        .main-part,
+        .list__topic-card .bili-dyn-item {
+            min-width: 832px !important;
+            min-width: 900px !important;
         }
     }
 }
