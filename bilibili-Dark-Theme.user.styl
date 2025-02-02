@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0202.2
+@version        1.25.0202.3
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -206,7 +206,6 @@
         filter: brightness(0.96);
     }
 }
-
 
 @-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard|festival|watchroom|v/(customer-service|pay|virtual)).*") {
     :root {
@@ -1357,6 +1356,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .bili-card-dropdown-popper__item:hover {
         background-color: var(--bg2p50) !important;
     }
+    .top-video__cover,
     .anounce,
     .bili-cover-card,
     .toutu-content {
