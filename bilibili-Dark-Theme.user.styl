@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0203.2
+@version        1.25.0203.3
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -282,11 +282,13 @@
     .header-channel,
     .mini-header,
     .fixed-header-nav-shown,
-    .primary-btn,
+    .bili-radio__inner,
     body {
         background-color: var(--bg1);
     }
     .history-item,
+    #i_cecream .primary-btn:not(:hover),
+    .watchlater-pip-button-inner:not(:hover),
     .floor-card-inner:not(:hover),
     .bili-footer {
         background-color: var(--bg1) !important;
@@ -443,9 +445,6 @@
     }
     .living-up-list {
         margin-bottom: 0 !important;
-    }
-    .bpx-player-ctrl-eplist-section-bottom {
-        margin: 8px 0 !important;
     }
     .header-dynamic-list-item {
         padding: 6px 20px !important;
