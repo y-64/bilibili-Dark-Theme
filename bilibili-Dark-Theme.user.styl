@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0203.3
+@version        1.25.0203.4
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -79,8 +79,10 @@
         --text5u: var(--b-Ga8);
         --trans: transparent;
         --trans-hov: transparent;
-        --bwh: var(--b-Ga1);
-        --bwh-hov: var(--b-Ga0);
+        --fff: var(--b-Wh0);
+        --fff-hov: var(--b-Wh0);
+        --iwh: var(--b-Ga1);
+        --iwh-hov: var(--b-Ga0);
         --bbl3: var(--b-Lb3);
         --bbl5-hov: var(--b-Lb4);
         --bbl5: var(--b-Lb5);
@@ -209,8 +211,11 @@
 
 @-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard|festival|watchroom|v/(customer-service|pay|virtual)).*") {
     :root {
-        --Ga1: var(--bg3u);
-        --Ga10: var(--text1u);
+        --Ga1: var(--bg3);
+        --Ga2: var(--line_regular);
+        --Ga9: var(--text1);
+        --Ga10: var(--text1);
+        --Ga11: var(--bg1);
         --Pi10_u: var(--b-Pi3);
         --bg1: var(--bg1u);
         --bg1_rgb: var(--bg1u-rgb);
@@ -413,7 +418,8 @@
     .mini-header,
     .search-fixed-header,
     .fixed-wrapper-shown,
-    .drop-list {
+    .drop-list,
+    .vui_dialog--content {
         box-shadow: var(--shadow-popup) !important;
     }
     .bili-mini-content-wp input {
@@ -743,15 +749,10 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
         --Ga0: var(--bg2);
         --Ga0_s: var(--bg2);
         --Ga1_s: var(--bg3);
-        --Ga2: var(--line_regular);
         --Ga3: var(--text4);
         --Ga5: var(--text3);
         --Ga7: var(--text2);
         --Ga8: var(--text2);
-        --Ga9: var(--text1);
-        --Ga9: var(--text1);
-        --Ga10: var(--text1);
-        --Ga11: var(--bg1);
         --Ga12: var(--bg3);
         --Ga12_s: var(--bg2);
         --Bl1: var(--b-Si8);
@@ -871,7 +872,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     }
     .week-day-item.active {
         background-color: var(--bbl5) !important;
-        color: var(--bwh) !important;
+        color: var(--iwh) !important;
     }
     .sp-user:not([style^="c"]),
     .sponsor-choice li:not(.active) span,
@@ -1213,7 +1214,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
         color: var(--text4) !important;
     }
     .special-text h3 {
-        color: var(--bwh) !important;
+        color: var(--iwh) !important;
     }
     .game-header .search-icon:hover path,
     .game-next [class^="arrow-"] path {
@@ -1283,6 +1284,9 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
         --bili-video-card-title-font-size: 14px !important;
         --bili-video-card-subtitle-font-size: 13px !important;
     }
+    .float-button {
+        background-color: var(--bg1);
+    }
     .opus-card--only-text,
     .menu-popover__panel-item {
         background-color: var(--bg2) !important;
@@ -1295,12 +1299,13 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .top-video__cover,
     .anounce,
+    .b-img,
     .bili-cover-card,
     .toutu-content {
         background: transparent !important;
     }
     .toutu-content,
-    .vui_dialog--content {
+    .bui-dialog {
         box-shadow: var(--shadow-popup);
     }
     .vui_drawer-drawer--bottom-placement {
@@ -1327,6 +1332,23 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .bili-card-dropdown-popper {
         padding: 4px !important;
+    }
+    .game-card {
+        display: flex !important;
+    }
+    .game-card-info__btn {
+        border-radius: var(--ra-btn-rd) !important;
+        margin: auto 0 auto auto !important;
+        width: auto !important;
+    }
+    .subscribe-section .btn {
+        margin: 12px auto 0 auto !important;
+        width: auto !important;
+    }
+    .game-card-info__btn.blue,
+    .living-section__follow,
+    .subscribe-section .vui_button--blue {
+        btn(--bbl5, --fff, --bbl5-s);
     }
     .bili-card-dropdown-popper {
         pb(-rt);
@@ -1524,6 +1546,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/topic/.*"),
 regexp("^https?://(www\.)?bilibili\.com/opus/.*"),
 url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bgc,
+    .bili-select-dropdown,
     .bili-set-follow-group__add__mask {
         background-color: var(--bg1) !important;
     }
@@ -1749,7 +1772,7 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
         color: var(--text3) !important;
     }
     .my-vote .option-text {
-        color: var(--bwh) !important;
+        color: var(--iwh) !important;
     }
     .checkbox:not(.checked) {
         border-color: var(--text3) !important;
