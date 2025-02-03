@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0203.4
+@version        1.25.0204.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -283,13 +283,18 @@
             color: var(--text3);
         }
     }
-    .bili-header .slide-down,
-    .header-channel,
-    .mini-header,
     .fixed-header-nav-shown,
     .bili-radio__inner,
     body {
         background-color: var(--bg1);
+    }
+    .bili-header .slide-down,
+    .header-channel,
+    .search-fixed-header,
+    .mini-header,
+    .fixed .main-breadcrums {
+        background-color: var(--bg1) !important;
+        box-shadow: var(--shadow-popup) !important;
     }
     .history-item,
     #i_cecream .primary-btn:not(:hover),
@@ -414,11 +419,8 @@
     .icon-bg__popular {
         border: 3px solid var(--bpi5);
     }
-    .header-channel,
-    .mini-header,
-    .search-fixed-header,
-    .fixed-wrapper-shown,
     .drop-list,
+    .fixed-wrapper-shown,
     .vui_dialog--content {
         box-shadow: var(--shadow-popup) !important;
     }
