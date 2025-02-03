@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0204.1
+@version        1.25.0204.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -284,6 +284,7 @@
         }
     }
     .fixed-header-nav-shown,
+    .bili-dyn-sidebar__btn,
     .bili-radio__inner,
     body {
         background-color: var(--bg1);
@@ -447,8 +448,7 @@
     }
     .bili-mini-close-icon,
     #link-message-container .side-bar .icon,
-    .active-content__desc span:first-child,
-    .side-toolbar__btn.backtop span:before {
+    .active-content__desc span:first-child {
         filter: invert(0.9);
     }
     .living-up-list {
@@ -1600,7 +1600,6 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bili-dyn-list-tabs__list,
     .bili-dyn-list-notification,
     section .bili-dyn-item,
-    .bili-dyn-sidebar__btn,
     .opus-detail,
     .side-toolbar__box,
     .side-toolbar__btn {
