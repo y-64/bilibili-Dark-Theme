@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0204.2
+@version        1.25.0205.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -476,7 +476,7 @@
     }
     .recommended-container_floor-aside .container > *:nth-of-type(n+8),
     .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n+13) {
-        margin-top: 5px;
+        margin-top: 0;
     }
     .bpx-player-dm-btn-send.bui-disabled .bui-button-blue,
     #dialog-user-rating-button:not([class*="act"]),
@@ -765,7 +765,8 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
 
 @-moz-document regexp("^https?://(www\.)?bilibili\.com/bangumi/(?!media).*") {
     .home-container .main-container,
-    [class*="SendingBar"] {
+    [class*="SendingBar"],
+    [class^="navTools_na"] [class^="navTools_it"] {
         background-color: var(--bg1);
     }
     [class*="mediaCover"],
@@ -1311,7 +1312,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
         box-shadow: var(--shadow-popup);
     }
     .vui_drawer-drawer--bottom-placement {
-        height: 620px !important;
+        height: 640px !important;
     }
     .modify-fav-wrapper,
     .modify-relationship-list {
