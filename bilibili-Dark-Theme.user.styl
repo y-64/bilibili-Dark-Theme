@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           bilibili Dark Theme
+@name           bilibili-Dark-Dev
 @namespace      y-64
-@version        1.25.0205.1
+@version        1.25.0206.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -133,6 +133,7 @@
         --bpi5-2s: 2px solid var(--bpi5);
         --bpi5-2s-hov: 2px solid var(--bpi5-hov);
         --bor4-s: 1px solid var(--bor4);
+        --bor4-s-hov: 1px solid var(--bor4-hov);
         --bor5-s: 1px solid var(--bor5);
         --shadow-popup: 0px 0px 10px rgba(0, 0, 0, 0.5);
         --ra-zero: 0;
@@ -1093,8 +1094,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .manga-navbar-submission-portal,
     .cover-image,
     .manga-cover,
-    .manga-cover img,
-    .discount-hinter .button {
+    .manga-cover img {
         border-radius: var(--ra-btn-md) !important;
     }
     .search-icon,
@@ -1123,7 +1123,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     }
     .list-data:not([style^="d"]) {
         display: grid !important;
-        grid-template-columns: repeat(6, 1fr) !important;
+        grid-template-columns: repeat(5, 1fr) !important;
         grid-gap: 16px;
     }
     .manga-button,
@@ -1131,6 +1131,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         border-radius: var(--ra-btn-md) !important;
         margin: 0;
         width: auto !important;
+        max-width: 473px;
     }
     #main-stage .header-item {
         background: var(--bg2) !important;
@@ -1144,6 +1145,9 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .back-to-top-button-container {
         position: fixed;
         right: 35px;
+    }
+    .batch-buy {
+        btnRd(--trans, --bor4, --bor4-s);
     }
     .discount-hinter .button {
         btn(--trans, --bor4, --trans-s)
