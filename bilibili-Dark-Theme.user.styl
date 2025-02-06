@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           bilibili-Dark-Dev
+@name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0206.1
+@version        1.25.0206.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -665,8 +665,8 @@
     .follow-dialog-window .content,
     .bili-dialog-bomb .content,
     [class*="Collect_con"] {
-        height: 485px !important;
-        max-height: 485px !important;
+        height: 480px !important;
+        max-height: 480px !important;
         overflow: auto;
     }
     .group-list {
@@ -711,35 +711,19 @@
         }
     }
 
-    @media (max-height: 848px) {
+    @media screen and (min-width: 1680px) {
         .video-pod__body,
         .multi-page-v1 .cur-list {
             height: auto !important;
-            max-height: 355px !important;
+            max-height: 455px !important;
         }
         .video-sections-content-list {
             height: auto !important;
-            max-height: 330px !important;
+            max-height: 455px !important;
         }
         [class^="numberList_wrap"],
         [class^="imageList_wrap"] {
-            max-height: 420px !important;
-        }
-    }
-
-    @media (min-height: 848px) {
-        .video-pod__body,
-        .multi-page-v1 .cur-list {
-            height: auto !important;
-            max-height: 485px !important;
-        }
-        .video-sections-content-list {
-            height: auto !important;
-            max-height: 485px !important;
-        }
-        [class^="numberList_wrap"],
-        [class^="imageList_wrap"] {
-            max-height: 535px !important;
+            max-height: 491px !important;
         }
     }
 }
@@ -1702,10 +1686,10 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
         display: none;
     }
     .musicInfo .btn,
-    ._btn_1jbur_81 {
+    [class^="_moreMusic"] [class^="_btn"] {
         btn(--trans,
         --bbl5,
-        --trans-s);
+        --bbl5-s);
     }
     [class^="_musician"] [class^="_card"],
     [class^="_moreMusic"] > [class^="_cardList"] > div {
