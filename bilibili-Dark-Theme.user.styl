@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0206.2
+@version        1.25.0207.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1278,11 +1278,13 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .float-button {
         background-color: var(--bg1);
     }
+    .bili-video-card__cover,
     .opus-card--only-text,
     .menu-popover__panel-item {
         background-color: var(--bg2) !important;
     }
-    [class*="-aside-section"] > div {
+    [class*="-aside-section"] > div,
+    .folder-cover-card__back2 {
         background-color: var(--bg2p25) !important;
     }
     .bili-card-dropdown-popper__item:hover {
@@ -1302,6 +1304,22 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .vui_drawer-drawer--bottom-placement {
         height: 640px !important;
     }
+    .game-card {
+        margin-bottom: 20px !important;
+    }
+    .game-card:last-child {
+        margin-bottom: 0px !important;
+    }
+    .vui_sidebar-item {
+        height: 40px !important;
+        padding: 10px 16px !important;
+    }
+    .menu-popover__panel {
+        padding: 0 !important;
+    }
+    .bili-card-dropdown-popper {
+        padding: 4px !important;
+    }
     .modify-fav-wrapper,
     .modify-relationship-list {
         height: 440px !important;
@@ -1313,16 +1331,6 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .modify-relationship-create,
     .modify-relationship-list .vui_checkbox--label {
         height: 40px !important;
-    }
-    .vui_sidebar-item {
-        height: 40px !important;
-        padding: 10px 16px !important;
-    }
-    .menu-popover__panel {
-        padding: 0 !important;
-    }
-    .bili-card-dropdown-popper {
-        padding: 4px !important;
     }
     .game-card {
         display: flex !important;
