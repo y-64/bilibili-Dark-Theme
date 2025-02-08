@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0208.1
+@version        1.25.0208.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -398,6 +398,11 @@
     [class*="game_button"] {
         border-radius: var(--ra-btn-rd) !important;
     }
+    .submit-move,
+    [class*="Collect_btn"],
+    [class^="sponsor_btn"] {
+        border-radius: var(--ra-btn-md) !important;
+    }
     .watch-later-list .av-about {
         border-color: var(--bg2) !important;
     }
@@ -442,9 +447,11 @@
     .catalogue-nav-wrp {
         box-shadow: none !important;
     }
+    input[type="checkbox"]:not(:hover):not(:checked) + i {
+        filter: brightness(0.3);
+    }
     .bili-header .nav-search-clean:not(:hover),
     .second-line_left img,
-    input[type="checkbox"]:not(:hover):not(:checked) + i,
     .helper-btn::before {
         filter: brightness(0.6);
     }
@@ -773,7 +780,6 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
         background-color: var(--bg1);
     }
     [class*="mediaCover"],
-    textarea[name="short-review"],
     [class^="RecommendItem_cover"],
     [class^="Share"] > div,
     [class*="playerPop"] {
@@ -785,8 +791,6 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
         background-color: var(--bg4) !important;
     }
     [class*="media_desc"] i,
-    [class*="sponsor_border"],
-    [name="custom-amount"],
     [class^="EpListSke"],
     [class*="coverWrap"] {
         background: transparent !important;
@@ -804,8 +808,7 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     #danmu-icon path {
         fill: var(--text3);
     }
-    [class^="follow_btn"],
-    [class^="sponsor_btn"] {
+    [class^="follow_btn"] {
         border-radius: var(--ra-btn-rd) !important;
     }
     [class*="review_body"] {
@@ -837,14 +840,16 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     [class^="upinfo_upInfo"] {
         btnRd(--bg2, --text3, --trans-s);
     }
+    [class^="Share_share__"],
+    [class*="watch_more"] {
+        pb(-rd);
+    }
     [class*="coin_op"],
     [class*="dialogCon"],
-    [class^="Share_share__"],
-    [class*="watch_more"],
     [class*="review_con"],
     [class*="rank_content"],
     [class*="pay_con"] {
-        pb(-rd);
+        pb(-rd, --bg1);
     }
     [class^="moreTool_po"] {
         pb(-rt);
