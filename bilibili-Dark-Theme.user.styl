@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0207.1
+@version        1.25.0208.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -113,9 +113,9 @@
         --bg2-2s: 2px solid var(--bg2);
         --bg4-s: 1px solid var(--bg4);
         --bg4-s-hov: 1px solid var(--bg4-hov);
-        --bg4-2s: 2px solid var(--bg4);
         --bg5-s: 1px solid var(--bg5);
         --bg5-s-hov: 1px solid var(--bg5-hov);
+        --bg5-2s: 2px solid var(--bg5);
         --text1-s: 1px solid var(--text1);
         --text2-s: 1px solid var(--text2);
         --text2-s-hov: 1px solid var(--text2-hov);
@@ -391,6 +391,7 @@
         stroke: var(--bor5);
     }
     .vui_button.vui_button--round,
+    .nav-search-btn,
     .header-upload-entry,
     .enter-button,
     .vote-btn,
@@ -452,29 +453,6 @@
     .active-content__desc span:first-child {
         filter: invert(0.9);
     }
-    .living-up-list {
-        margin-bottom: 0 !important;
-    }
-    .header-dynamic-list-item {
-        padding: 6px 20px !important;
-    }
-    .bili-header .header-fav-card {
-        padding: 6px 10px !important;
-    }
-    .dynamic-panel-popover .header-tabs-panel__content {
-        max-height: 680px;
-    }
-    .favorite-panel-popover__nav,
-    .favorite-panel-popover__content,
-    .history-panel-popover {
-        height: 680px;
-    }
-    .favorite-panel-popover__content .content-scroll {
-        height: 633px;
-    }
-    .history-panel-popover .header-tabs-panel__content {
-        height: 620px;
-    }
     .recommended-container_floor-aside .container > *:nth-of-type(n+8),
     .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n+13) {
         margin-top: 0;
@@ -511,7 +489,7 @@
         transition: all .3s ease !important;
         &:hover,
         &:focus-within {
-            border: var(--bg4-2s) !important;
+            border: var(--bg5-2s) !important;
         }
 
         & input {
@@ -537,14 +515,6 @@
         & .nav-search-content,
         & .nav-search-content input {
             background-color: transparent !important;
-        }
-    }
-    .bili-header #nav-searchform .nav-search-btn {
-        color: var(--text3);
-        background-color: transparent;
-        transition: all .3s ease;
-        &:hover {
-            color: var(--text1);
         }
     }
     .vui_button.search-button {
@@ -620,18 +590,20 @@
     .video-share-popover,
     .modal-content,
     .user-card-m-exp,
-    .follow-dialog-window,
-    .bili-dialog-bomb > div,
     #musicApp,
     [class^="_VideoAs"],
     .bili-game-header-user-popper,
-    .overlay .content,
     .popup-box,
     .bp-emoji-box .static-popup,
     .cs-actions-wrap,
     .bp-popup-panel,
     .bili-dialog .con {
         pb(-rd);
+    }
+    .bili-dialog-bomb > div,
+    .follow-dialog-window,
+    .overlay .content {
+        pb(-rd, --bg1);
     }
     .lt-row ~ div .v-popover-content,
     .vui_popover-content,
@@ -652,9 +624,6 @@
         pb(-rt);
         padding: 4px !important;
     }
-    .bili-video-card__info--no-interest-panel {
-        padding: 4px;
-    }
     .sponsor-pay-header,
     .bili-dialog .con header {
         background-color: var(--bg2) !important;
@@ -662,17 +631,67 @@
         border-radius: var(--ra-popup-rd) !important;
         color: var(--text1) !important;
     }
+    .bili-video-card__info--no-interest-panel {
+        padding: 4px;
+    }
+    .living-up-list {
+        margin-bottom: 0 !important;
+    }
+    .header-dynamic-list-item {
+        padding: 6px 20px !important;
+    }
+    .bili-header .header-fav-card {
+        padding: 6px 10px !important;
+    }
+    .dynamic-panel-popover .header-tabs-panel__content {
+        max-height: 680px;
+    }
+    .favorite-panel-popover__nav,
+    .favorite-panel-popover__content,
+    .history-panel-popover {
+        height: 680px;
+    }
+    .favorite-panel-popover__content .content-scroll {
+        height: 633px;
+    }
+    .history-panel-popover .header-tabs-panel__content {
+        height: 620px;
+    }
+    .collection-m-exp,
+    [class*="_dialogContent"],
+    .follow-dialog-wrap-exp,
+    .follow-dialog-window {
+        width: 762px !important;
+    }
+    .follow-dialog-window {
+        left: auto !important;
+        margin-left: auto !important;
+    }
     .follow-dialog-window .content,
     .bili-dialog-bomb .content,
     [class*="Collect_con"] {
-        height: 480px !important;
-        max-height: 480px !important;
+        height: 455px !important;
+        max-height: 455px !important;
         overflow: auto;
     }
-    .group-list {
+    .group-list ul,
+    [class*="_groupList"] ul,
+    .modify-fav-list .vui_radio-group,
+    .modify-relationship-list .vui_checkbox-group {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 60px;
+    }
+    .add-group,
+    [class*="_addGroup"],
+    .modify-relationship-create {
+        width: auto !important;
+    }
+    .group-list,
+    [class*="_groupList"] {
         overflow: unset !important;
         & li:not(:last-child) {
-            padding-bottom: 20px !important;
+            padding-bottom: 17px !important;
         }
     }
     .floor-single-card .layer,
@@ -710,8 +729,7 @@
             visibility: hidden;
         }
     }
-
-    @media screen and (min-width: 1680px) {
+    @media screen and (min-width: 1760px) {
         .video-pod__body,
         .multi-page-v1 .cur-list {
             height: auto !important;
@@ -796,11 +814,6 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     [class*="list_title"] {
         border-radius: 6px !important;
     }
-    [class*="coin_op"],
-    [class*="dialogCon"] {
-        box-shadow: var(--shadow-popup) !important;
-        border-color: var(--trans);
-    }
     [class^="numberListItem_nu"] {
         height: 38px;
         & [class^="numberListItem_ti"] {
@@ -824,6 +837,8 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     [class^="upinfo_upInfo"] {
         btnRd(--bg2, --text3, --trans-s);
     }
+    [class*="coin_op"],
+    [class*="dialogCon"],
     [class^="Share_share__"],
     [class*="watch_more"],
     [class*="review_con"],
@@ -1310,27 +1325,17 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .game-card:last-child {
         margin-bottom: 0px !important;
     }
-    .vui_sidebar-item {
-        height: 40px !important;
-        padding: 10px 16px !important;
+    .fav-collapse:nth-of-type(1) .fav-collapse-wrap {
+        max-height: 639px;
+    }
+    .fav-collapse:nth-of-type(2) .fav-collapse-wrap {
+        max-height: 552px;
     }
     .menu-popover__panel {
         padding: 0 !important;
     }
     .bili-card-dropdown-popper {
         padding: 4px !important;
-    }
-    .modify-fav-wrapper,
-    .modify-relationship-list {
-        height: 440px !important;
-        padding-right: 10px;
-    }
-    .modify-fav-add,
-    .modify-fav-item,
-    .relation-collapse-create,
-    .modify-relationship-create,
-    .modify-relationship-list .vui_checkbox--label {
-        height: 40px !important;
     }
     .game-card {
         display: flex !important;
@@ -1351,6 +1356,37 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .bili-card-dropdown-popper {
         pb(-rt);
+    }
+    .fav-modify-modal-content,
+    .vui_dialog--content:has(.modify-relationship-list) {
+        padding: 0 !important;
+        width: 600px !important;
+        & .vui_dialog--title {
+            margin-top: 24px !important;
+        }
+        & .vui_dialog--footer {
+            margin-bottom: 24px !important;
+        }
+    }
+    .modify-fav-wrapper,
+    .modify-relationship-list {
+        padding: 0 32px !important;
+    }
+    .modify-relationship-desc,
+    .modify-relationship-create {
+        margin: 12px 32px !important;
+    }
+    .modify-fav-wrapper,
+    .modify-relationship-list {
+        height: 425px !important;
+    }
+    .vui_sidebar-item,
+    .relation-collapse-create,
+    .modify-fav-add,
+    .modify-fav-item,
+    .modify-relationship-create,
+    .modify-relationship-list .vui_checkbox--label {
+        height: 38px !important;
     }
 }
 
@@ -1536,7 +1572,9 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .send-btn,
     .follow-btn.active {
-        btn(--trans, --text2, --bg5-s);
+        btn(--trans,
+        --text2,
+        --bg5-s);
     }
 }
 
