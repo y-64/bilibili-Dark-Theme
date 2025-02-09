@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0209.1
+@version        1.25.0209.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -214,6 +214,7 @@
     :root {
         --Ga1: var(--bg3);
         --Ga2: var(--line_regular);
+        --Ga3: var(--text4);
         --Ga9: var(--text1);
         --Ga10: var(--text1);
         --Ga11: var(--bg1);
@@ -290,6 +291,17 @@
     body {
         background-color: var(--bg1);
     }
+    .history-item,
+    #i_cecream .primary-btn:not(:hover),
+    .watchlater-pip-button-inner:not(:hover),
+    .floor-card-inner:not(:hover),
+    .follow-group-mask,
+    .collection-mask,
+    .sub-tag-item:not([checked="checked"]) .item-check-btn,
+    [class*="collectionMask"],
+    .bili-footer {
+        background-color: var(--bg1) !important;
+    }
     .bili-header .slide-down,
     .header-channel,
     .search-fixed-header,
@@ -297,13 +309,6 @@
     .fixed .main-breadcrums {
         background-color: var(--bg1) !important;
         box-shadow: var(--shadow-popup) !important;
-    }
-    .history-item,
-    #i_cecream .primary-btn:not(:hover),
-    .watchlater-pip-button-inner:not(:hover),
-    .floor-card-inner:not(:hover),
-    .bili-footer {
-        background-color: var(--bg1) !important;
     }
     .vui_button--link:hover,
     .up-info__btn-panel .upinfo-btn-panel .default-btn,
@@ -360,8 +365,9 @@
     .watch-later-list .info > *:not(a:hover) > span {
         color: var(--text3) !important;
     }
-    .login-sms-wp .disable {
-        color: var(--text5) !important;
+    .login-sms-wp .disable,
+    .opt-list .disabled {
+        color: var(--text4) !important;
     }
     .section-item:hover .section-title {
         color: var(--bbl5) !important;
@@ -378,7 +384,6 @@
     }
     .search-input .clear-icon > use,
     .bui-checkbox .bui-checkbox-icon svg,
-    #__next [class*="rankList_svg"],
     .game-header .search-icon path,
     .css-1xneiug .border,
     .css-1xneiug .content {
@@ -398,8 +403,6 @@
     [class*="game_button"] {
         border-radius: var(--ra-btn-rd) !important;
     }
-    .submit-move,
-    [class*="Collect_btn"],
     [class^="sponsor_btn"] {
         border-radius: var(--ra-btn-md) !important;
     }
@@ -481,12 +484,6 @@
     .bili-mini-content-wp .tab__form {
         border-color: var(--bg5);
         color: var(--text1);
-    }
-    .opt-list li {
-        color: var(--text1) !important;
-        &:hover {
-            background-color: var(--bg4) !important;
-        }
     }
     .bili-header #nav-searchform,
     .search-layout .search-input-wrap {
@@ -586,6 +583,13 @@
     .charge-btn-icon {
         margin-left: -10px;
     }
+    .submit-move,
+    [class*="Collect_btn"] {
+        border-radius: var(--ra-btn-md) !important;
+        margin-top: 20px !important;
+        height: 34px !important;
+        width: 120px !important;
+    }
     .panel-v2,
     .rank-video-card__popover,
     .misl-ep-item:not(.simple),
@@ -619,7 +623,6 @@
     .search-sub-channel,
     .pod-description-popover,
     .bpx-player-report-box,
-    .opt-list,
     .bili-popover,
     .channel-select-content {
         pb(-rt);
@@ -628,6 +631,7 @@
     .bui-dropdown-items,
     [class*="follow_optionsList"],
     [class*="selectorDrop"],
+    .opt-list,
     .sort-type-wrp ul {
         pb(-rt);
         padding: 4px !important;
@@ -678,8 +682,8 @@
     .follow-dialog-window .content,
     .bili-dialog-bomb .content,
     [class*="Collect_con"] {
-        height: 455px !important;
-        max-height: 455px !important;
+        height: 454px !important;
+        max-height: 454px !important;
         overflow: auto;
     }
     .group-list ul,
@@ -707,7 +711,6 @@
     .usercard-wrap .layout,
     .bili-dialog-bomb .layout,
     .hovercard .tip,
-    .join-button__join-way:after,
     .share-popover:after {
         display: none;
     }
@@ -787,8 +790,7 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
         background-color: var(--bg2) !important;
     }
     [class*="follow_optionsList"] li:not([class^="follow_dis"]):hover,
-    [class*="dropdownItem"]:hover,
-    [class*="upLink"]::after {
+    [class*="dropdownItem"]:hover {
         background-color: var(--bg4) !important;
     }
     [class*="media_desc"] i,
@@ -809,14 +811,14 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     #danmu-icon path {
         fill: var(--text3);
     }
+    [class*="rankList_svg"] {
+        fill: var(--text5) !important;
+    }
     [class^="follow_btn"] {
         border-radius: var(--ra-btn-rd) !important;
     }
     [class*="review_body"] {
         border-color: var(--bg5) !important;
-    }
-    [class*="list_title"] {
-        border-radius: 6px !important;
     }
     [class^="numberListItem_nu"] {
         height: 38px;
@@ -1402,7 +1404,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
         background-color: var(--bg1) !important;
     }
     .delete-btn {
-        background-color: var(--bg2) !important;
+        background-color: var(--bg4) !important;
     }
     .play-list .list-title:not(:hover),
     .play-list .upper-name:not(:hover),
@@ -1427,7 +1429,7 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
         color: var(--text3) !important;
     }
     .delete-btn:not(.delete-check) {
-        color: var(--text5) !important;
+        color: var(--text4) !important;
     }
     .oprate-panel,
     .source-right {
@@ -1821,52 +1823,6 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
     }
     .submit-button.disabled {
         visibility: hidden;
-    }
-}
-
-@-moz-document regexp("^https?://(www\.)?bilibili\.com/appeal/.*") {
-    .app,
-    .navbar,
-    .row,
-    .form-textarea,
-    .form-upload-image,
-    #app {
-        background-color: var(--bg2) !important;
-    }
-    .navbar::after,
-    .row::before,
-    .tip-wrap,
-    .section-info,
-    .cnt {
-        background-color: var(--bg4) !important;
-    }
-    .navbar-title,
-    .sub-tag-item,
-    textarea,
-    .container .question {
-        color: var(--text1) !important;
-    }
-    .tip-text,
-    .info-description,
-    .before,
-    .block-text {
-        color: var(--text2) !important;
-    }
-    .section-name,
-    textarea::placeholder,
-    .cnt__num,
-    .upload-tip {
-        color: var(--text3) !important;
-    }
-    .item-check-btn,
-    textarea,
-    .img-wrap {
-        border-color: var(--text4) !important;
-    }
-    .header,
-    .submit {
-        background-color: var(--bg2) !important;
-        border-color: var(--trans) !important;
     }
 }
 
