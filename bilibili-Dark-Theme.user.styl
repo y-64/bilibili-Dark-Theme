@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0210.1
+@version        1.25.0211.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -257,7 +257,7 @@
         color-scheme: dark;
     }
     [class^="_VideoAs"] {
-        --app_graph_bg: var(--bg5) !important;
+        --app_graph_bg: var(--bg1) !important;
     }
     iframe {
         color-scheme: initial;
@@ -329,7 +329,8 @@
     }
     .login-tab-line,
     .bili-video-card__info--no-interest-panel--item:hover,
-    .liked:hover {
+    .liked:hover,
+    [class^="_Tab"][class*="_Active"] {
         background-color: var(--bg4) !important;
     }
     .bili-header .icon-bg,
@@ -828,6 +829,7 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     }
     [class*="coin_op"],
     [class*="dialogCon"],
+    [class*="1080p_m"],
     [class*="review_con"],
     [class*="rank_content"],
     [class*="pay_con"] {
