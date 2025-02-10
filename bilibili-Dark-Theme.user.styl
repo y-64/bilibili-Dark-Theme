@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0209.2
+@version        1.25.0210.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -250,6 +250,8 @@
         --graph_medium: var(--text3);
         --graph_bold: var(--text2);
         --graph_icon: var(--text2);
+        --bpx-dmsend-disable-button-bg: var(--bg4);
+        --bpx-dmsend-disable-button-text: var(--text4);
         --bpx-dmsend-hint-icon: var(--text3);
         --bpx-tooltip-color: var(--text0u);
         color-scheme: dark;
@@ -338,13 +340,10 @@
         background: var(--trans) !important;
     }
     .van-popover,
-    body,
-    .bili-dialog {
+    body {
         color: var(--text1);
     }
     .follow-dialog-wrap li:not(:hover),
-    .watch-later-list .t:not(:hover),
-    .watch-later-list .key,
     .act-rich-render-content {
         color: var(--text1) !important;
     }
@@ -361,8 +360,7 @@
     .bili-mini-content-wp input::placeholder {
         color: var(--text3);
     }
-    .bpx-player-video-inputbar,
-    .watch-later-list .info > *:not(a:hover) > span {
+    .bpx-player-video-inputbar {
         color: var(--text3) !important;
     }
     .login-sms-wp .disable,
@@ -406,11 +404,7 @@
     [class^="sponsor_btn"] {
         border-radius: var(--ra-btn-md) !important;
     }
-    .watch-later-list .av-about {
-        border-color: var(--bg2) !important;
-    }
-    .bpx-player-filter-wrap *:not(span),
-    .watch-later-list .looked {
+    .bpx-player-filter-wrap *:not(span) {
         border-color: var(--bg4) !important;
     }
     .login-scan-box,
@@ -467,7 +461,6 @@
     .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n+13) {
         margin-top: 0;
     }
-    .bpx-player-dm-btn-send.bui-disabled .bui-button-blue,
     #dialog-user-rating-button:not([class*="act"]),
     .sponsor-btn.disabled,
     .mr-btn:not(.active),
@@ -543,13 +536,8 @@
     }
     .btn_other,
     .bpx-player-adv-danmaku-dialog-function,
-    .day-select,
-    .btn-cancel {
+    .day-select {
         btn(--trans, --text2, --bg5-s);
-    }
-    .d-btn,
-    .s-btn {
-        btn(--trans, --bbl5, --bbl5-s);
     }
     .old-charge-btn,
     .new-charge-btn + .follow-btn.not-follow,
@@ -608,8 +596,7 @@
     .popup-box,
     .bp-emoji-box .static-popup,
     .cs-actions-wrap,
-    .bp-popup-panel,
-    .bili-dialog .con {
+    .bp-popup-panel {
         pb(-rd);
     }
     .bili-dialog-bomb > div,
@@ -636,8 +623,7 @@
         pb(-rt);
         padding: 4px !important;
     }
-    .sponsor-pay-header,
-    .bili-dialog .con header {
+    .sponsor-pay-header {
         background-color: var(--bg2) !important;
         border-color: var(--trans) !important;
         border-radius: var(--ra-popup-rd) !important;
@@ -786,17 +772,13 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     [class*="mediaCover"],
     [class^="RecommendItem_cover"],
     [class^="Share"] > div,
-    [class*="playerPop"] {
+    [class*="playerPop"],
+    [class*="coverWrap"] {
         background-color: var(--bg2) !important;
     }
     [class*="follow_optionsList"] li:not([class^="follow_dis"]):hover,
     [class*="dropdownItem"]:hover {
         background-color: var(--bg4) !important;
-    }
-    [class*="media_desc"] i,
-    [class^="EpListSke"],
-    [class*="coverWrap"] {
-        background: transparent !important;
     }
     [class*="List_sp_rank"],
     [class*="sponsor_point"] {
@@ -816,9 +798,6 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     }
     [class^="follow_btn"] {
         border-radius: var(--ra-btn-rd) !important;
-    }
-    [class*="review_body"] {
-        border-color: var(--bg5) !important;
     }
     [class^="numberListItem_nu"] {
         height: 38px;
@@ -1293,7 +1272,8 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
 }
 
-@-moz-document regexp("^https?://space\.bilibili\.com/.*") {
+@-moz-document regexp("^https?://space\.bilibili\.com/.*"),
+regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
     .bili-video-card {
         --bili-video-card-title-font-size: 14px !important;
         --bili-video-card-subtitle-font-size: 13px !important;
