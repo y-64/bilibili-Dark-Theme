@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0211.1
+@version        1.25.0212.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -96,17 +96,14 @@
         --bor5: var(--b-Or5);
         --bg2-hov: var(--bg4);
         --bg4-hov: var(--bg5);
-        --bg4-bl: var(--bg4);
-        --bg5-hov: var(--bg6);
-        --bg6: var(--b-Ga6);
+        --bg5-hov: var(--b-Ga7);
         --text0: var(--text0u);
         --text1-hov: var(--text0);
         --text2-hov: var(--text1);
         --text3-hov: var(--text2);
         --text4-hov: var(--text3);
-        --none-s: none;
         --trans-s: 1px solid transparent;
-        --trans-s-hov: 1px solid transparent;
+        --trans-s-hov: var(--trans-s);
         --bg1-s: 1px solid var(--bg1);
         --bg2-s: 1px solid var(--bg2);
         --bg2-s-hov: 1px solid var(--bg2-hov);
@@ -136,18 +133,12 @@
         --bor4-s-hov: 1px solid var(--bor4-hov);
         --bor5-s: 1px solid var(--bor5);
         --shadow-popup: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        --ra-zero: 0;
         --ra-btn-md: 8px;
         --ra-btn-rd: 100px;
         --ra-popup-rt: 6px;
         --ra-popup-rd: 12px;
-        --ra-popup-sp: 16px;
+        --ra-popup-rx: 16px;
         --ra-tag: 4px;
-    }
-
-    bgnb(bgc, border=bgc) {
-        background-color: var(bgc) !important;
-        border-color: var(border) !important;
     }
 
     btn(bgc, color, border, colorHov=false, borderHov=false) {
@@ -163,12 +154,12 @@
         }
     }
 
-    btnRd(bgc, color, border) {
+    btnRC(bgc, color, border) {
         btn(bgc, color, border);
         border-radius: var(--ra-btn-rd) !important;
     }
 
-    btnRs() {
+    btnHW() {
         border-radius: var(--ra-btn-md) !important;
         line-height: normal !important;
         height: auto !important;
@@ -176,32 +167,24 @@
         padding: 5px 16px !important;
     }
 
-    tag(bgc, color, border, radius=--ra-tag) {
-        background-color: var(bgc) !important;
-        border: var(border) !important;
+    tag(color, bgc=false, borderColor=false, radius=--ra-tag) {
+        background-color: var(bgc||--trans) !important;
+        border: var((borderColor||bgc||color)+-s) !important;
         border-radius: var(radius) !important;
         color: var(color) !important;
         height: auto !important;
         padding: 0px 5px !important;
     }
 
-    tagT(color) {
-        tag(--trans, color, color+-s);
-    }
-
-    popupBox(bgc, borderColor, radius, shadow) {
+    popup(bgc, borderColor, radius, shadow) {
         background-color: var(bgc) !important;
         border-color: var(borderColor) !important;
         border-radius: var(radius) !important;
         box-shadow: var(shadow) !important;
     }
 
-    pb(radius, color=--bg2u) {
-        popupBox(color, --trans, --ra-popup+radius, --shadow-popup);
-    }
-
-    pbTrans() {
-        popupBox(--trans, --trans, --ra-popup-rt, --trans);
+    po(radius, bgc=--bg2u) {
+        popup(bgc, --trans, --ra-popup+radius, --shadow-popup);
     }
     .banner-content,
     html,
@@ -504,9 +487,9 @@
     }
     .bili-header .search-panel,
     .search-panel-popover {
-        pb(-rd);
+        po(-rd);
         margin-top: 8px !important;
-        border-radius: var(--ra-popup-sp) !important;
+        border-radius: var(--ra-popup-rx) !important;
     }
     .bili-header #nav-searchform {
         padding-left: 6px !important;
@@ -516,7 +499,7 @@
         }
     }
     .vui_button.search-button {
-        border-radius: 6px var(--ra-btn-rd) var(--ra-btn-rd) 6px !important;
+        border-radius: 16px var(--ra-btn-rd) var(--ra-btn-rd) 16px !important;
     }
     [class*="-actions"] .vui_button,
     .follow-btn__trigger {
@@ -528,7 +511,7 @@
     .game-card-content-head-recommend,
     .normal .up span,
     .rcmd-tag {
-        tagT(--bor4);
+        tag(--bor4);
     }
     .follow-btn.following,
     .follow-btn.inactive,
@@ -549,7 +532,7 @@
         btn(--trans, --bbl5, --bbl5-2s);
     }
     [class^="mediainfo_btn"] {
-        btnRd(--trans, --bbl5, --bbl5-2s);
+        btnRC(--trans, --bbl5, --bbl5-2s);
         padding: 5px 12px !important;
     }
     .new-charge-btn.charge-btn-loaded {
@@ -584,7 +567,7 @@
     .misl-ep-item:not(.simple),
     .sp-msg,
     .sp-msg::before {
-        pbTrans();
+        popup(--trans, --trans, --ra-popup-rt, --trans);
     }
     .bili-mini-content-wp,
     .v-popover-content,
@@ -598,12 +581,12 @@
     .bp-emoji-box .static-popup,
     .cs-actions-wrap,
     .bp-popup-panel {
-        pb(-rd);
+        po(-rd);
     }
     .bili-dialog-bomb > div,
     .follow-dialog-window,
     .overlay .content {
-        pb(-rd, --bg1);
+        po(-rd, --bg1);
     }
     .lt-row ~ div .v-popover-content,
     .vui_popover-content,
@@ -613,7 +596,7 @@
     .bpx-player-report-box,
     .bili-popover,
     .channel-select-content {
-        pb(-rt);
+        po(-rt);
     }
     .van-followed,
     .bui-dropdown-items,
@@ -621,7 +604,7 @@
     [class*="selectorDrop"],
     .opt-list,
     .sort-type-wrp ul {
-        pb(-rt);
+        po(-rt);
         padding: 4px !important;
     }
     .sponsor-pay-header {
@@ -821,11 +804,11 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     }
     [class^="follow_btn"][class*="_followed"],
     [class^="upinfo_upInfo"] {
-        btnRd(--bg2, --text3, --trans-s);
+        btnRC(--bg2, --text3, --trans-s);
     }
     [class^="Share_share__"],
     [class*="watch_more"] {
-        pb(-rd);
+        po(-rd);
     }
     [class*="coin_op"],
     [class*="dialogCon"],
@@ -833,10 +816,10 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     [class*="review_con"],
     [class*="rank_content"],
     [class*="pay_con"] {
-        pb(-rd, --bg1);
+        po(-rd, --bg1);
     }
     [class^="moreTool_po"] {
-        pb(-rt);
+        po(-rt);
     }
 }
 
@@ -948,7 +931,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .sponsor-pay-content,
     .short-review-content,
     .report-dialog-content {
-        pb(-rd);
+        po(-rd);
     }
 }
 
@@ -989,7 +972,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         display: none;
     }
     [class^="Card-rec"] {
-        pb(-rd, --bg2p25);
+        po(-rd, --bg2p25);
     }
 }
 
@@ -1135,7 +1118,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         right: 35px;
     }
     .batch-buy {
-        btnRd(--trans, --bor4, --bor4-s);
+        btnRC(--trans, --bor4, --bor4-s);
     }
     .discount-hinter .button {
         btn(--trans, --bor4, --trans-s)
@@ -1148,11 +1131,11 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .hovercard,
     .hot-category,
     .episode-comment {
-        pb(-rt, --bg1);
+        po(-rt, --bg1);
     }
     .section-navigator,
     .back-to-content {
-        pb(-rt, --bg2p25);
+        po(-rt, --bg2p25);
     }
 }
 
@@ -1252,11 +1235,11 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     }
     .game-next .dis-btn {
         btn(--bg4, --text3, --trans-s);
-        btnRs();
+        btnHW();
     }
     .game-next .card .btn {
         btn(--trans, --bbl5, --bbl5-2s);
-        btnRs();
+        btnHW();
     }
     .slide-cover .card,
     [class^="arrow-"],
@@ -1265,12 +1248,12 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .team-list .team,
     .option,
     .video-option {
-        pb(-rt, --bg2p25);
+        po(-rt, --bg2p25);
     }
     .popper > *,
     .user-options,
     .competition-option-hide > div {
-        pb(-rt);
+        po(-rt);
     }
 }
 
@@ -1345,7 +1328,7 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
         btn(--bbl5, --fff, --bbl5-s);
     }
     .bili-card-dropdown-popper {
-        pb(-rt);
+        po(-rt);
     }
     .fav-modify-modal-content,
     .vui_dialog--content:has(.modify-relationship-list) {
@@ -1426,7 +1409,7 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
     }
     .oprate-window,
     .collect {
-        pb(-rt);
+        po(-rt);
     }
 }
 
@@ -1664,11 +1647,11 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bili-at-popup,
     .bili-user-profile,
     .share-popover {
-        pb(-rd);
+        po(-rd);
     }
     .bili-cascader-options,
     .bili-follow-button__menu {
-        pb(-rt);
+        po(-rt);
         padding: 4px;
     }
 
@@ -1729,12 +1712,12 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
     }
     [class^="_musician"] [class^="_card"],
     [class^="_moreMusic"] > [class^="_cardList"] > div {
-        pb(-rt,
+        po(-rt,
         --bg2p25);
     }
     .weekly-header .panel,
     .rulePop {
-        pb(-rt);
+        po(-rt);
     }
 }
 
@@ -1761,7 +1744,7 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
     .officialAccount,
     .share-pannel-wrp > div,
     .select-droplist {
-        pb(-rd);
+        po(-rd);
     }
 }
 
