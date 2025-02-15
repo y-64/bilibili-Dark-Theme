@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0212.1
+@version        1.25.0215.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -132,7 +132,8 @@
         --bor4-s: 1px solid var(--bor4);
         --bor4-s-hov: 1px solid var(--bor4-hov);
         --bor5-s: 1px solid var(--bor5);
-        --shadow-popup: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        --shadow-8: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        --shadow-10: 0px 0px 10px rgba(0, 0, 0, 0.5);
         --ra-btn-md: 8px;
         --ra-btn-rd: 100px;
         --ra-popup-rt: 6px;
@@ -184,7 +185,7 @@
     }
 
     po(radius, bgc=--bg2u) {
-        popup(bgc, --trans, --ra-popup+radius, --shadow-popup);
+        popup(bgc, --trans, --ra-popup+radius, --shadow-10);
     }
     .banner-content,
     html,
@@ -293,7 +294,7 @@
     .mini-header,
     .fixed .main-breadcrums {
         background-color: var(--bg1) !important;
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-10) !important;
     }
     .vui_button--link:hover,
     .up-info__btn-panel .upinfo-btn-panel .default-btn,
@@ -411,7 +412,7 @@
     .drop-list,
     .fixed-wrapper-shown,
     .vui_dialog--content {
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-10) !important;
     }
     .bili-mini-content-wp input {
         box-shadow: inset 0 0 0 1000px var(--bg2) !important;
@@ -966,7 +967,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         background: var(--trans) !important;
     }
     .bili-game-header-nav-bar {
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-10) !important;
     }
     [class^="ske"] {
         display: none;
@@ -1287,7 +1288,7 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
     }
     .toutu-content,
     .bui-dialog {
-        box-shadow: var(--shadow-popup);
+        box-shadow: var(--shadow-10);
     }
     .vui_drawer-drawer--bottom-placement {
         height: 640px !important;
@@ -1604,14 +1605,14 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bili-dyn-live-users,
     .bili-dyn-topic-box,
     .bili-dyn-publishing,
-    .bili-dyn-up-list__window,
-    .bili-dyn-list-tabs__list,
+    .bili-dyn-up-list,
+    .bili-dyn-list-tabs,
     .bili-dyn-list-notification,
     section .bili-dyn-item,
     .opus-detail,
     .side-toolbar__box,
     .side-toolbar__btn {
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-8) !important;
     }
     .bili-set-follow-group__content {
         height: 450px !important;
@@ -1628,7 +1629,7 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .bili-dyn-share-publishing {
         border-color: var(--trans) !important;
         border-radius: var(--ra-popup-rd) !important;
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-10) !important;
     }
     .bili-at-popup {
         width: auto;
@@ -1655,10 +1656,10 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
         padding: 4px;
     }
 
-    @media screen and (min-width: 1680px) {
+    @media screen and (min-width: 1760px) {
         .bili-dyn-home--member main,
         #app > .content {
-            width: 924px;
+            width: 1024px;
         }
         .main-part,
         .list__topic-card .bili-dyn-item {
@@ -1666,7 +1667,7 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
             min-width: 900px !important;
         }
         .bili-dyn-sidebar {
-            right: calc(50vw - 786px);
+            right: calc(50vw - 836px);
         }
     }
 }
@@ -1699,7 +1700,7 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
         border-color: var(--trans);
     }
     [class*="_PcRankPeriod"] {
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-10) !important;
     }
     [class*="_arrow"] {
         display: none;
@@ -1736,7 +1737,7 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
         background: var(--Cy6) !important;
     }
     .tab-choose-fixed {
-        box-shadow: var(--shadow-popup) !important;
+        box-shadow: var(--shadow-10) !important;
     }
     p.url input:focus-visible {
         outline: none;
@@ -1795,16 +1796,19 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
     #app {
         top: 20px;
     }
-    .opus-detail {
-        width: 908px;
-    }
-    .right-sidebar-wrap {
-        margin-left: 930px;
-    }
     .side-toolbar__top,
     .opus-collection {
-        box-shadow: var(--shadow-popup);
+        box-shadow: var(--shadow-10);
         filter: none;
+    }
+
+    @media screen and (min-width: 1560px) {
+        .opus-detail {
+            width: 1008px;
+        }
+        .right-sidebar-wrap {
+            margin-left: 1030px;
+        }
     }
     [style*="#d6d5d5"] {
         color: #5f5f5f !important;
