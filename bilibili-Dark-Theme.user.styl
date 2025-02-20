@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0219.1
+@version        1.25.0220.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -134,10 +134,9 @@
         --shadow-8: 0px 0px 8px rgba(0, 0, 0, 0.5);
         --shadow-10: 0px 0px 10px rgba(0, 0, 0, 0.5);
         --ra-btn-md: 8px;
-        --ra-btn-rd: 100px;
+        --ra-btn-rd: 99px;
         --ra-popup-rt: 6px;
         --ra-popup-rd: 12px;
-        --ra-popup-rx: 16px;
         --ra-tag: 4px;
     }
 
@@ -488,8 +487,10 @@
     .bili-header .search-panel,
     .search-panel-popover {
         pop(-rd);
+    }
+    .bili-header .search-panel{
         margin-top: 8px !important;
-        border-radius: var(--ra-popup-rx) !important;
+        border-radius: 16px !important;
     }
     .bili-header #nav-searchform {
         padding-left: 6px !important;
@@ -498,8 +499,21 @@
             background-color: transparent !important;
         }
     }
-    .vui_button.search-button {
-        border-radius: 16px var(--ra-btn-rd) var(--ra-btn-rd) 16px !important;
+    .search-layout {
+        & .search-input {
+            margin: 30px 0 12px !important;
+        }
+        & .search-input-wrap {
+            height: 46px !important;
+        }
+        & .search-button {
+            border-radius: 16px var(--ra-btn-rd) var(--ra-btn-rd) 16px !important;
+            height: 32px !important;
+        }
+        & .search-panel-popover {
+            border-radius: 19px !important;
+            top:54px !important;
+        }
     }
     [class*="-actions"] .vui_button,
     .follow-btn__trigger {
