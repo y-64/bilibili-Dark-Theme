@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0220.1
+@version        1.25.0222.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -15,8 +15,11 @@
         --b-Ga2: #E3E5E7;
         --b-Ga3: #C9CCD0;
         --b-Ga3-rgb: 201, 204, 208;
+        --b-Ga3p75: #B5B9BF;
         --b-Ga4: #AEB3B9;
+        --b-Ga4p75: #9AA0A6;
         --b-Ga5: #9499A0;
+        --b-Ga5p75: #80868D;
         --b-Ga6: #797F87;
         --b-Ga7: #61666D;
         --b-Ga8: #484C53;
@@ -71,9 +74,9 @@
         --bg4u: var(--b-Ga8p50);
         --bg5u: var(--b-Ga8);
         --text0u: var(--b-Ga2);
-        --text1u: var(--b-Ga4);
-        --text2u: var(--b-Ga5);
-        --text3u: var(--b-Ga6);
+        --text1u: var(--b-Ga3p75);
+        --text2u: var(--b-Ga4p75);
+        --text3u: var(--b-Ga5p75);
         --text4u: var(--b-Ga7);
         --text5u: var(--b-Ga8);
         --trans: transparent;
@@ -488,7 +491,7 @@
     .search-panel-popover {
         pop(-rd);
     }
-    .bili-header .search-panel{
+    .bili-header .search-panel {
         margin-top: 8px !important;
         border-radius: 16px !important;
     }
@@ -512,7 +515,7 @@
         }
         & .search-panel-popover {
             border-radius: 19px !important;
-            top:54px !important;
+            top: 54px !important;
         }
     }
     [class*="-actions"] .vui_button,
