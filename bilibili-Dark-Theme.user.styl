@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0222.2
+@version        1.25.0222.3
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -195,7 +195,7 @@
     }
 }
 
-@-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard|festival|watchroom|v/(customer-service|pay|virtual)).*") {
+@-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay|virtual)).*") {
     :root {
         --Ga1: var(--bg3);
         --Ga2: var(--line_regular);
