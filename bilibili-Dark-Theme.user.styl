@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0222.3
+@version        1.25.0223.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -358,12 +358,8 @@
     .section-item:hover .section-title {
         color: var(--bbl5) !important;
     }
-    .icon-bg__popular + .icon-title,
     .space-notice {
         color: var(--bpi5) !important;
-    }
-    .icon-bg__dynamic ~ .icon-title {
-        color: var(--bor5);
     }
     .v-popover [class*="info"] path {
         fill: var(--text3);
@@ -374,12 +370,6 @@
     .css-1xneiug .border,
     .css-1xneiug .content {
         fill: var(--text4);
-    }
-    .icon-bg__popular path {
-        fill: var(--bpi5);
-    }
-    .icon-bg__dynamic path {
-        stroke: var(--bor5);
     }
     .vui_button.vui_button--round,
     .nav-search-btn,
@@ -405,12 +395,6 @@
     .single-card.floor-card,
     [class*="List_sp_msg"] {
         border-color: var(--trans) !important;
-    }
-    .icon-bg__dynamic {
-        border: 3px solid var(--bor5);
-    }
-    .icon-bg__popular {
-        border: 3px solid var(--bpi5);
     }
     .drop-list,
     .fixed-wrapper-shown,
@@ -448,6 +432,24 @@
     .recommended-container_floor-aside .container > *:nth-of-type(n+8),
     .recommended-container_floor-aside .container.is-version8 > *:nth-of-type(n+13) {
         margin-top: 0;
+    }
+    .icon-bg__dynamic {
+        border: 3px solid var(--bbl5);
+        & ~ .icon-title {
+            color: var(--bbl5);
+        }
+        & path {
+            stroke: var(--bbl5);
+        }
+    }
+    .icon-bg__popular {
+        border: 3px solid var(--bpi5);
+        & ~ .icon-title {
+            color: var(--bpi5);
+        }
+        & path {
+            fill: var(--bpi5);
+        }
     }
     #dialog-user-rating-button:not([class*="act"]),
     .sponsor-btn.disabled,
