@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0224.5
+@version        1.25.0224.6
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -143,22 +143,17 @@
         --ra-tag: 4px;
     }
 
-    btn(bgc, couleur, bordure, colorHov=false, borderHov=false) {
+    btn(couleur, bgc, bordure) {
         background-color: var(bgc) !important;
         border: var(bordure) !important;
         color: var(couleur) !important;
         box-shadow: none !important;
-        transition: all .3s ease;
+        transition: all .25s ease;
         &:hover {
             background-color: var(bgc+-hov) !important;
-            border: var(borderHov||bordure+-hov) !important;
-            color: var(colorHov||couleur+-hov) !important;
+            border: var(bordure+-hov) !important;
+            color: var(couleur+-hov) !important;
         }
-    }
-
-    btnRC(bgc, couleur, bordure) {
-        btn(bgc, couleur, bordure);
-        border-radius: var(--ra-btn-rd) !important;
     }
 
     btnHW() {
@@ -538,12 +533,12 @@
     .follow-btn.following,
     .follow-btn.inactive,
     .follow-btn.on {
-        btn(--bg2, --text3, --trans-s);
+        btn(--text3, --bg2, --trans-s);
     }
     .btn_other,
     .bpx-player-adv-danmaku-dialog-function,
     .day-select {
-        btn(--trans, --text2, --bg5-s);
+        btn(--text2, --trans, --bg5-s);
     }
     .old-charge-btn,
     .new-charge-btn + .follow-btn.not-follow,
@@ -551,14 +546,15 @@
     .search-content .vui_button--blue,
     .episode-list .list-item.last-read,
     .follow-btn__trigger:not(.gray) {
-        btn(--trans, --bbl5, --bbl5-2s);
+        btn(--bbl5, --trans, --bbl5-2s);
     }
     [class^="mediainfo_btn"] {
-        btnRC(--trans, --bbl5, --bbl5-2s);
+        btn(--bbl5, --trans, --bbl5-2s);
+        border-radius: var(--ra-btn-rd) !important;
         padding: 5px 12px !important;
     }
     .new-charge-btn.charge-btn-loaded {
-        btn(--trans, --bpi5, --bpi5-2s);
+        btn(--bpi5, --trans, --bpi5-2s);
     }
     .upinfo-btn-panel .default-btn {
         border-radius: 8px !important;
@@ -814,7 +810,11 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
         }
 
         &:not([class*="Item_select"]) {
-            btn(--trans, --text2, --bg4-s, --bbl5, --bbl5-s);
+            btn(--text2, --trans, --bg4-s);
+            transition: all .1s !important;
+            &:hover {
+                border-color: var(--bbl5) !important;
+            }
         }
     }
     [class*="Item_badge"] {
@@ -826,7 +826,8 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     }
     [class^="follow_btn"][class*="_followed"],
     [class^="upinfo_upInfo"] {
-        btnRC(--bg2, --text3, --trans-s);
+        btn(--text3, --bg2, --trans-s);
+        border-radius: var(--ra-btn-rd) !important;
     }
     [class^="Share_share__"],
     [class*="watch_more"] {
@@ -1141,14 +1142,15 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
         right: 35px;
     }
     .batch-buy {
-        btnRC(--trans, --bor4, --bor4-s);
+        btn(--bor4, --trans, --bor4-s);
+        border-radius: var(--ra-btn-rd) !important;
     }
     .discount-hinter .button {
-        btn(--trans, --bor4, --trans-s)
+        btn(--bor4, --trans, --trans-s)
     }
     .manga-button.ghost,
     .episode-list .list-item {
-        btn(--trans, --text2, --bg5-s);
+        btn(--text2, --trans, --bg5-s);
     }
     nav.manga-navbar,
     .hovercard,
@@ -1248,20 +1250,20 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
         filter: invert(0.9);
     }
     .topbar .option-item {
-        btn(--bg2, --text2, --trans-s);
+        btn(--text2, --bg2, --trans-s);
     }
     .title .right,
     .all-video,
     .toggle-open-select,
     .game-menu .more {
-        btn(--trans, --text2, --bg4-s);
+        btn(--text2, --trans, --bg4-s);
     }
     .game-next .dis-btn {
-        btn(--bg4, --text3, --trans-s);
+        btn(--text3, --bg4, --trans-s);
         btnHW();
     }
     .game-next .card .btn {
-        btn(--trans, --bbl5, --bbl5-2s);
+        btn(--bbl5, --trans, --bbl5-2s);
         btnHW();
     }
     .slide-cover .card,
@@ -1348,7 +1350,7 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
     .game-card-info__btn.blue,
     .living-section__follow,
     .subscribe-section .vui_button--blue {
-        btn(--bbl5, --fff, --bbl5-s);
+        btn(--fff, --bbl5, --bbl5-s);
     }
     .bili-card-dropdown-popper {
         pop(-rt);
@@ -1568,9 +1570,7 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
     }
     .send-btn,
     .follow-btn.active {
-        btn(--trans,
-        --text2,
-        --bg5-s);
+        btn(--text2, --trans, --bg5-s);
     }
 }
 
@@ -1729,8 +1729,8 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
     }
     .musicInfo .btn,
     [class^="_moreMusic"] [class^="_btn"] {
-        btn(--trans,
-        --bbl5,
+        btn(--bbl5,
+        --trans,
         --bbl5-s);
     }
     [class^="_musician"] [class^="_card"],
