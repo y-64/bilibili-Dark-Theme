@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0223.1
+@version        1.25.0224.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -474,17 +474,14 @@
         border: var(--bg2-2s) !important;
         border-radius: var(--ra-btn-rd) !important;
         transition: all .3s ease !important;
-        &:hover,
-        &:focus-within {
+        &:hover {
             border: var(--bg5-2s) !important;
         }
 
-        & input {
-            color: var(--text2) !important;
-        }
-
-        & input:focus {
-            color: var(--text1) !important;
+        &[class*="-focus"] {
+            border-color: var(--trans) !important;
+            box-shadow: var(--shadow-10);
+            transition: all .15s !important;
         }
 
         & input::placeholder {
