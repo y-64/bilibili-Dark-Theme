@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0308.1
+@version        1.25.0614.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -190,7 +190,7 @@
     }
 }
 
-@-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay|virtual)).*") {
+@-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|manga|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay|virtual)).*") {
     :root {
         --Ga1: var(--bg3);
         --Ga2: var(--line_regular);
@@ -267,7 +267,6 @@
             color: var(--text3);
         }
     }
-    .fixed-header-nav-shown,
     .bili-dyn-sidebar__btn,
     .bili-radio__inner,
     body {
@@ -752,6 +751,7 @@ regexp("^https?://(www\.)?bilibili\.com/cheese/.*") {
     :root {
         --Ba0_s: var(--text1);
         --Wh0: var(--bg1);
+        --Wh0_s: var(--bg1);
         --Ga0: var(--bg2);
         --Ga0_s: var(--bg2);
         --Ga1_s: var(--bg3);
@@ -988,8 +988,22 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     :root {
         --Ga10_rgb: var(--b-Ga3-rgb);
     }
-    [class^="Home"] {
+    .swiper-slide:only-child .layout-container,
+    .swiper-slide:only-child .gradient-overlay,
+    .tag,
+    .rank-list,
+    .rank-card .header,
+    .feed-container .card,
+    .b-img,
+    .feed-container .default-button {
         background: var(--trans) !important;
+    }
+    #app .gc-header input {
+        background-color: var(--text0);
+        color: var(--bg1);
+    }
+    .notice {
+        color: var(--text2) !important;
     }
     .bili-game-header-nav-bar {
         box-shadow: var(--shadow-10) !important;
@@ -997,12 +1011,9 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     [class^="ske"] {
         display: none;
     }
-    [class^="Card-rec"] {
-        pop(-rd, --bg2p25);
-    }
 }
 
-@-moz-document regexp("^https?://manga\.bilibili\.com/(?!account-center).*") {
+@-moz-document regexp("^https?://manga1\.bilibili\.com/(?!account-center).*") {
     .manga-footer,
     .drop-list,
     .manga-navbar .right-part [class*="-btn-container"],
@@ -1441,138 +1452,17 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
 }
 
 @-moz-document regexp("^https?://message\.bilibili\.com/.*") {
-    body:has(#home_nav) {
-        background: url(//i0.hdslb.com/bfs/album/ec22a65f8475b0f97a95cc3c6aea298aec910821.jpg) top/cover no-repeat fixed;
+    .message-bg {
+        background-image: url(//i0.hdslb.com/bfs/album/ec22a65f8475b0f97a95cc3c6aea298aec910821.jpg) !important;
     }
-    #message-navbar,
-    .message .message-content:not(.is-me),
-    .msg-notify,
-    .auto-reply-push,
-    .cs-q-tab-item.active,
-    .cs-self-service-item {
+    .z-top-container {
         background-color: var(--bg1) !important;
     }
-    .divider-last::before,
-    .split-line,
-    .message-list,
-    .send-box,
-    .msg-notify hr,
-    .emoji-cover.selected,
-    .config-item:not(:first-child)::before {
-        background-color: var(--bg2) !important;
-    }
-    .list-item.active,
-    .list-item:hover,
-    .bp-emoji-box .pagination,
-    .bp-emoji-box .static-popup li:hover,
-    .cs-q-tabs,
-    .cs-action-item:hover {
-        background-color: var(--bg4) !important;
-    }
-    .name-loading,
-    .emoji div,
-    .emoji:not(:hover) {
-        background-color: transparent !important;
-    }
-    .love-card .header::after,
-    .link-progress-tv {
-        background: transparent !important;
-    }
-    .space-left {
-        background-color: rgba(30, 31, 35, 0.8) !important;
-    }
-    .space-right {
-        background-color: rgba(30, 31, 35, 0.5) !important;
-    }
-    .follow-group-mask {
-        background-color: var(--bg1) !important;
-        opacity: 0.7 !important;
-    }
-    #link-message-container .line-1 .name-field,
-    .detail .content:not(:hover),
-    .message .message-content:not(.is-me),
-    .auto-reply-push *,
-    .msg-notify .link:not(:hover) {
-        color: var(--text1);
-    }
-    .title,
-    .line-2,
-    .content-text,
-    .list-item .name,
-    .core-style,
-    .msg-notify .detail span,
-    .tool-title,
-    .uname,
-    .config,
-    .radio-selector {
-        color: var(--text1) !important;
-    }
-    .item:not(.active):not(:hover),
-    .item:not(.active):not(:hover) a,
-    .line-1,
-    .bottom,
-    .bili-im,
-    .list-item .close,
-    .msg-notify .content,
-    .icon-more-1,
-    .helper-btn,
-    .cs-action-item {
-        color: var(--text2) !important;
-    }
-    .space-right .line-3 {
-        color: var(--text3);
-    }
-    .orginal-reply,
-    .time,
-    .list-item .last-word,
-    .msg-tips,
-    .mtitle,
-    .ar-recommend-item__info--view *,
-    .notify-wrapper,
-    .no-more,
-    .indicator,
-    .follow-dialog-wrap .info,
-    .follow-dialog-wrap .special-tip,
-    .tip {
-        color: var(--text3) !important;
-    }
-    .divider,
-    .card > div:not(:last-child)::after,
-    .bili-im .title {
-        border-color: var(--bg2) !important;
-    }
-    #link-message-container .orginal-reply,
-    .follow-dialog-wrap .bottom {
-        border-color: var(--bg4) !important;
-    }
-    .add-group .add-btn:not(:hover),
-    #link-message-container .send-box {
-        border-color: var(--bg5) !important;
-    }
-    .divided-line,
-    .bili-im .left,
-    .msg-notify .title,
-    .follow-dialog-window .title {
-        border-color: var(--trans) !important;
-    }
-    .space-right-top .title,
-    .card,
-    .bili-im,
-    .config {
-        background-color: var(--bg1) !important;
-        box-shadow: 0 2px 4px 0 rgba(24, 25, 28, 0.54) !important;
-    }
-    .reply-textarea {
-        background-color: var(--bg2) !important;
-        border: var(--solid-bg2) !important;
-        color: var(--text1) !important;
-    }
-    #link-message-container .divider-last::after {
-        height: 0;
-    }
-    .send-btn,
-    .follow-btn.active {
-        btn(--text2, --trans, --bg5-s);
+    .message-box-shadow,
+    .im-box-shadow,
+    .group-popover,
+    [class^="_SettingMenu"] {
+        box-shadow: var(--shadow-10);
     }
 }
 
@@ -1834,11 +1724,8 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
             margin-left: 1030px;
         }
     }
-    [style*="#d6d5d5"] {
-        color: #5f5f5f !important;
-    }
-    [style*="#5f5f5f"] {
-        color: #d6d5d5 !important;
+    [style*="#000000"] {
+        color: var(--text1) !important;
     }
     [style*="#56c1fe"] {
         color: var(--b-Lb2) !important;
@@ -1849,6 +1736,7 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
     [style*="#0176ba"] {
         color: var(--b-Lb4) !important;
     }
+    .opus-module-extend__item,
     [style*="#004e80"] {
         color: var(--b-Lb5) !important;
     }
@@ -1877,16 +1765,17 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
         color: var(--b-Gr5) !important;
     }
     [style*="#ff968d"] {
-        color: var(--b-Pi2) !important;
-    }
-    [style*="#ff654e"] {
         color: var(--b-Pi3) !important;
     }
-    [style*="#ee230d"] {
+    [style*="#ff654e"] {
         color: var(--b-Pi4) !important;
     }
-    [style*="#b41700"] {
+    [style*="#ee230d"] {
         color: var(--b-Pi5) !important;
+    }
+    [style*="#ea0077"],
+    [style*="#b41700"] {
+        color: var(--b-Pi6) !important;
     }
     [style*="#ff8cc6"] {
         color: var(--b-Pu2) !important;
