@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0614.1
+@version        1.25.0615.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1013,170 +1013,6 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     }
 }
 
-@-moz-document regexp("^https?://manga1\.bilibili\.com/(?!account-center).*") {
-    .manga-footer,
-    .drop-list,
-    .manga-navbar .right-part [class*="-btn-container"],
-    .multi-line-text::after,
-    .hot-seller,
-    .manga-detail .layout {
-        background-color: var(--bg1) !important;
-    }
-    .search-bar-bg,
-    .dot,
-    .split {
-        background-color: var(--bg2) !important;
-    }
-    .schedule-img,
-    .empty-hinter,
-    .rank-item-wrapper,
-    .back-to-content,
-    .discount-hinter {
-        background: var(--trans) !important;
-    }
-    .right-part .login-panel .action-button,
-    .row .nav-list .nav-item,
-    .right-part .app-button {
-        color: var(--text1);
-    }
-    .manga-navbar-manga-logo,
-    .hovercard .line,
-    [class*="-btn-container"] .app-button,
-    .manga-title,
-    .section-title,
-    .schedule-list .title-text,
-    .rank-title,
-    .category-item,
-    .m-auto .title,
-    .title1,
-    .title .text,
-    .app-button.tab.active,
-    .section-item:not(.current),
-    .style-tag,
-    .first-line {
-        color: var(--text1) !important;
-    }
-    .user-panel [class*="item-"],
-    .date-item:not(.active),
-    .sidebar-item:not(.activated),
-    .author-name,
-    .introduction-text,
-    .header-content .more:not(:hover),
-    .second-line,
-    .manga-reader {
-        color: var(--text2) !important;
-    }
-    .drop-list .text,
-    .placeholder-item,
-    .hot-category + div .sub-title,
-    .sell-number,
-    .completed-comic,
-    .tags,
-    .supporting-text,
-    .block-title.v-top,
-    .status-controls,
-    .status-text,
-    .rank-hint,
-    .meta-ctnr > *,
-    .comic-info {
-        color: var(--text3) !important;
-    }
-    .app-button.tab {
-        color: var(--text4) !important;
-    }
-
-    .app-layout a:hover,
-    a [class*="text"]:hover,
-    a [class*="title"]:hover {
-        color: var(--bbl5) !important;
-        cursor: pointer;
-    }
-    .recharge-panel {
-        color: #222;
-    }
-    .fix-scroller *,
-    .fav-icon.cancel,
-    .discount-hinter {
-        border-color: var(--trans) !important;
-    }
-    .manga-navbar-submission-portal,
-    .cover-image,
-    .manga-cover,
-    .manga-cover img {
-        border-radius: var(--ra-btn-md) !important;
-    }
-    .search-icon,
-    .emmet,
-    .list-body button,
-    .label-icon,
-    .fav-icon.add {
-        filter: invert(0.9);
-    }
-    canvas {
-        filter: brightness(0.94);
-    }
-    .last-read * {
-        opacity: 1 !important;
-    }
-    .manga-detail .right-side {
-        display: none;
-    }
-    .app-layout .size-ruler:has(.manga-detail) {
-        margin: 0;
-        padding: 70px 120px;
-        width: 100%;
-    }
-    .section-list {
-        width: 100% !important;
-    }
-    .list-data:not([style^="d"]) {
-        display: grid !important;
-        grid-template-columns: repeat(5, 1fr) !important;
-        grid-gap: 16px;
-    }
-    .manga-button,
-    .list-data .list-item {
-        border-radius: var(--ra-btn-md) !important;
-        margin: 0;
-        width: auto !important;
-        max-width: 473px;
-    }
-    #main-stage .header-item {
-        background: var(--bg2) !important;
-        border-radius: var(--ra-btn-md) !important;
-        color: var(--text1) !important;
-        &.selected {
-            background: var(--bbl5) !important;
-            color: var(--b-Wh0) !important;
-        }
-    }
-    .back-to-top-button-container {
-        position: fixed;
-        right: 35px;
-    }
-    .batch-buy {
-        btn(--bor4, --trans, --bor4-s);
-        border-radius: var(--ra-btn-rd) !important;
-    }
-    .discount-hinter .button {
-        btn(--bor4, --trans, --trans-s)
-    }
-    .manga-button.ghost,
-    .episode-list .list-item {
-        btn(--text2, --trans, --bg5-s);
-    }
-    nav.manga-navbar,
-    .hovercard,
-    .hot-category,
-    .episode-comment {
-        pop(-rt, --bg1);
-    }
-    .section-navigator,
-    .back-to-content {
-        pop(-rt, --bg2p25);
-    }
-}
-
 @-moz-document regexp("^https?://(www\.)?bilibili\.com/match/.*"),
 regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     :root {
@@ -1517,7 +1353,8 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     }
     .bili-dyn-my-info,
     .bili-dyn-live-users,
-    .bili-dyn-topic-box,
+    .bili-dyn-banner,
+    .bili-dyn-search-trendings,
     .bili-dyn-publishing,
     .bili-dyn-up-list,
     .bili-dyn-list-tabs,
@@ -1708,7 +1545,7 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
 
 @-moz-document regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
     #app {
-        top: 20px;
+        top: 10px;
     }
     .side-toolbar__top,
     .opus-collection {
@@ -1724,7 +1561,9 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
             margin-left: 1030px;
         }
     }
-    [style*="#000000"] {
+
+    [style*="#000000"],
+    [style*="#2f3238"] {
         color: var(--text1) !important;
     }
     [style*="#56c1fe"] {
