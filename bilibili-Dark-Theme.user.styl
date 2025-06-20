@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0616.1
+@version        1.25.0620.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -185,7 +185,7 @@
     }
 }
 
-@-moz-document regexp("^https?://((?!account|app|cool|jobs|link|live|love|manga|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay|virtual)).*") {
+@-moz-document regexp("^https?://((?!account|app|cm|cool|jobs|link|live|love|manga|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay)).*") {
     :root {
         --Ga1: var(--bg3);
         --Ga2: var(--line_regular);
@@ -289,7 +289,7 @@
     .header-channel,
     .search-fixed-header,
     .mini-header,
-    .fixed .main-breadcrums {
+    .history-record.fixed .main-breadcrumbs {
         background-color: var(--bg1) !important;
         box-shadow: var(--shadow-10) !important;
     }
@@ -361,9 +361,7 @@
     }
     .search-input .clear-icon > use,
     .bui-checkbox .bui-checkbox-icon svg,
-    .game-header .search-icon path,
-    .css-1xneiug .border,
-    .css-1xneiug .content {
+    .game-header .search-icon path {
         fill: var(--text4);
     }
     .vui_button.vui_button--round,
@@ -415,12 +413,10 @@
         filter: brightness(0.3);
     }
     .bili-header .nav-search-clean:not(:hover),
-    .second-line_left img,
-    .helper-btn::before {
+    .second-line_left img {
         filter: brightness(0.6);
     }
     .bili-mini-close-icon,
-    #link-message-container .side-bar .icon,
     .active-content__desc span:first-child {
         filter: invert(0.9);
     }
@@ -448,8 +444,7 @@
     }
     #dialog-user-rating-button:not([class*="act"]),
     .sponsor-btn.disabled,
-    .mr-btn:not(.active),
-    .follow-dialog-wrap .btn:disabled {
+    .mr-btn:not(.active) {
         background-color: var(--bg4) !important;
         border-color: var(--trans) !important;
         color: var(--text4) !important;
@@ -531,7 +526,6 @@
         tag(--bor4);
     }
     .follow-btn.following,
-    .follow-btn.inactive,
     .follow-btn.on {
         btn(--text3, --bg2, --trans-s);
     }
@@ -581,7 +575,6 @@
         width: 120px !important;
     }
     .panel-v2,
-    .rank-video-card__popover,
     .misl-ep-item:not(.simple),
     .sp-msg,
     .sp-msg::before {
@@ -595,10 +588,7 @@
     #musicApp,
     [class^="_VideoAs"],
     .bili-game-header-user-popper,
-    .popup-box,
-    .bp-emoji-box .static-popup,
-    .cs-actions-wrap,
-    .bp-popup-panel {
+    .popup-box {
         pop(-rd);
     }
     .bili-dialog-bomb > div,
@@ -612,8 +602,7 @@
     .search-sub-channel,
     .pod-description-popover,
     .bpx-player-report-box,
-    .bili-popover,
-    .channel-select-content {
+    .bili-popover {
         pop(-rt);
     }
     .van-followed,
