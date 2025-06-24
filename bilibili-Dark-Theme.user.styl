@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0624.1
+@version        1.25.0624.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -187,6 +187,8 @@
 
 @-moz-document regexp("^https?://((?!account|app|cm|cool|jobs|link|live|love|manga|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay)).*") {
     :root {
+        --brand_blue: var(--b-Lb5);
+        --brand_pink: var(--b-Pi5);
         --Ga1: var(--bg3);
         --Ga2: var(--line_regular);
         --Ga3: var(--text4);
@@ -610,6 +612,10 @@
     .sort-type-wrp ul {
         pop(-rt);
         padding: 4px !important;
+    }
+    .vui_popover-content.vui_tooltip {
+        pop(-rt, --iwh);
+        color: var(--bg1);
     }
     .sponsor-pay-header {
         background-color: var(--bg2) !important;
@@ -1285,6 +1291,12 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
 regexp("^https?://(www\.)?bilibili\.com/v/topic/.*"),
 regexp("^https?://(www\.)?bilibili\.com/opus/.*"),
 url("https://www.bilibili.com/h5/topic-active/topic-intro") {
+    .bg {
+        background-image: url("//i1.hdslb.com/bfs/static/stone-free/dyn-home/assets/bg_dark.png@1c.avif") !important;
+    }
+    html.bili_dark #app:after {
+        background: none;
+    }
     .bgc,
     .bili-select-dropdown,
     .bili-set-follow-group__add__mask {
@@ -1300,7 +1312,6 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .share-popover__tips--content .title {
         background-color: var(--bg2p50) !important;
     }
-    .bg,
     .b-img,
     .bili-album__preview__picture,
     .topic-detail__header {
