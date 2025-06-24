@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0620.1
+@version        1.25.0624.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -397,9 +397,6 @@
     .bili-mini-content-wp input {
         box-shadow: inset 0 0 0 1000px var(--bg2) !important;
     }
-    .el-input__inner {
-        box-shadow: 0 0 0 1px var(--bg4) inset !important;
-    }
     .bili-feed4 .bili-header .slide-down,
     #bilibili-player-placeholder,
     .bpx-player-container,
@@ -449,8 +446,7 @@
         border-color: var(--trans) !important;
         color: var(--text4) !important;
     }
-    .tool-item:not(:hover),
-    .back-top-btn:not(:hover) {
+    .tool-item:not(:hover) {
         background-color: var(--bg1) !important;
         border-color: var(--bg4) !important;
     }
@@ -520,6 +516,7 @@
         min-width: auto !important;
     }
     .bili-video-card__info--icon-text,
+    .bili-video-card__info--rcmd-text,
     .game-card-content-head-recommend,
     .normal .up span,
     .rcmd-tag {
@@ -710,13 +707,6 @@
     div.cm-module,
     .eva-banner {
         display: none !important;
-    }
-    .is-rcmd:has(.bili-video-card__info--ad) .bili-video-card__wrap {
-        background: url(//i0.hdslb.com/bfs/album/eb65ae5ee6f66b6381090f5bee4fe6cbabfd6d0d.png@360w_!web-dynamic.webp) center/cover no-repeat;
-        border-radius: 6px;
-        & a {
-            visibility: hidden;
-        }
     }
     @media screen and (min-width: 1760px) {
         .video-pod__body,
@@ -1422,18 +1412,11 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
     [class^="._loading"] {
         background-color: var(--bg2) !important;
     }
-    .select-item:not(.item-active):hover,
-    .other-link:hover,
-    .vector-ver {
-        background-color: var(--bg4) !important;
-    }
     .bili-header__banner,
-    .history-hint,
-    .info-wrap .tag {
+    .history-hint {
         background-color: transparent !important;
     }
-    .weekly-hint,
-    .rank-tips {
+    .weekly-hint {
         color: var(--text2) !important;
     }
     [class^="_item"] [class^="_inlineVideoSquare"] {
