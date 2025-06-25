@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0624.2
+@version        1.25.0625.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -599,7 +599,6 @@
     .vui_popover-content,
     .video-tool-more-popover,
     .search-sub-channel,
-    .pod-description-popover,
     .bpx-player-report-box,
     .bili-popover {
         pop(-rt);
@@ -613,9 +612,13 @@
         pop(-rt);
         padding: 4px !important;
     }
-    .vui_popover-content.vui_tooltip {
+    .vui_popover-content.vui_tooltip,
+    .pod-description-popover {
         pop(-rt, --iwh);
-        color: var(--bg1);
+    }
+    .vui_popover-content.vui_tooltip,
+    .pod-description-dropdown {
+        color: var(--bg1) !important;
     }
     .sponsor-pay-header {
         background-color: var(--bg2) !important;
@@ -913,9 +916,17 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .sort-item i.down {
         border-top-color: var(--text4);
     }
-    .season-slider-list li:not(.cur)::after,
-    .season-slider-list li:not(.cur)::before {
-        filter: invert(0.84);
+    .theme-light .season-slider-list li:not(.cur) {
+        &::after,
+        &::before {
+            filter: invert(0.84);
+        }
+    }
+    .theme-dark .season-slider-list li:not(.cur) {
+        &::after,
+        &::before {
+            filter: invert(0.07);
+        }
     }
     .title-right .left-icon,
     .today .day-of-week {
@@ -1118,6 +1129,9 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
 
 @-moz-document regexp("^https?://space\.bilibili\.com/.*"),
 regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
+    :root {
+        --Pi4: var(--b-Pi4);
+    }
     .bili-video-card {
         --bili-video-card-title-font-size: 14px !important;
         --bili-video-card-subtitle-font-size: 13px !important;
@@ -1529,6 +1543,9 @@ regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
 @-moz-document regexp("^https?://(www\.)?bilibili\.com/opus/.*") {
     #app {
         top: 10px;
+    }
+    #app.dark_mode::after {
+        background: none;
     }
     .side-toolbar__top,
     .opus-collection {
