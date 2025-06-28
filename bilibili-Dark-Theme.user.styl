@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0628.1
+@version        1.25.0628.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -50,6 +50,7 @@
         --b-Cy3: #89E1E1;
         --b-Cy4: #4FD3D1;
         --b-Cy5: #14C4BF;
+        --b-Lb1: #DFF6FD;
         --b-Lb2: #BFEDFA;
         --b-Lb3: #80DAF6;
         --b-Lb4: #40C5F1;
@@ -188,8 +189,10 @@
 @-moz-document regexp("^https?://((?!account|app|cm|cool|jobs|link|live|love|manga|member|play-live|passport|pay|show)(?:[^\/.]+\.)*)bilibili\.com/(?!audio|blackboard(?!/help\.html)|festival|watchroom|v/(customer-service|pay)).*") {
     :root {
         --brand_blue: var(--b-Lb5);
+        --brand_blue_thin: var(--b-Lb1);
         --brand_pink: var(--b-Pi5);
         --Ga1: var(--bg3);
+        --Ga1_rgb: var(--bg2u-rgb);
         --Ga2: var(--line_regular);
         --Ga3: var(--text4);
         --Ga9: var(--text1);
@@ -430,61 +433,6 @@
         border-color: var(--bg5);
         color: var(--text1);
     }
-    .bili-header #nav-searchform,
-    .search-layout .search-input-wrap {
-        background-color: var(--bg2) !important;
-        border: var(--bg2-s) !important;
-        border-radius: var(--ra-btn-rd) !important;
-        transition: all .3s ease !important;
-        &:hover {
-            border: var(--bg5-s) !important;
-        }
-
-        &[class*="-focus"] {
-            border: var(--bg5-s) !important;
-            box-shadow: var(--shadow-10);
-        }
-
-        & input::placeholder {
-            color: var(--text3) !important;
-        }
-    }
-    .bili-header .search-panel,
-    .search-panel-popover {
-        pop(-rd);
-    }
-    .bili-header .search-panel {
-        margin-top: 8px !important;
-        border-radius: 16px !important;
-        padding: 16px 4px !important;
-    }
-    .trendings-col:first-child {
-        margin-right: 4px !important;
-    }
-    .bili-header #nav-searchform {
-        padding-left: 6px !important;
-        & .nav-search-content,
-        & .nav-search-content input {
-            background-color: transparent !important;
-        }
-    }
-    .search-layout {
-        & .search-input {
-            margin: 30px 0 12px !important;
-        }
-        & .search-input-wrap {
-            height: 46px !important;
-        }
-        & .search-button {
-            border-radius: 16px var(--ra-btn-rd) var(--ra-btn-rd) 16px !important;
-            height: 32px !important;
-        }
-        & .search-panel-popover {
-            border-radius: 22px !important;
-            padding: 16px 10px !important;
-            top: 55px !important;
-        }
-    }
     [class*="-actions"] .vui_button,
     .follow-btn__trigger {
         width: 82px !important;
@@ -555,6 +503,8 @@
     }
     .bili-mini-content-wp,
     .v-popover-content,
+    .bili-header .search-panel,
+    .search-panel-popover,
     .video-share-popover,
     .modal-content,
     .user-card-m-exp,
@@ -590,14 +540,63 @@
     .pod-description-popover {
         pop(-rt, --iwh);
     }
+    .bili-header #nav-searchform,
+    .search-layout .search-input-wrap {
+        background-color: var(--bg2) !important;
+        border: var(--bg2-s) !important;
+        transition: all .3s ease !important;
+        &:hover {
+            border: var(--bg5-s) !important;
+        }
+
+        &[class*="-focus"] {
+            border: var(--bg5-s) !important;
+            box-shadow: var(--shadow-10);
+        }
+
+        & input::placeholder {
+            color: var(--text3) !important;
+        }
+    }
+    .bili-header .search-panel {
+        margin-top: 8px !important;
+        border-radius: 16px !important;
+        padding: 16px 4px 14px 4px !important;
+    }
+    .trendings-col:first-child {
+        margin-right: 4px !important;
+    }
+    .bili-header #nav-searchform {
+        border-radius: var(--ra-btn-rd) !important;
+        padding-left: 6px !important;
+        & .nav-search-content,
+        & .nav-search-content input {
+            background-color: transparent !important;
+        }
+    }
+    .search-layout {
+        & .search-input {
+            margin: 30px 0 12px !important;
+        }
+        & .search-input-wrap {
+            border-radius: 8px !important;
+            height: 46px !important;
+        }
+        & .search-button {
+            border-radius: 6px !important;
+            height: 32px !important;
+        }
+        & .search-panel-popover {
+            padding: 16px 10px 14px 10px !important;
+            top: 55px !important;
+        }
+    }
     .vui_popover-content.vui_tooltip,
     .pod-description-dropdown {
         color: var(--bg1) !important;
     }
     .sponsor-pay-header {
-        background-color: var(--bg2) !important;
         border-color: var(--trans) !important;
-        border-radius: var(--ra-popup-rd) !important;
         color: var(--text1) !important;
     }
     .bili-video-card__info--no-interest-panel {
@@ -672,10 +671,11 @@
         display: none;
     }
     .adblock-tips,
+    .bili-video-card__image--link[href^="//cm"],
+    .bili-video-card__image--link[href^="//cm"] + div,
     .couplet-locs,
     .adcard-content,
     .btn-ad,
-    .col_3:has(.bili-video-card__info--ad),
     .activity-m-v1,
     .ad-report,
     .slide-ad-exp,
@@ -899,8 +899,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
             filter: invert(0.07);
         }
     }
-    .title-right .left-icon,
-    .today .day-of-week {
+    .theme-light .today .day-of-week {
         filter: invert(0.9);
     }
     .ranking-cell-index {
@@ -909,7 +908,6 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .subject-picture.has-background {
         opacity: 0.4 !important;
     }
-    .tl-day:not(.today) .indicator,
     .sp-msg > span {
         display: none !important;
     }
