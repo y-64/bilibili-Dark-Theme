@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0625.1
+@version        1.25.0628.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -241,12 +241,9 @@
     [class^="_VideoAs"] {
         --app_graph_bg: var(--bg1) !important;
     }
-    iframe {
-        color-scheme: initial;
-    }
 
     *:not(html):not(body) {
-        &::-webkit-scrollbar {
+        &::-webkit-scrollbar:vertical {
             width: 6px !important;
         }
 
@@ -255,22 +252,7 @@
             border-radius: var(--ra-btn-rd) !important;
         }
     }
-
-    input,
-    #app input,
-    #app ~ div input,
-    textarea,
-    #app textarea,
-    #app ~ div textarea {
-        background-color: transparent;
-        color: var(--text1);
-        caret-color: var(--text1);
-        &::placeholder {
-            color: var(--text3);
-        }
-    }
     .bili-dyn-sidebar__btn,
-    .bili-radio__inner,
     body {
         background-color: var(--bg1);
     }
@@ -280,7 +262,6 @@
     .floor-card-inner:not(:hover),
     .follow-group-mask,
     .collection-mask,
-    .sub-tag-item:not([checked="checked"]) .item-check-btn,
     [class^="_Seek"] [class^="_Item"],
     [class^="_RestoreAuto"],
     [class*="collectionMask"],
@@ -324,20 +305,16 @@
         background: var(--trans) !important;
     }
     .van-popover,
-    body {
+    body,
+    .act-rich-style-init2 .act-rich-render-content {
         color: var(--text1);
-    }
-    .follow-dialog-wrap li:not(:hover),
-    .act-rich-render-content {
-        color: var(--text1) !important;
     }
     .bili-mini-customer-title,
     .login-tab-item:not(.active-tab) {
         color: var(--text2);
     }
     .login-scan-title,
-    .login-scan-desc p,
-    .add-group .add-btn {
+    .login-scan-desc p {
         color: var(--text2) !important;
     }
     .login-sns-wp *,
@@ -351,9 +328,6 @@
     .login-sms-wp .disable,
     .opt-list .disabled {
         color: var(--text4) !important;
-    }
-    .section-item:hover .section-title {
-        color: var(--bbl5) !important;
     }
     .space-notice {
         color: var(--bpi5) !important;
@@ -698,12 +672,10 @@
         display: none;
     }
     .adblock-tips,
-    .is-rcmd:has(.bili-video-card__info--ad) .bili-video-card__info,
     .couplet-locs,
     .adcard-content,
     .btn-ad,
     .col_3:has(.bili-video-card__info--ad),
-    .reply-notice,
     .activity-m-v1,
     .ad-report,
     .slide-ad-exp,
@@ -712,7 +684,6 @@
     #right-bottom-banner,
     [class^="vipPay"],
     [class^="paybar_con"],
-    .gg-floor-module,
     div.cm-module,
     .eva-banner {
         display: none !important;
@@ -994,10 +965,6 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     .feed-container .default-button {
         background: var(--trans) !important;
     }
-    #app .gc-header input {
-        background-color: var(--text0);
-        color: var(--bg1);
-    }
     .notice {
         color: var(--text2) !important;
     }
@@ -1025,10 +992,10 @@ regexp("^https?://(www\.)?bilibili\.com/v/game/match/.*") {
     .datepicker-popup .calendar-year > a:hover {
         background-color: var(--bg4) !important;
     }
+    .topbar input,
     .card-cover {
         background-color: transparent !important;
     }
-    .search-icon,
     .score .score-point,
     .filter-top,
     .competition-option-content,
