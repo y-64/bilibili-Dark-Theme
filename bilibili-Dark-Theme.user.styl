@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.25.0701.2
+@version        1.26.0102.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -506,8 +506,7 @@ regexp("^https?://account\.bilibili\.com/big.*") {
     }
     .bili-mini-content-wp,
     .v-popover-content,
-    .bili-header .search-panel,
-    .search-panel-popover,
+    .search-panel,
     .video-share-popover,
     .modal-content,
     .user-card-m-exp,
@@ -589,7 +588,7 @@ regexp("^https?://account\.bilibili\.com/big.*") {
             border-radius: 6px !important;
             height: 32px !important;
         }
-        & .search-panel-popover {
+        & .search-panel {
             padding: 16px 10px 14px 10px !important;
         }
     }
@@ -614,18 +613,18 @@ regexp("^https?://account\.bilibili\.com/big.*") {
         padding: 6px 10px !important;
     }
     .dynamic-panel-popover .header-tabs-panel__content {
-        max-height: 680px;
+        max-height: 740px;
     }
     .favorite-panel-popover__nav,
     .favorite-panel-popover__content,
-    .history-panel-popover {
-        height: 680px;
+    .bili-header .history-panel-popover {
+        height: 740px;
     }
     .favorite-panel-popover__content .content-scroll {
-        height: 633px;
+        height: 693px;
     }
-    .history-panel-popover .header-tabs-panel__content {
-        height: 620px;
+    .bili-header .history-panel-popover .header-tabs-panel__content {
+        height: 680px;
     }
     .collection-m-exp,
     [class*="_dialogContent"],
@@ -1480,6 +1479,7 @@ regexp("^https?://music\.bilibili\.com/pc/.*") {
 @-moz-document regexp("^https?://t\.bilibili\.com/h5/dynamic/vote/#/.*"),
 regexp("^https?://t\.bilibili\.com/vote/h5/index/#/.*") {
     #bp-app,
+    #bp-app.dark,
     html,
     body,
     .square:not(.checked) {
