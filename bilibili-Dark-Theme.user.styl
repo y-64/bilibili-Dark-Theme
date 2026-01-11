@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.26.0112.1
+@version        1.26.0112.2
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -200,8 +200,8 @@ regexp("^https?://account\.bilibili\.com/big.*") {
         --Ga9: var(--text1);
         --Ga10: var(--text1);
         --Ga11: var(--bg1);
-        --Lb6: var(--b-Lb4);
-        --Lb7: var(--b-Lb5);
+        --Lb6: var(--b-Lb3);
+        --Lb7: var(--b-Lb4);
         --Pi10_u: var(--b-Pi3);
         --bg1: var(--bg1u);
         --bg1_rgb: var(--bg1u-rgb);
@@ -1294,6 +1294,7 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     }
     .bgc,
     .bili-select-dropdown,
+    .active-card,
     .bili-set-follow-group__add__mask {
         background-color: var(--bg1) !important;
     }
@@ -1349,6 +1350,9 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     .side-toolbar__box,
     .side-toolbar__btn {
         box-shadow: var(--shadow-8) !important;
+    }
+    .active-card .active-content__desc span:first-child {
+        opacity: 0.7;
     }
     .bili-set-follow-group__content {
         height: 450px !important;
