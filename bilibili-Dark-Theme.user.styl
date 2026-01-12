@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.26.0112.2
+@version        1.26.0112.3
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -200,8 +200,6 @@ regexp("^https?://account\.bilibili\.com/big.*") {
         --Ga9: var(--text1);
         --Ga10: var(--text1);
         --Ga11: var(--bg1);
-        --Lb6: var(--b-Lb3);
-        --Lb7: var(--b-Lb4);
         --Pi10_u: var(--b-Pi3);
         --bg1: var(--bg1u);
         --bg1_rgb: var(--bg1u-rgb);
@@ -1285,7 +1283,12 @@ regexp("^https?://(www\.)?bilibili\.com/watchlater/.*") {
 @-moz-document regexp("^https?://t\.bilibili\.com/.*"),
 regexp("^https?://(www\.)?bilibili\.com/v/topic/.*"),
 regexp("^https?://(www\.)?bilibili\.com/opus/.*"),
+regexp("^https?://space\.bilibili\.com/\d+/dynamic"),
 url("https://www.bilibili.com/h5/topic-active/topic-intro") {
+    :root {
+        --Lb6: var(--b-Lb3);
+        --Lb7: var(--b-Lb4);
+    }
     .bg {
         background-image: url("//i1.hdslb.com/bfs/static/stone-free/dyn-home/assets/bg_dark.png@1c.avif") !important;
     }
