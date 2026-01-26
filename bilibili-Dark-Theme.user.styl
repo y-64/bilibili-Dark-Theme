@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.26.0121.1
+@version        1.26.0127.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -957,8 +957,7 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     :root {
         --Ga10_rgb: var(--b-Ga3-rgb);
     }
-    .swiper-slide:only-child .layout-container,
-    .swiper-slide:only-child .gradient-overlay,
+    .layout-container[style*="241"],
     .tag,
     .rank-list,
     .rank-card .header,
@@ -969,6 +968,26 @@ regexp("^https?://(www\.)?bilibili\.com/bangumi/media/.*") {
     }
     .notice {
         color: var(--text2) !important;
+    }
+    .rank-card:nth-child(2) {
+        & .title,
+        .more:hover {
+            color: var(--bbl5);
+        }
+
+        & .title path {
+            fill: var(--bbl5);
+        }
+    }
+    .rank-card:nth-child(3) {
+        & .title,
+        .more:hover {
+            color: var(--b-Gr4);
+        }
+
+        & .title path {
+            fill: var(--b-Gr4);
+        }
     }
     .bili-game-header-nav-bar {
         box-shadow: var(--shadow-10) !important;
