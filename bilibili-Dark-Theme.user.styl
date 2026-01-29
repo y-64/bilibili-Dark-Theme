@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.26.0127.1
+@version        1.26.0130.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -1306,10 +1306,6 @@ regexp("^https?://(www\.)?bilibili\.com/v/topic/.*"),
 regexp("^https?://(www\.)?bilibili\.com/opus/.*"),
 regexp("^https?://space\.bilibili\.com/\d+/dynamic"),
 url("https://www.bilibili.com/h5/topic-active/topic-intro") {
-    :root {
-        --Lb6: var(--b-Lb3);
-        --Lb7: var(--b-Lb4);
-    }
     .bg {
         background-image: url("//i1.hdslb.com/bfs/static/stone-free/dyn-home/assets/bg_dark.png@1c.avif") !important;
     }
@@ -1354,6 +1350,14 @@ url("https://www.bilibili.com/h5/topic-active/topic-intro") {
     }
     .action-item__data {
         color: var(--text2) !important;
+    }
+    .bili-topic,
+    .opus-text-rich-hl,
+    .dyn-card-opus__summary__action {
+        color: var(--b-Lb4);
+        &:hover {
+            color: var(--b-Lb3) !important;
+        }
     }
     .bili-dyn-publishing__action,
     [class^="bili-dyn-card"] button,
