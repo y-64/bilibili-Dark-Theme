@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           bilibili Dark Theme
 @namespace      y-64
-@version        1.26.0130.1
+@version        1.26.0201.1
 @description    A dark theme for bilibili.com
 @author         y-64
 @license        GPL-3.0
@@ -259,13 +259,12 @@ regexp("^https?://account\.bilibili\.com/big.*") {
             border-radius: var(--ra-btn-rd) !important;
         }
     }
-    #musicApp .main,
     .bili-dyn-sidebar__btn,
     body {
         background-color: var(--bg1);
     }
     .history-item,
-    #i_cecream .primary-btn:not(:hover),
+    .feed-roll-btn .primary-btn:not(:hover),
     .watchlater-pip-button-inner:not(:hover),
     .floor-card-inner:not(:hover),
     .follow-group-mask,
@@ -447,6 +446,7 @@ regexp("^https?://account\.bilibili\.com/big.*") {
     .bili-video-card__info--icon-text,
     .bili-video-card__info--rcmd-text,
     .game-card-content-head-recommend,
+    #bgm-entry [class^="_right-desc"],
     .videoList .up .undefined,
     .rcmd-tag {
         tag(--bor4);
